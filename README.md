@@ -46,12 +46,9 @@ Class | Method | HTTP request | Description
 *BlocksApi* | [**unblock**](docs/BlocksApi.md#unblock) | **DELETE** /accounts/{id}/blocks | Unblock a account
 *CommentsApi* | [**deleteComment**](docs/CommentsApi.md#deletecomment) | **DELETE** /comments/{id} | Remove a comment
 *CommentsApi* | [**findComment**](docs/CommentsApi.md#findcomment) | **GET** /comments/{id} | Get basic information about this comment
-*CommentsApi* | [**findCommentLikes**](docs/CommentsApi.md#findcommentlikes) | **GET** /comments/{id}/likes | Get accounts list who liked on a comment
 *CommentsApi* | [**findComments**](docs/CommentsApi.md#findcomments) | **GET** /comments | Search comments
-*CommentsApi* | [**likeComment**](docs/CommentsApi.md#likecomment) | **POST** /comments/{id}/likes | Set a like on this comment
 *CommentsApi* | [**postComment**](docs/CommentsApi.md#postcomment) | **POST** /comments | Create a comment on a feed
 *CommentsApi* | [**reportComment**](docs/CommentsApi.md#reportcomment) | **POST** /comments/{id}/reports | Report this comment
-*CommentsApi* | [**unlikeComment**](docs/CommentsApi.md#unlikecomment) | **DELETE** /comments/{id}/likes | Remove a like on this comment
 *FeedsApi* | [**deleteFeed**](docs/FeedsApi.md#deletefeed) | **DELETE** /feeds/{id} | Delete this feed
 *FeedsApi* | [**findAccountFeeds**](docs/FeedsApi.md#findaccountfeeds) | **GET** /accounts/{id}/feeds | Get feeds list this account posted
 *FeedsApi* | [**findAccountLikes**](docs/FeedsApi.md#findaccountlikes) | **GET** /accounts/{id}/likes | Get account's liked feeds
@@ -136,7 +133,7 @@ Class | Method | HTTP request | Description
  - [io.github.cactacea.backend.AccountNameNotExists](docs/AccountNameNotExists.md)
  - [io.github.cactacea.backend.AccountStatus](docs/AccountStatus.md)
  - [io.github.cactacea.backend.Authentication](docs/Authentication.md)
- - [io.github.cactacea.backend.CactaceaError](docs/CactaceaError.md)
+ - [io.github.cactacea.backend.BadRequest](docs/BadRequest.md)
  - [io.github.cactacea.backend.Comment](docs/Comment.md)
  - [io.github.cactacea.backend.CommentCreated](docs/CommentCreated.md)
  - [io.github.cactacea.backend.CommentId](docs/CommentId.md)
@@ -161,6 +158,7 @@ Class | Method | HTTP request | Description
  - [io.github.cactacea.backend.MediumId](docs/MediumId.md)
  - [io.github.cactacea.backend.Message](docs/Message.md)
  - [io.github.cactacea.backend.MessageCreated](docs/MessageCreated.md)
+ - [io.github.cactacea.backend.NotFound](docs/NotFound.md)
  - [io.github.cactacea.backend.PostAccountReportBody](docs/PostAccountReportBody.md)
  - [io.github.cactacea.backend.PostActiveStatusBody](docs/PostActiveStatusBody.md)
  - [io.github.cactacea.backend.PostCommentBody](docs/PostCommentBody.md)
@@ -184,6 +182,7 @@ Class | Method | HTTP request | Description
  - [io.github.cactacea.backend.PutSessionProfileBody](docs/PutSessionProfileBody.md)
  - [io.github.cactacea.backend.PutSessionProfileImageBody](docs/PutSessionProfileImageBody.md)
  - [io.github.cactacea.backend.SocialAccount](docs/SocialAccount.md)
+ - [io.github.cactacea.backend.Unauthorized](docs/Unauthorized.md)
 
 
 <a name="documentation-for-authorization"></a>

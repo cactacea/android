@@ -14,10 +14,14 @@ package io.github.cactacea.backend
 
 /**
  * 
- * @param id 
+ * @param code code
+ * @param message message
  */
-data class FeedCreated (
-    val id: java.math.BigDecimal
+data class Unauthorized (
+    /* code */
+    val code: kotlin.Long,
+    /* message */
+    val message: kotlin.String
 ) {
 
 }

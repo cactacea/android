@@ -6,12 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteComment**](CommentsApi.md#deleteComment) | **DELETE** /comments/{id} | Remove a comment
 [**findComment**](CommentsApi.md#findComment) | **GET** /comments/{id} | Get basic information about this comment
-[**findCommentLikes**](CommentsApi.md#findCommentLikes) | **GET** /comments/{id}/likes | Get accounts list who liked on a comment
 [**findComments**](CommentsApi.md#findComments) | **GET** /comments | Search comments
-[**likeComment**](CommentsApi.md#likeComment) | **POST** /comments/{id}/likes | Set a like on this comment
 [**postComment**](CommentsApi.md#postComment) | **POST** /comments | Create a comment on a feed
 [**reportComment**](CommentsApi.md#reportComment) | **POST** /comments/{id}/reports | Report this comment
-[**unlikeComment**](CommentsApi.md#unlikeComment) | **DELETE** /comments/{id}/likes | Remove a like on this comment
 
 
 <a name="deleteComment"></a>
@@ -103,57 +100,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findCommentLikes"></a>
-# **findCommentLikes**
-> kotlin.Array&lt;Account&gt; findCommentLikes(id, since, offset, count)
-
-Get accounts list who liked on a comment
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = CommentsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Comment Identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Account> = apiInstance.findCommentLikes(id, since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling CommentsApi#findCommentLikes")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling CommentsApi#findCommentLikes")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Comment Identifier. |
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Account&gt;**](Account.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="findComments"></a>
 # **findComments**
 > kotlin.Array&lt;Comment&gt; findComments(id, since, offset, count)
@@ -195,50 +141,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**kotlin.Array&lt;Comment&gt;**](Comment.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="likeComment"></a>
-# **likeComment**
-> likeComment(id)
-
-Set a like on this comment
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = CommentsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Comment Identifier.
-try {
-    apiInstance.likeComment(id)
-} catch (e: ClientException) {
-    println("4xx response calling CommentsApi#likeComment")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling CommentsApi#likeComment")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Comment Identifier. |
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 
@@ -326,50 +228,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **java.math.BigDecimal**| Comment Identifier. |
  **body** | [**PostCommentReportBody**](PostCommentReportBody.md)|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="unlikeComment"></a>
-# **unlikeComment**
-> unlikeComment(id)
-
-Remove a like on this comment
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = CommentsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Comment Identifier.
-try {
-    apiInstance.unlikeComment(id)
-} catch (e: ClientException) {
-    println("4xx response calling CommentsApi#unlikeComment")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling CommentsApi#unlikeComment")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Comment Identifier. |
 
 ### Return type
 
