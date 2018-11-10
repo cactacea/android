@@ -4,7 +4,7 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteMedium**](MediumsApi.md#deleteMedium) | **DELETE** /mediums/{id} | Delete this medium
+[**deleteMedium**](MediumsApi.md#deleteMedium) | **DELETE** /mediums/{id} | Delete a medium
 [**uploadMedium**](MediumsApi.md#uploadMedium) | **POST** /mediums | Upload a medium
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 # **deleteMedium**
 > deleteMedium(id)
 
-Delete this medium
+Delete a medium
 
 ### Example
 ```kotlin

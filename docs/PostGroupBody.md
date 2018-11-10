@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **name** | **kotlin.String** | Group name. |  [optional]
 **by_invitation_only** | **kotlin.Boolean** | Only invited accounts can join in. |  [optional]
 **privacy_type** | [**inline**](#Privacy_typeEnum) | Which accounts can join in. |  [optional]
-**authority_type** | [**inline**](#Authority_typeEnum) | Which accounts can manage this group. |  [optional]
+**authority_type** | [**inline**](#Authority_typeEnum) | Which accounts can manage a group. |  [optional]
 
 
 <a name="Privacy_typeEnum"></a>

@@ -5,10 +5,10 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**existAccountName**](AccountsApi.md#existAccountName) | **GET** /account/{account_name} | Confirm account name exist
-[**findAccount**](AccountsApi.md#findAccount) | **GET** /accounts/{id} | Get information about this account
+[**findAccount**](AccountsApi.md#findAccount) | **GET** /accounts/{id} | Get information about a account
 [**findAccountStatus**](AccountsApi.md#findAccountStatus) | **GET** /accounts/{id}/status | Get account on
 [**findAccounts**](AccountsApi.md#findAccounts) | **GET** /accounts | Search accounts
-[**reportAccount**](AccountsApi.md#reportAccount) | **POST** /accounts/{id}/reports | Report this account
+[**reportAccount**](AccountsApi.md#reportAccount) | **POST** /accounts/{id}/reports | Report a account
 [**updateDisplayName**](AccountsApi.md#updateDisplayName) | **PUT** /accounts/{id}/display_name | Change display name to session account
 
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 # **findAccount**
 > Account findAccount(id)
 
-Get information about this account
+Get information about a account
 
 ### Example
 ```kotlin
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 # **reportAccount**
 > reportAccount(id, body)
 
-Report this account
+Report a account
 
 ### Example
 ```kotlin

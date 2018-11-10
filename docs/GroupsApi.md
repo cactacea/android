@@ -5,22 +5,22 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createGroup**](GroupsApi.md#createGroup) | **POST** /groups | Create a group
-[**deleteGroup**](GroupsApi.md#deleteGroup) | **DELETE** /groups/{id} | Hide this group and delete all messages
-[**findAccountGroup**](GroupsApi.md#findAccountGroup) | **GET** /accounts/{id}/group | Get a direct message group to this account
-[**findAccountGroups**](GroupsApi.md#findAccountGroups) | **GET** /accounts/{id}/groups | Get groups list this account joined
-[**findGroup**](GroupsApi.md#findGroup) | **GET** /groups/{id} | Get basic information about this group
-[**findGroupAccounts**](GroupsApi.md#findGroupAccounts) | **GET** /groups/{id}/accounts | Get accounts list of this group
+[**deleteGroup**](GroupsApi.md#deleteGroup) | **DELETE** /groups/{id} | Hide a group and delete all messages
+[**findAccountGroup**](GroupsApi.md#findAccountGroup) | **GET** /accounts/{id}/group | Get a direct message group to a account
+[**findAccountGroups**](GroupsApi.md#findAccountGroups) | **GET** /accounts/{id}/groups | Get groups list a account joined
+[**findGroup**](GroupsApi.md#findGroup) | **GET** /groups/{id} | Get basic information about a group
+[**findGroupAccounts**](GroupsApi.md#findGroupAccounts) | **GET** /groups/{id}/accounts | Get accounts list of a group
 [**findGroups**](GroupsApi.md#findGroups) | **GET** /groups | Search groups
 [**findSessionGroups**](GroupsApi.md#findSessionGroups) | **GET** /session/groups | Get groups list session account joined
 [**findSessionHides**](GroupsApi.md#findSessionHides) | **GET** /session/hides | Get hidden groups list session account joined
-[**hideGroup**](GroupsApi.md#hideGroup) | **POST** /groups/{id}/hides | Hide this group
-[**joinAccountToGroup**](GroupsApi.md#joinAccountToGroup) | **POST** /accounts/{account_id}/groups/{group_id}/join | Join this account in this group
-[**joinToGroup**](GroupsApi.md#joinToGroup) | **POST** /groups/{id}/join | Join to this group,
-[**leaveAccountFromGroup**](GroupsApi.md#leaveAccountFromGroup) | **POST** /accounts/{account_id}/groups/{group_id}/leave | Leave this account from this group
-[**leaveFromGroup**](GroupsApi.md#leaveFromGroup) | **POST** /groups/{id}/leave | Leave from this group
-[**reportGroup**](GroupsApi.md#reportGroup) | **POST** /groups/{id}/reports | Report this group
-[**showGroup**](GroupsApi.md#showGroup) | **DELETE** /groups/{id}/hides | Show this group
-[**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /groups/{id} | Update this group
+[**hideGroup**](GroupsApi.md#hideGroup) | **POST** /groups/{id}/hides | Hide a group
+[**joinAccountToGroup**](GroupsApi.md#joinAccountToGroup) | **POST** /accounts/{account_id}/groups/{group_id}/join | Join a account in a group
+[**joinToGroup**](GroupsApi.md#joinToGroup) | **POST** /groups/{id}/join | Join to a group,
+[**leaveAccountFromGroup**](GroupsApi.md#leaveAccountFromGroup) | **POST** /accounts/{account_id}/groups/{group_id}/leave | Leave a account from a group
+[**leaveFromGroup**](GroupsApi.md#leaveFromGroup) | **POST** /groups/{id}/leave | Leave from a group
+[**reportGroup**](GroupsApi.md#reportGroup) | **POST** /groups/{id}/reports | Report a group
+[**showGroup**](GroupsApi.md#showGroup) | **DELETE** /groups/{id}/hides | Show a group
+[**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /groups/{id} | Update a group
 
 
 <a name="createGroup"></a>
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 # **deleteGroup**
 > deleteGroup(id)
 
-Hide this group and delete all messages
+Hide a group and delete all messages
 
 ### Example
 ```kotlin
@@ -116,7 +116,7 @@ null (empty response body)
 # **findAccountGroup**
 > Group findAccountGroup(id)
 
-Get a direct message group to this account
+Get a direct message group to a account
 
 ### Example
 ```kotlin
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 # **findAccountGroups**
 > kotlin.Array&lt;Group&gt; findAccountGroups(id, since, offset, count)
 
-Get groups list this account joined
+Get groups list a account joined
 
 ### Example
 ```kotlin
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 # **findGroup**
 > Group findGroup(id)
 
-Get basic information about this group
+Get basic information about a group
 
 ### Example
 ```kotlin
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 # **findGroupAccounts**
 > kotlin.Array&lt;Group&gt; findGroupAccounts(id, since, offset, count)
 
-Get accounts list of this group
+Get accounts list of a group
 
 ### Example
 ```kotlin
@@ -267,7 +267,7 @@ Get accounts list of this group
 
 val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | 
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
@@ -287,7 +287,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **java.math.BigDecimal**| Group identifier. |
- **since** | **java.math.BigDecimal**|  | [optional]
+ **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
  **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
  **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 # **hideGroup**
 > hideGroup(id)
 
-Hide this group
+Hide a group
 
 ### Example
 ```kotlin
@@ -505,7 +505,7 @@ null (empty response body)
 # **joinAccountToGroup**
 > joinAccountToGroup(accountId, groupId)
 
-Join this account in this group
+Join a account in a group
 
 ### Example
 ```kotlin
@@ -551,7 +551,7 @@ null (empty response body)
 # **joinToGroup**
 > joinToGroup(id)
 
-Join to this group,
+Join to a group,
 
 ### Example
 ```kotlin
@@ -595,7 +595,7 @@ null (empty response body)
 # **leaveAccountFromGroup**
 > leaveAccountFromGroup(accountId, groupId)
 
-Leave this account from this group
+Leave a account from a group
 
 ### Example
 ```kotlin
@@ -641,7 +641,7 @@ null (empty response body)
 # **leaveFromGroup**
 > leaveFromGroup(id)
 
-Leave from this group
+Leave from a group
 
 ### Example
 ```kotlin
@@ -685,7 +685,7 @@ null (empty response body)
 # **reportGroup**
 > reportGroup(id, body)
 
-Report this group
+Report a group
 
 ### Example
 ```kotlin
@@ -731,7 +731,7 @@ null (empty response body)
 # **showGroup**
 > showGroup(id)
 
-Show this group
+Show a group
 
 ### Example
 ```kotlin
@@ -775,7 +775,7 @@ null (empty response body)
 # **updateGroup**
 > updateGroup(id, body)
 
-Update this group
+Update a group
 
 ### Example
 ```kotlin

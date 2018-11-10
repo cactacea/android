@@ -4,17 +4,17 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findAccountFollowers**](FollowsApi.md#findAccountFollowers) | **GET** /accounts/{id}/followers | Get accounts list this account is followed by
-[**findFollows**](FollowsApi.md#findFollows) | **GET** /accounts/{id}/follows | Get accounts list this user followed
-[**follow**](FollowsApi.md#follow) | **POST** /accounts/{id}/follows | Follow this account
-[**unfollow**](FollowsApi.md#unfollow) | **DELETE** /accounts/{id}/follows | UnFollow this account
+[**findAccountFollowers**](FollowsApi.md#findAccountFollowers) | **GET** /accounts/{id}/followers | Get accounts list a account is followed by
+[**findFollows**](FollowsApi.md#findFollows) | **GET** /accounts/{id}/follows | Get accounts list a account followed
+[**follow**](FollowsApi.md#follow) | **POST** /accounts/{id}/follows | Follow a account
+[**unfollow**](FollowsApi.md#unfollow) | **DELETE** /accounts/{id}/follows | UnFollow a account
 
 
 <a name="findAccountFollowers"></a>
 # **findAccountFollowers**
 > kotlin.Array&lt;Account&gt; findAccountFollowers(id, since, offset, count)
 
-Get accounts list this account is followed by
+Get accounts list a account is followed by
 
 ### Example
 ```kotlin
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 # **findFollows**
 > kotlin.Array&lt;Account&gt; findFollows(id, since, offset, count)
 
-Get accounts list this user followed
+Get accounts list a account followed
 
 ### Example
 ```kotlin
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 # **follow**
 > follow(id)
 
-Follow this account
+Follow a account
 
 ### Example
 ```kotlin
@@ -160,7 +160,7 @@ null (empty response body)
 # **unfollow**
 > unfollow(id)
 
-UnFollow this account
+UnFollow a account
 
 ### Example
 ```kotlin

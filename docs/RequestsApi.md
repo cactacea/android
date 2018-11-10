@@ -5,8 +5,8 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**accept**](RequestsApi.md#accept) | **POST** /session/requests/{id}/accept | Accept a friend request
-[**createFriendRequest**](RequestsApi.md#createFriendRequest) | **POST** /accounts/{id}/requests | Create a friend request to this account
-[**deleteRequest**](RequestsApi.md#deleteRequest) | **DELETE** /accounts/{id}/requests | Remove a friend request to this account
+[**createFriendRequest**](RequestsApi.md#createFriendRequest) | **POST** /accounts/{id}/requests | Create a friend request to a account
+[**deleteRequest**](RequestsApi.md#deleteRequest) | **DELETE** /accounts/{id}/requests | Remove a friend request to a account
 [**findSessionFriendRequests**](RequestsApi.md#findSessionFriendRequests) | **GET** /session/requests | Get friend requests list session account created or received
 [**reject**](RequestsApi.md#reject) | **POST** /session/requests/{id}/reject | Reject a friend request
 
@@ -59,7 +59,7 @@ null (empty response body)
 # **createFriendRequest**
 > FriendRequestCreated createFriendRequest(id)
 
-Create a friend request to this account
+Create a friend request to a account
 
 ### Example
 ```kotlin
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 # **deleteRequest**
 > deleteRequest(id)
 
-Remove a friend request to this account
+Remove a friend request to a account
 
 ### Example
 ```kotlin
@@ -158,7 +158,7 @@ Get friend requests list session account created or received
 
 val apiInstance = RequestsApi()
 val received : kotlin.Boolean = true // kotlin.Boolean | Filters friend requests which you have received or sent.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | 
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friend requests which started on since or later.
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friend request. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friend request returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
@@ -178,7 +178,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **received** | **kotlin.Boolean**| Filters friend requests which you have received or sent. |
- **since** | **java.math.BigDecimal**|  | [optional]
+ **since** | **java.math.BigDecimal**| Filters friend requests which started on since or later. | [optional]
  **offset** | **java.math.BigDecimal**| The offset of friend request. By default the value is 0. | [optional]
  **count** | **java.math.BigDecimal**| Maximum number of friend request returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 

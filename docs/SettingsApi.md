@@ -4,7 +4,7 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findSessionPushNotificationSettings**](SettingsApi.md#findSessionPushNotificationSettings) | **GET** /session/push_notification | Get this push notification settings
+[**findSessionPushNotificationSettings**](SettingsApi.md#findSessionPushNotificationSettings) | **GET** /session/push_notification | Get push notification settings
 [**updateSessionDeviceStatus**](SettingsApi.md#updateSessionDeviceStatus) | **POST** /session/status | Update device status
 [**updateSessionPushNotificationSettings**](SettingsApi.md#updateSessionPushNotificationSettings) | **PUT** /session/push_notification | Update ths push notification settings
 [**updateSessionPushToken**](SettingsApi.md#updateSessionPushToken) | **POST** /session/push_token | Update device push token
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 # **findSessionPushNotificationSettings**
 > PushNotificationSetting findSessionPushNotificationSettings()
 
-Get this push notification settings
+Get push notification settings
 
 ### Example
 ```kotlin

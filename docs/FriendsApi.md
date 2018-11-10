@@ -4,15 +4,15 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteFriend**](FriendsApi.md#deleteFriend) | **DELETE** /accounts/{id}/friends | Remove friendship to this account
-[**findAccountFriends**](FriendsApi.md#findAccountFriends) | **GET** /accounts/{id}/friends | Get this account&#39;s friends list
+[**deleteFriend**](FriendsApi.md#deleteFriend) | **DELETE** /accounts/{id}/friends | Remove friendship to a account
+[**findAccountFriends**](FriendsApi.md#findAccountFriends) | **GET** /accounts/{id}/friends | Get a account&#39;s friends list
 
 
 <a name="deleteFriend"></a>
 # **deleteFriend**
 > deleteFriend(id)
 
-Remove friendship to this account
+Remove friendship to a account
 
 ### Example
 ```kotlin
@@ -56,7 +56,7 @@ null (empty response body)
 # **findAccountFriends**
 > Account findAccountFriends(id, since, offset, count)
 
-Get this account&#39;s friends list
+Get a account&#39;s friends list
 
 ### Example
 ```kotlin

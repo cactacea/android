@@ -5,8 +5,8 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**findSessionMutes**](MutesApi.md#findSessionMutes) | **GET** /session/mutes | Get accounts list session account muted
-[**muteAccount**](MutesApi.md#muteAccount) | **POST** /accounts/{id}/mutes | Mute this account
-[**unmuteAccount**](MutesApi.md#unmuteAccount) | **DELETE** /accounts/{id}/mutes | UnMute this account
+[**muteAccount**](MutesApi.md#muteAccount) | **POST** /accounts/{id}/mutes | Mute a account
+[**unmuteAccount**](MutesApi.md#unmuteAccount) | **DELETE** /accounts/{id}/mutes | UnMute a account
 
 
 <a name="findSessionMutes"></a>
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 # **muteAccount**
 > muteAccount(id)
 
-Mute this account
+Mute a account
 
 ### Example
 ```kotlin
@@ -106,7 +106,7 @@ null (empty response body)
 # **unmuteAccount**
 > unmuteAccount(id)
 
-UnMute this account
+UnMute a account
 
 ### Example
 ```kotlin

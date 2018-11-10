@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **kotlin.String** | Account name. |  [optional]
+**account_name** | **kotlin.String** | Account name. |  [optional]
 **display_name** | **kotlin.String** | Display name. |  [optional]
 **password** | **kotlin.String** | Account password. |  [optional]
 **udid** | **kotlin.String** | Unique Device Identifier. |  [optional]

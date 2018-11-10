@@ -4,21 +4,21 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteFeed**](FeedsApi.md#deleteFeed) | **DELETE** /feeds/{id} | Delete this feed
-[**findAccountFeeds**](FeedsApi.md#findAccountFeeds) | **GET** /accounts/{id}/feeds | Get feeds list this account posted
+[**deleteFeed**](FeedsApi.md#deleteFeed) | **DELETE** /feeds/{id} | Delete a feed
+[**findAccountFeeds**](FeedsApi.md#findAccountFeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
 [**findAccountLikes**](FeedsApi.md#findAccountLikes) | **GET** /accounts/{id}/likes | Get account&#39;s liked feeds
-[**findFeed**](FeedsApi.md#findFeed) | **GET** /feeds/{id} | Get basic information about this feed
+[**findFeed**](FeedsApi.md#findFeed) | **GET** /feeds/{id} | Get basic information about a feed
 [**findFeeds**](FeedsApi.md#findFeeds) | **GET** /feeds | Search feeds
 [**postFeed**](FeedsApi.md#postFeed) | **POST** /feeds | Post a feed
-[**reportFeed**](FeedsApi.md#reportFeed) | **POST** /feeds/{id}/reports | Report this feed
-[**updateFeed**](FeedsApi.md#updateFeed) | **PUT** /feeds/{id} | Update this feed
+[**reportFeed**](FeedsApi.md#reportFeed) | **POST** /feeds/{id}/reports | Report a feed
+[**updateFeed**](FeedsApi.md#updateFeed) | **PUT** /feeds/{id} | Update a feed
 
 
 <a name="deleteFeed"></a>
 # **deleteFeed**
 > deleteFeed(id)
 
-Delete this feed
+Delete a feed
 
 ### Example
 ```kotlin
@@ -62,7 +62,7 @@ null (empty response body)
 # **findAccountFeeds**
 > Feed findAccountFeeds(id, since, offset, count)
 
-Get feeds list this account posted
+Get feeds list a account posted
 
 ### Example
 ```kotlin
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 # **findFeed**
 > Feed findFeed(id)
 
-Get basic information about this feed
+Get basic information about a feed
 
 ### Example
 ```kotlin
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 # **reportFeed**
 > reportFeed(id, body)
 
-Report this feed
+Report a feed
 
 ### Example
 ```kotlin
@@ -351,7 +351,7 @@ null (empty response body)
 # **updateFeed**
 > updateFeed(id, body)
 
-Update this feed
+Update a feed
 
 ### Example
 ```kotlin
