@@ -21,13 +21,13 @@ package io.github.cactacea.backend
  */
 data class PutGroupBody (
     /* Group name. */
-    val name: kotlin.String? = null,
+    val name: kotlin.String,
     /* Only invited accounts can join in. */
-    val by_invitation_only: kotlin.Boolean? = null,
+    val by_invitation_only: kotlin.Boolean,
     /* Which accounts can join in. */
-    val privacy_type: PutGroupBody.PrivacyType? = null,
+    val privacy_type: PutGroupBody.PrivacyType,
     /* Which accounts can manage a group. */
-    val authority_type: PutGroupBody.AuthorityType? = null
+    val authority_type: PutGroupBody.AuthorityType
 ) {
 
     /**

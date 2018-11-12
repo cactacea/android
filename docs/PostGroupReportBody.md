@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**report_type** | [**inline**](#Report_typeEnum) |  | 
-**report_content** | **kotlin.String** |  |  [optional]
+**report_type** | [**inline**](#Report_typeEnum) | Report type. | 
+**report_content** | **kotlin.String** | Description about this report. | 
 
 
 <a name="Report_typeEnum"></a>

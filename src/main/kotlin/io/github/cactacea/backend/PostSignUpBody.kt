@@ -25,13 +25,13 @@ package io.github.cactacea.backend
  */
 data class PostSignUpBody (
     /* Account name. */
-    val account_name: kotlin.String? = null,
+    val account_name: kotlin.String,
+    /* Account password. */
+    val password: kotlin.String,
+    /* Unique Device Identifier. */
+    val udid: kotlin.String,
     /* Display name. */
     val display_name: kotlin.String? = null,
-    /* Account password. */
-    val password: kotlin.String? = null,
-    /* Unique Device Identifier. */
-    val udid: kotlin.String? = null,
     /* Profile URL. */
     val web: kotlin.String? = null,
     /* Account birthday. */

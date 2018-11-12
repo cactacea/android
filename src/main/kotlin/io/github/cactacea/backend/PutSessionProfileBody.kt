@@ -22,15 +22,15 @@ package io.github.cactacea.backend
  */
 data class PutSessionProfileBody (
     /* Display name. */
-    val display_name: kotlin.String? = null,
+    val display_name: kotlin.String,
     /* Profile URL. */
-    val web: kotlin.String? = null,
+    val web: kotlin.String,
     /* Account birthday. */
-    val birthday: java.math.BigDecimal? = null,
+    val birthday: java.math.BigDecimal,
     /* Account address. */
-    val location: kotlin.String? = null,
+    val location: kotlin.String,
     /* Account bio. */
-    val bio: kotlin.String? = null
+    val bio: kotlin.String
 ) {
 
 }

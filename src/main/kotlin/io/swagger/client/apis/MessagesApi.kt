@@ -57,7 +57,7 @@ class MessagesApi(basePath: kotlin.String = "https://localhost") : ApiClient(bas
     * Search messages
     * 
     * @param id Group identifier. 
-    * @param ascending  
+    * @param ascending Order by posted time. 
     * @param since Filters messages which started on since or later. (optional)
     * @param offset The offset of messages. By default the value is 0. (optional)
     * @param count Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. (optional)

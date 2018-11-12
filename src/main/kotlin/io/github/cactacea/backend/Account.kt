@@ -25,6 +25,7 @@ package io.github.cactacea.backend
  * @param followCount 
  * @param followerCount 
  * @param friendCount 
+ * @param feedsCount 
  * @param mute 
  * @param web 
  * @param birthday 
@@ -47,6 +48,7 @@ data class Account (
     val followCount: java.math.BigDecimal? = null,
     val followerCount: java.math.BigDecimal? = null,
     val friendCount: java.math.BigDecimal? = null,
+    val feedsCount: java.math.BigDecimal? = null,
     val web: kotlin.String? = null,
     val birthday: java.math.BigDecimal? = null,
     val location: kotlin.String? = null,

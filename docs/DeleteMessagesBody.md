@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Group identifier. |  [optional]
+**id** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Group identifier. | 
 
 
 

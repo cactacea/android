@@ -20,7 +20,7 @@ package io.github.cactacea.backend
  */
 data class PostMessageBody (
     /* Group identifier. */
-    val id: java.math.BigDecimal? = null,
+    val id: java.math.BigDecimal,
     /* A message will be posted. */
     val message: kotlin.String? = null,
     /* A medium will be posted. */

@@ -23,15 +23,15 @@ package io.github.cactacea.backend
  */
 data class PutFeedBody (
     /* A feed message will be posted. */
-    val message: kotlin.String? = null,
+    val message: kotlin.String,
+    /* Group privacy type. */
+    val privacy_type: PutFeedBody.PrivacyType,
+    /* Content warning. */
+    val content_warning: kotlin.Boolean,
     /* Medium identifiers of attached. */
     val medium_ids: kotlin.Array<java.math.BigDecimal>? = null,
     /* Tags of feed. */
     val tags: kotlin.Array<kotlin.String>? = null,
-    /* Group privacy type. */
-    val privacy_type: PutFeedBody.PrivacyType? = null,
-    /* Content warning. */
-    val content_warning: kotlin.Boolean? = null,
     /* Expiration of a feed. */
     val expiration: java.math.BigDecimal? = null
 ) {

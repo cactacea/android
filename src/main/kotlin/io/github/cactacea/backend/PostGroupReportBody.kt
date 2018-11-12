@@ -14,16 +14,18 @@ package io.github.cactacea.backend
 
 /**
  * 
- * @param report_type 
- * @param report_content 
+ * @param report_type Report type.
+ * @param report_content Description about this report.
  */
 data class PostGroupReportBody (
+    /* Report type. */
     val report_type: PostGroupReportBody.ReportType,
-    val report_content: kotlin.String? = null
+    /* Description about this report. */
+    val report_content: kotlin.String
 ) {
 
     /**
-    * 
+    * Report type.
     * Values: none,spam,inappropriate
     */
     enum class ReportType(val value: kotlin.Any){

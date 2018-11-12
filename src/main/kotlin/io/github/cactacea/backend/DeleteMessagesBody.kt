@@ -18,7 +18,7 @@ package io.github.cactacea.backend
  */
 data class DeleteMessagesBody (
     /* Group identifier. */
-    val id: java.math.BigDecimal? = null
+    val id: java.math.BigDecimal
 ) {
 
 }

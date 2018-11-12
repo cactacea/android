@@ -19,9 +19,9 @@ package io.github.cactacea.backend
  */
 data class PutSessionPasswordBody (
     /* Account old password. */
-    val old_password: kotlin.String? = null,
+    val old_password: kotlin.String,
     /* Account new password. */
-    val new_password: kotlin.String? = null
+    val new_password: kotlin.String
 ) {
 
 }

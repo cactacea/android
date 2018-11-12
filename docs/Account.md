@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **followCount** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 **followerCount** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 **friendCount** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
+**feedsCount** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 **mute** | **kotlin.Boolean** |  | 
 **web** | **kotlin.String** |  |  [optional]
 **birthday** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]

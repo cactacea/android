@@ -187,6 +187,13 @@ Class | Method | HTTP request | Description
 - **API key parameter name**: X-API-KEY
 - **Location**: HTTP header
 
+<a name="authorization"></a>
+### authorization
+
+- **Type**: API key
+- **API key parameter name**: X-AUTHORIZATION
+- **Location**: HTTP header
+
 <a name="cactacea_auth"></a>
 ### cactacea_auth
 

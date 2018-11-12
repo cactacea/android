@@ -14,15 +14,15 @@ package io.github.cactacea.backend
 
 /**
  * 
- * @param privacy_type Feed privacy type.
+ * @param privacy_type Feed privacy type. By default the value is everyone.
  */
 data class GetFeedsBody (
-    /* Feed privacy type. */
+    /* Feed privacy type. By default the value is everyone. */
     val privacy_type: GetFeedsBody.PrivacyType? = null
 ) {
 
     /**
-    * Feed privacy type.
+    * Feed privacy type. By default the value is everyone.
     * Values: everyone,followers,friends,self
     */
     enum class PrivacyType(val value: kotlin.Any){

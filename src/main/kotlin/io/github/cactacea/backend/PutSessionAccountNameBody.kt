@@ -18,7 +18,7 @@ package io.github.cactacea.backend
  */
 data class PutSessionAccountNameBody (
     /* Account name. */
-    val name: kotlin.String? = null
+    val name: kotlin.String
 ) {
 
 }

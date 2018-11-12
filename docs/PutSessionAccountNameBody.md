@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **kotlin.String** | Account name. |  [optional]
+**name** | **kotlin.String** | Account name. | 
 
 
 

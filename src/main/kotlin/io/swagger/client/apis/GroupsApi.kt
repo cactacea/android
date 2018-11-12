@@ -227,7 +227,7 @@ class GroupsApi(basePath: kotlin.String = "https://localhost") : ApiClient(baseP
     * @param invitationOnly Filters groups that invited accounts can join in. (optional)
     * @param privacyType Filters groups which can join in. (optional)
     * @param since Filters groups which started on since or later. (optional)
-    * @param offset  (optional)
+    * @param offset The offset of messages. By default the value is 0. (optional)
     * @param count Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. (optional)
     * @return kotlin.Array<Group>
     */

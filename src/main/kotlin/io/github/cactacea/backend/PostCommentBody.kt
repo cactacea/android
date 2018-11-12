@@ -19,9 +19,9 @@ package io.github.cactacea.backend
  */
 data class PostCommentBody (
     /* Feed Identifier. */
-    val id: java.math.BigDecimal? = null,
+    val id: java.math.BigDecimal,
     /* A message will be posted. */
-    val comment_message: kotlin.String? = null
+    val comment_message: kotlin.String
 ) {
 
 }
