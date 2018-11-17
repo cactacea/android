@@ -1,6 +1,6 @@
 # FeedsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,7 +23,7 @@ Delete a feed
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FeedsApi()
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Feed identifier. |
+ **id** | **java.math.BigDecimal**| Feed identifier. | [default to null]
 
 ### Return type
 
@@ -56,7 +56,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findAccountFeeds"></a>
 # **findAccountFeeds**
@@ -67,7 +67,7 @@ Get feeds list a account posted
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FeedsApi()
@@ -91,10 +91,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
+ **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findAccountLikes"></a>
 # **findAccountLikes**
@@ -118,7 +118,7 @@ Get account&#39;s liked feeds
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FeedsApi()
@@ -142,10 +142,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
+ **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findFeed"></a>
 # **findFeed**
@@ -169,7 +169,7 @@ Get basic information about a feed
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FeedsApi()
@@ -190,7 +190,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Feed identifier. |
+ **id** | **java.math.BigDecimal**| Feed identifier. | [default to null]
 
 ### Return type
 
@@ -203,27 +203,27 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findFeeds"></a>
 # **findFeeds**
-> kotlin.Array&lt;Feed&gt; findFeeds(body, since, offset, count)
+> kotlin.Array&lt;Feed&gt; findFeeds(getFeedsBody, since, offset, count)
 
 Search feeds
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FeedsApi()
-val body : GetFeedsBody =  // GetFeedsBody | 
+val getFeedsBody : GetFeedsBody =  // GetFeedsBody | 
 val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Feed> = apiInstance.findFeeds(body, since, offset, count)
+    val result : kotlin.Array<Feed> = apiInstance.findFeeds(getFeedsBody, since, offset, count)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling FeedsApi#findFeeds")
@@ -238,10 +238,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetFeedsBody**](GetFeedsBody.md)|  |
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **getFeedsBody** | [**GetFeedsBody**](GetFeedsBody.md)|  |
+ **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -254,24 +254,24 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="postFeed"></a>
 # **postFeed**
-> FeedCreated postFeed(body)
+> FeedCreated postFeed(postFeedBody)
 
 Post a feed
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FeedsApi()
-val body : PostFeedBody =  // PostFeedBody | 
+val postFeedBody : PostFeedBody =  // PostFeedBody | 
 try {
-    val result : FeedCreated = apiInstance.postFeed(body)
+    val result : FeedCreated = apiInstance.postFeed(postFeedBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling FeedsApi#postFeed")
@@ -286,7 +286,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostFeedBody**](PostFeedBody.md)|  |
+ **postFeedBody** | [**PostFeedBody**](PostFeedBody.md)|  |
 
 ### Return type
 
@@ -299,25 +299,25 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="reportFeed"></a>
 # **reportFeed**
-> reportFeed(id, body)
+> reportFeed(id, postFeedReportBody)
 
 Report a feed
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FeedsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
-val body : PostFeedReportBody =  // PostFeedReportBody | 
+val postFeedReportBody : PostFeedReportBody =  // PostFeedReportBody | 
 try {
-    apiInstance.reportFeed(id, body)
+    apiInstance.reportFeed(id, postFeedReportBody)
 } catch (e: ClientException) {
     println("4xx response calling FeedsApi#reportFeed")
     e.printStackTrace()
@@ -331,8 +331,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Feed identifier. |
- **body** | [**PostFeedReportBody**](PostFeedReportBody.md)|  |
+ **id** | **java.math.BigDecimal**| Feed identifier. | [default to null]
+ **postFeedReportBody** | [**PostFeedReportBody**](PostFeedReportBody.md)|  |
 
 ### Return type
 
@@ -345,25 +345,25 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="updateFeed"></a>
 # **updateFeed**
-> updateFeed(id, body)
+> updateFeed(id, putFeedBody)
 
 Update a feed
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FeedsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
-val body : PutFeedBody =  // PutFeedBody | 
+val putFeedBody : PutFeedBody =  // PutFeedBody | 
 try {
-    apiInstance.updateFeed(id, body)
+    apiInstance.updateFeed(id, putFeedBody)
 } catch (e: ClientException) {
     println("4xx response calling FeedsApi#updateFeed")
     e.printStackTrace()
@@ -377,8 +377,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Feed identifier. |
- **body** | [**PutFeedBody**](PutFeedBody.md)|  |
+ **id** | **java.math.BigDecimal**| Feed identifier. | [default to null]
+ **putFeedBody** | [**PutFeedBody**](PutFeedBody.md)|  |
 
 ### Return type
 
@@ -391,5 +391,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 

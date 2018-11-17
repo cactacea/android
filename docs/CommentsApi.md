@@ -1,6 +1,6 @@
 # CommentsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,7 +23,7 @@ Remove a comment
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = CommentsApi()
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Comment Identifier. |
+ **id** | **java.math.BigDecimal**| Comment Identifier. | [default to null]
 
 ### Return type
 
@@ -56,7 +56,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findComment"></a>
 # **findComment**
@@ -67,7 +67,7 @@ Get basic information about a comment
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = CommentsApi()
@@ -88,7 +88,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Comment Identifier. |
+ **id** | **java.math.BigDecimal**| Comment Identifier. | [default to null]
 
 ### Return type
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findCommentLikes"></a>
 # **findCommentLikes**
@@ -112,7 +112,7 @@ Get accounts list who liked on a comment
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = CommentsApi()
@@ -136,10 +136,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Comment Identifier. |
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **id** | **java.math.BigDecimal**| Comment Identifier. | [default to null]
+ **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findComments"></a>
 # **findComments**
@@ -163,7 +163,7 @@ Search comments
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = CommentsApi()
@@ -187,10 +187,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Feed identifier. |
- **since** | **java.math.BigDecimal**| Filters comments which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of comments. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of comments returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **id** | **java.math.BigDecimal**| Feed identifier. | [default to null]
+ **since** | **java.math.BigDecimal**| Filters comments which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of comments. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of comments returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="likeComment"></a>
 # **likeComment**
@@ -214,7 +214,7 @@ Set a like on a comment
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = CommentsApi()
@@ -234,7 +234,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Comment Identifier. |
+ **id** | **java.math.BigDecimal**| Comment Identifier. | [default to null]
 
 ### Return type
 
@@ -247,24 +247,24 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="postComment"></a>
 # **postComment**
-> CommentCreated postComment(body)
+> CommentCreated postComment(postCommentBody)
 
 Create a comment on a feed
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = CommentsApi()
-val body : PostCommentBody =  // PostCommentBody | 
+val postCommentBody : PostCommentBody =  // PostCommentBody | 
 try {
-    val result : CommentCreated = apiInstance.postComment(body)
+    val result : CommentCreated = apiInstance.postComment(postCommentBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CommentsApi#postComment")
@@ -279,7 +279,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostCommentBody**](PostCommentBody.md)|  |
+ **postCommentBody** | [**PostCommentBody**](PostCommentBody.md)|  |
 
 ### Return type
 
@@ -292,25 +292,25 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="reportComment"></a>
 # **reportComment**
-> reportComment(id, body)
+> reportComment(id, postCommentReportBody)
 
 Report a comment
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = CommentsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Comment Identifier.
-val body : PostCommentReportBody =  // PostCommentReportBody | 
+val postCommentReportBody : PostCommentReportBody =  // PostCommentReportBody | 
 try {
-    apiInstance.reportComment(id, body)
+    apiInstance.reportComment(id, postCommentReportBody)
 } catch (e: ClientException) {
     println("4xx response calling CommentsApi#reportComment")
     e.printStackTrace()
@@ -324,8 +324,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Comment Identifier. |
- **body** | [**PostCommentReportBody**](PostCommentReportBody.md)|  |
+ **id** | **java.math.BigDecimal**| Comment Identifier. | [default to null]
+ **postCommentReportBody** | [**PostCommentReportBody**](PostCommentReportBody.md)|  |
 
 ### Return type
 
@@ -338,7 +338,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="unlikeComment"></a>
 # **unlikeComment**
@@ -349,7 +349,7 @@ Remove a like on a comment
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = CommentsApi()
@@ -369,7 +369,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Comment Identifier. |
+ **id** | **java.math.BigDecimal**| Comment Identifier. | [default to null]
 
 ### Return type
 
@@ -382,5 +382,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 

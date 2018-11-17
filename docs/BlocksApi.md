@@ -1,6 +1,6 @@
 # BlocksApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,7 @@ Block a account
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = BlocksApi()
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
+ **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
 
 ### Return type
 
@@ -51,7 +51,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findBlockingAccounts"></a>
 # **findBlockingAccounts**
@@ -62,7 +62,7 @@ Get blocking accounts list
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = BlocksApi()
@@ -85,9 +85,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="unblock"></a>
 # **unblock**
@@ -111,7 +111,7 @@ Unblock a account
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = BlocksApi()
@@ -131,7 +131,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. |
+ **id** | **java.math.BigDecimal**| Account identifier. | [default to null]
 
 ### Return type
 
@@ -144,5 +144,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 

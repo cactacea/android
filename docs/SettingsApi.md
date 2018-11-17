@@ -1,6 +1,6 @@
 # SettingsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Get push notification settings
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SettingsApi()
@@ -49,24 +49,24 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="updateSessionDeviceStatus"></a>
 # **updateSessionDeviceStatus**
-> updateSessionDeviceStatus(body)
+> updateSessionDeviceStatus(postActiveStatusBody)
 
 Update device status
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SettingsApi()
-val body : PostActiveStatusBody =  // PostActiveStatusBody | 
+val postActiveStatusBody : PostActiveStatusBody =  // PostActiveStatusBody | 
 try {
-    apiInstance.updateSessionDeviceStatus(body)
+    apiInstance.updateSessionDeviceStatus(postActiveStatusBody)
 } catch (e: ClientException) {
     println("4xx response calling SettingsApi#updateSessionDeviceStatus")
     e.printStackTrace()
@@ -80,7 +80,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostActiveStatusBody**](PostActiveStatusBody.md)|  |
+ **postActiveStatusBody** | [**PostActiveStatusBody**](PostActiveStatusBody.md)|  |
 
 ### Return type
 
@@ -104,7 +104,7 @@ Update ths push notification settings
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SettingsApi()
@@ -137,20 +137,20 @@ null (empty response body)
 
 <a name="updateSessionPushToken"></a>
 # **updateSessionPushToken**
-> updateSessionPushToken(body)
+> updateSessionPushToken(postDevicePushTokenBody)
 
 Update device push token
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SettingsApi()
-val body : PostDevicePushTokenBody =  // PostDevicePushTokenBody | 
+val postDevicePushTokenBody : PostDevicePushTokenBody =  // PostDevicePushTokenBody | 
 try {
-    apiInstance.updateSessionPushToken(body)
+    apiInstance.updateSessionPushToken(postDevicePushTokenBody)
 } catch (e: ClientException) {
     println("4xx response calling SettingsApi#updateSessionPushToken")
     e.printStackTrace()
@@ -164,7 +164,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostDevicePushTokenBody**](PostDevicePushTokenBody.md)|  |
+ **postDevicePushTokenBody** | [**PostDevicePushTokenBody**](PostDevicePushTokenBody.md)|  |
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # FollowsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Get accounts list a account is followed by
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FollowsApi()
@@ -43,10 +43,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
- **since** | **java.math.BigDecimal**| Filters followers which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of followers. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
+ **since** | **java.math.BigDecimal**| Filters followers which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of followers. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findFollows"></a>
 # **findFollows**
@@ -70,7 +70,7 @@ Get accounts list a account followed
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FollowsApi()
@@ -94,10 +94,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
- **since** | **java.math.BigDecimal**| Filters follower which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of follower. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
+ **since** | **java.math.BigDecimal**| Filters follower which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of follower. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="follow"></a>
 # **follow**
@@ -121,7 +121,7 @@ Follow a account
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FollowsApi()
@@ -141,7 +141,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
+ **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
 
 ### Return type
 
@@ -154,7 +154,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="unfollow"></a>
 # **unfollow**
@@ -165,7 +165,7 @@ UnFollow a account
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = FollowsApi()
@@ -185,7 +185,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
+ **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
 
 ### Return type
 
@@ -198,5 +198,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 

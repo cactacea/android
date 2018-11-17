@@ -1,6 +1,6 @@
 # InvitationsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Accept a invitation
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group invitation identifier. |
+ **id** | **java.math.BigDecimal**| Group invitation identifier. | [default to null]
 
 ### Return type
 
@@ -53,7 +53,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="createGroupInvitationToAccount"></a>
 # **createGroupInvitationToAccount**
@@ -64,7 +64,7 @@ Create a invitation to a account
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
@@ -86,8 +86,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **java.math.BigDecimal**| Account Identifier. |
- **groupId** | **java.math.BigDecimal**| Group Identifier. |
+ **accountId** | **java.math.BigDecimal**| Account Identifier. | [default to null]
+ **groupId** | **java.math.BigDecimal**| Group Identifier. | [default to null]
 
 ### Return type
 
@@ -100,25 +100,25 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="createGroupInvitationToAccounts"></a>
 # **createGroupInvitationToAccounts**
-> InvitationCreated createGroupInvitationToAccounts(id, body)
+> InvitationCreated createGroupInvitationToAccounts(id, postInvitationAccountsBody)
 
 Post a invitation to some accounts
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group Identifier.
-val body : PostInvitationAccountsBody =  // PostInvitationAccountsBody | 
+val postInvitationAccountsBody : PostInvitationAccountsBody =  // PostInvitationAccountsBody | 
 try {
-    val result : InvitationCreated = apiInstance.createGroupInvitationToAccounts(id, body)
+    val result : InvitationCreated = apiInstance.createGroupInvitationToAccounts(id, postInvitationAccountsBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling InvitationsApi#createGroupInvitationToAccounts")
@@ -133,8 +133,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group Identifier. |
- **body** | [**PostInvitationAccountsBody**](PostInvitationAccountsBody.md)|  |
+ **id** | **java.math.BigDecimal**| Group Identifier. | [default to null]
+ **postInvitationAccountsBody** | [**PostInvitationAccountsBody**](PostInvitationAccountsBody.md)|  |
 
 ### Return type
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findSessionGroupInvitations"></a>
 # **findSessionGroupInvitations**
@@ -158,7 +158,7 @@ Get invitations list session account received
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
@@ -181,9 +181,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters invitations which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of group invitations. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of invitations returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **since** | **java.math.BigDecimal**| Filters invitations which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of group invitations. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of invitations returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="rejectGroupInvitation"></a>
 # **rejectGroupInvitation**
@@ -207,7 +207,7 @@ Reject a invitation
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
@@ -227,7 +227,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group invitation identifier. |
+ **id** | **java.math.BigDecimal**| Group invitation identifier. | [default to null]
 
 ### Return type
 
@@ -240,5 +240,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 

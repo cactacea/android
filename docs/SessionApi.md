@@ -1,6 +1,6 @@
 # SessionApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,7 +27,7 @@ Remove the profile image
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
@@ -67,7 +67,7 @@ Get basic information about session account
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
@@ -97,7 +97,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findSessionFeeds"></a>
 # **findSessionFeeds**
@@ -108,7 +108,7 @@ Get feeds list session account posted
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
@@ -131,9 +131,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findSessionFollowers"></a>
 # **findSessionFollowers**
@@ -157,7 +157,7 @@ Get accounts list session account is followed by
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
@@ -180,9 +180,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters followers which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of followers. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **since** | **java.math.BigDecimal**| Filters followers which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of followers. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findSessionFollows"></a>
 # **findSessionFollows**
@@ -206,7 +206,7 @@ Get accounts list session account followed
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
@@ -229,9 +229,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters follower which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of follower. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **since** | **java.math.BigDecimal**| Filters follower which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of follower. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findSessionFriends"></a>
 # **findSessionFriends**
@@ -255,7 +255,7 @@ Get friends list
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
@@ -278,9 +278,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters friends which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of friends. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **since** | **java.math.BigDecimal**| Filters friends which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of friends. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findSessionLikes"></a>
 # **findSessionLikes**
@@ -304,7 +304,7 @@ Get feeds list session account set a like
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
@@ -327,9 +327,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters entries which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **since** | **java.math.BigDecimal**| Filters entries which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="signOut"></a>
 # **signOut**
@@ -353,7 +353,7 @@ Sign out
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
@@ -386,20 +386,20 @@ null (empty response body)
 
 <a name="updateSessionAccountName"></a>
 # **updateSessionAccountName**
-> updateSessionAccountName(body)
+> updateSessionAccountName(putSessionAccountNameBody)
 
 Update the account name
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val body : PutSessionAccountNameBody =  // PutSessionAccountNameBody | 
+val putSessionAccountNameBody : PutSessionAccountNameBody =  // PutSessionAccountNameBody | 
 try {
-    apiInstance.updateSessionAccountName(body)
+    apiInstance.updateSessionAccountName(putSessionAccountNameBody)
 } catch (e: ClientException) {
     println("4xx response calling SessionApi#updateSessionAccountName")
     e.printStackTrace()
@@ -413,7 +413,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PutSessionAccountNameBody**](PutSessionAccountNameBody.md)|  |
+ **putSessionAccountNameBody** | [**PutSessionAccountNameBody**](PutSessionAccountNameBody.md)|  |
 
 ### Return type
 
@@ -426,24 +426,24 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="updateSessionPassword"></a>
 # **updateSessionPassword**
-> updateSessionPassword(body)
+> updateSessionPassword(putSessionPasswordBody)
 
 Update the password
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val body : PutSessionPasswordBody =  // PutSessionPasswordBody | 
+val putSessionPasswordBody : PutSessionPasswordBody =  // PutSessionPasswordBody | 
 try {
-    apiInstance.updateSessionPassword(body)
+    apiInstance.updateSessionPassword(putSessionPasswordBody)
 } catch (e: ClientException) {
     println("4xx response calling SessionApi#updateSessionPassword")
     e.printStackTrace()
@@ -457,7 +457,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PutSessionPasswordBody**](PutSessionPasswordBody.md)|  |
+ **putSessionPasswordBody** | [**PutSessionPasswordBody**](PutSessionPasswordBody.md)|  |
 
 ### Return type
 
@@ -474,20 +474,20 @@ null (empty response body)
 
 <a name="updateSessionProfile"></a>
 # **updateSessionProfile**
-> updateSessionProfile(body)
+> updateSessionProfile(putSessionProfileBody)
 
 Update the profile
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val body : PutSessionProfileBody =  // PutSessionProfileBody | 
+val putSessionProfileBody : PutSessionProfileBody =  // PutSessionProfileBody | 
 try {
-    apiInstance.updateSessionProfile(body)
+    apiInstance.updateSessionProfile(putSessionProfileBody)
 } catch (e: ClientException) {
     println("4xx response calling SessionApi#updateSessionProfile")
     e.printStackTrace()
@@ -501,7 +501,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PutSessionProfileBody**](PutSessionProfileBody.md)|  |
+ **putSessionProfileBody** | [**PutSessionProfileBody**](PutSessionProfileBody.md)|  |
 
 ### Return type
 
@@ -518,20 +518,20 @@ null (empty response body)
 
 <a name="updateSessionProfileImage"></a>
 # **updateSessionProfileImage**
-> updateSessionProfileImage(body)
+> updateSessionProfileImage(putSessionProfileImageBody)
 
 Update the profile image
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val body : PutSessionProfileImageBody =  // PutSessionProfileImageBody | 
+val putSessionProfileImageBody : PutSessionProfileImageBody =  // PutSessionProfileImageBody | 
 try {
-    apiInstance.updateSessionProfileImage(body)
+    apiInstance.updateSessionProfileImage(putSessionProfileImageBody)
 } catch (e: ClientException) {
     println("4xx response calling SessionApi#updateSessionProfileImage")
     e.printStackTrace()
@@ -545,7 +545,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PutSessionProfileImageBody**](PutSessionProfileImageBody.md)|  |
+ **putSessionProfileImageBody** | [**PutSessionProfileImageBody**](PutSessionProfileImageBody.md)|  |
 
 ### Return type
 
@@ -558,5 +558,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 

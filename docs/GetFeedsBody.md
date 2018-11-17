@@ -4,14 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**privacy_type** | [**inline**](#Privacy_typeEnum) | Feed privacy type. By default the value is everyone. |  [optional]
+**privacyType** | [**inline**](#PrivacyTypeEnum) | Feed privacy type. By default the value is everyone. |  [optional]
 
 
-<a name="Privacy_typeEnum"></a>
+<a name="PrivacyTypeEnum"></a>
 ## Enum: privacy_type
 Name | Value
 ---- | -----
-privacy_type | everyone, followers, friends, self
+privacyType | everyone, followers, friends, self
 
 
 

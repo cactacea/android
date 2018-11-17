@@ -1,6 +1,6 @@
 # RequestsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Accept a friend request
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = RequestsApi()
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Friend request Identifier. |
+ **id** | **java.math.BigDecimal**| Friend request Identifier. | [default to null]
 
 ### Return type
 
@@ -53,7 +53,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="createFriendRequest"></a>
 # **createFriendRequest**
@@ -64,7 +64,7 @@ Create a friend request to a account
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = RequestsApi()
@@ -85,7 +85,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
+ **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
 
 ### Return type
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="deleteRequest"></a>
 # **deleteRequest**
@@ -109,7 +109,7 @@ Remove a friend request to a account
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = RequestsApi()
@@ -129,7 +129,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. |
+ **id** | **java.math.BigDecimal**| Account identifier. | [default to null]
 
 ### Return type
 
@@ -142,7 +142,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="findSessionFriendRequests"></a>
 # **findSessionFriendRequests**
@@ -153,7 +153,7 @@ Get friend requests list session account created or received
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = RequestsApi()
@@ -177,10 +177,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **received** | **kotlin.Boolean**| Filters friend requests which you have received or sent. |
- **since** | **java.math.BigDecimal**| Filters friend requests which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of friend request. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of friend request returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **received** | **kotlin.Boolean**| Filters friend requests which you have received or sent. | [default to null]
+ **since** | **java.math.BigDecimal**| Filters friend requests which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of friend request. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of friend request returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="reject"></a>
 # **reject**
@@ -204,7 +204,7 @@ Reject a friend request
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = RequestsApi()
@@ -224,7 +224,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Friend request Identifier. |
+ **id** | **java.math.BigDecimal**| Friend request Identifier. | [default to null]
 
 ### Return type
 
@@ -237,5 +237,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 

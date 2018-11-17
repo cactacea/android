@@ -1,6 +1,6 @@
 # MessagesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,20 +11,20 @@ Method | HTTP request | Description
 
 <a name="deleteMessage"></a>
 # **deleteMessage**
-> deleteMessage(body)
+> deleteMessage(deleteMessagesBody)
 
 Delete messages form a group
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = MessagesApi()
-val body : DeleteMessagesBody =  // DeleteMessagesBody | 
+val deleteMessagesBody : DeleteMessagesBody =  // DeleteMessagesBody | 
 try {
-    apiInstance.deleteMessage(body)
+    apiInstance.deleteMessage(deleteMessagesBody)
 } catch (e: ClientException) {
     println("4xx response calling MessagesApi#deleteMessage")
     e.printStackTrace()
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteMessagesBody**](DeleteMessagesBody.md)|  |
+ **deleteMessagesBody** | [**DeleteMessagesBody**](DeleteMessagesBody.md)|  |
 
 ### Return type
 
@@ -62,7 +62,7 @@ Search messages
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = MessagesApi()
@@ -87,11 +87,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. |
- **ascending** | **kotlin.Boolean**| Order by posted time. |
- **since** | **java.math.BigDecimal**| Filters messages which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of messages. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **id** | **java.math.BigDecimal**| Group identifier. | [default to null]
+ **ascending** | **kotlin.Boolean**| Order by posted time. | [default to null]
+ **since** | **java.math.BigDecimal**| Filters messages which started on since or later. | [optional] [default to null]
+ **offset** | **java.math.BigDecimal**| The offset of messages. By default the value is 0. | [optional] [default to null]
+ **count** | **java.math.BigDecimal**| Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type
 
@@ -104,24 +104,24 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="postMessage"></a>
 # **postMessage**
-> MessageCreated postMessage(body)
+> MessageCreated postMessage(postMessageBody)
 
 Post a message to a group
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = MessagesApi()
-val body : PostMessageBody =  // PostMessageBody | 
+val postMessageBody : PostMessageBody =  // PostMessageBody | 
 try {
-    val result : MessageCreated = apiInstance.postMessage(body)
+    val result : MessageCreated = apiInstance.postMessage(postMessageBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MessagesApi#postMessage")
@@ -136,7 +136,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostMessageBody**](PostMessageBody.md)|  |
+ **postMessageBody** | [**PostMessageBody**](PostMessageBody.md)|  |
 
 ### Return type
 
@@ -149,5 +149,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 

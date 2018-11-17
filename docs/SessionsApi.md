@@ -1,6 +1,6 @@
 # SessionsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Sign in
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionsApi()
@@ -41,10 +41,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **kotlin.String**| Account name. |
- **password** | **kotlin.String**| Account password. |
- **udid** | **kotlin.String**| Unique Device Identifier. |
- **userAgent** | **kotlin.String**|  | [optional]
+ **name** | **kotlin.String**| Account name. | [default to null]
+ **password** | **kotlin.String**| Account password. | [default to null]
+ **udid** | **kotlin.String**| Unique Device Identifier. | [default to null]
+ **userAgent** | **kotlin.String**|  | [optional] [default to null]
 
 ### Return type
 
@@ -57,25 +57,25 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 <a name="signUp"></a>
 # **signUp**
-> Authentication signUp(body, userAgent)
+> Authentication signUp(postSignUpBody, userAgent)
 
 Sign up
 
 ### Example
 ```kotlin
 // Import classes:
-//import io.swagger.client.infrastructure.*
+//import org.openapitools.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionsApi()
-val body : PostSignUpBody =  // PostSignUpBody | 
+val postSignUpBody : PostSignUpBody =  // PostSignUpBody | 
 val userAgent : kotlin.String = userAgent_example // kotlin.String | 
 try {
-    val result : Authentication = apiInstance.signUp(body, userAgent)
+    val result : Authentication = apiInstance.signUp(postSignUpBody, userAgent)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SessionsApi#signUp")
@@ -90,8 +90,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostSignUpBody**](PostSignUpBody.md)|  |
- **userAgent** | **kotlin.String**|  | [optional]
+ **postSignUpBody** | [**PostSignUpBody**](PostSignUpBody.md)|  |
+ **userAgent** | **kotlin.String**|  | [optional] [default to null]
 
 ### Return type
 
@@ -104,5 +104,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
