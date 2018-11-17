@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="signIn"></a>
 # **signIn**
-> Authentication signIn(name, password, udid, userAgent)
+> Authentication signIn(name, password, udid)
 
 Sign in
 
@@ -24,9 +24,8 @@ val apiInstance = SessionsApi()
 val name : kotlin.String = name_example // kotlin.String | Account name.
 val password : kotlin.String = password_example // kotlin.String | Account password.
 val udid : kotlin.String = udid_example // kotlin.String | Unique Device Identifier.
-val userAgent : kotlin.String = userAgent_example // kotlin.String | 
 try {
-    val result : Authentication = apiInstance.signIn(name, password, udid, userAgent)
+    val result : Authentication = apiInstance.signIn(name, password, udid)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SessionsApi#signIn")
@@ -44,7 +43,6 @@ Name | Type | Description  | Notes
  **name** | **kotlin.String**| Account name. | [default to null]
  **password** | **kotlin.String**| Account password. | [default to null]
  **udid** | **kotlin.String**| Unique Device Identifier. | [default to null]
- **userAgent** | **kotlin.String**|  | [optional] [default to null]
 
 ### Return type
 
@@ -61,7 +59,7 @@ Name | Type | Description  | Notes
 
 <a name="signUp"></a>
 # **signUp**
-> Authentication signUp(postSignUpBody, userAgent)
+> Authentication signUp(postSignUpBody)
 
 Sign up
 
@@ -73,9 +71,8 @@ Sign up
 
 val apiInstance = SessionsApi()
 val postSignUpBody : PostSignUpBody =  // PostSignUpBody | 
-val userAgent : kotlin.String = userAgent_example // kotlin.String | 
 try {
-    val result : Authentication = apiInstance.signUp(postSignUpBody, userAgent)
+    val result : Authentication = apiInstance.signUp(postSignUpBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SessionsApi#signUp")
@@ -91,7 +88,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postSignUpBody** | [**PostSignUpBody**](PostSignUpBody.md)|  |
- **userAgent** | **kotlin.String**|  | [optional] [default to null]
 
 ### Return type
 
