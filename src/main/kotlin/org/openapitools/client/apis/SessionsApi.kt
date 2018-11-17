@@ -25,14 +25,13 @@ class SessionsApi(basePath: kotlin.String = "http://localhost") : ApiClient(base
     * @param name Account name. 
     * @param password Account password. 
     * @param udid Unique Device Identifier. 
-    * @param userAgent  (optional, default to null)
     * @return Authentication
     */
     @Suppress("UNCHECKED_CAST")
-    fun signIn(name: kotlin.String, password: kotlin.String, udid: kotlin.String, userAgent: kotlin.String) : Authentication {
+    fun signIn(name: kotlin.String, password: kotlin.String, udid: kotlin.String) : Authentication {
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mapOf("name" to listOf("$name"), "password" to listOf("$password"), "udid" to listOf("$udid"))
-        val localVariableHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("user_agent" to userAgent)
+        val localVariableHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
             "/sessions",
@@ -58,14 +57,13 @@ class SessionsApi(basePath: kotlin.String = "http://localhost") : ApiClient(base
     * Sign up
     * 
     * @param postSignUpBody  
-    * @param userAgent  (optional, default to null)
     * @return Authentication
     */
     @Suppress("UNCHECKED_CAST")
-    fun signUp(postSignUpBody: PostSignUpBody, userAgent: kotlin.String) : Authentication {
+    fun signUp(postSignUpBody: PostSignUpBody) : Authentication {
         val localVariableBody: kotlin.Any? = postSignUpBody
         val localVariableQuery: MultiValueMap = mapOf()
-        val localVariableHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("user_agent" to userAgent)
+        val localVariableHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
             "/sessions",
