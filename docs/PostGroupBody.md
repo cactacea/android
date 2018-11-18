@@ -11,14 +11,14 @@ Name | Type | Description | Notes
 
 
 <a name="PrivacyTypeEnum"></a>
-## Enum: privacy_type
+## Enum: privacyType
 Name | Value
 ---- | -----
 privacyType | everyone, follows, followers, friends
 
 
 <a name="AuthorityTypeEnum"></a>
-## Enum: authority_type
+## Enum: authorityType
 Name | Value
 ---- | -----
 authorityType | owner, member

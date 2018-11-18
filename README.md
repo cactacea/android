@@ -35,7 +35,7 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountsApi* | [**existAccountName**](docs/AccountsApi.md#existaccountname) | **GET** /account/{account_name} | Confirm account name exist
+*AccountsApi* | [**existAccountName**](docs/AccountsApi.md#existaccountname) | **GET** /account/{accountName} | Confirm account name exist
 *AccountsApi* | [**findAccount**](docs/AccountsApi.md#findaccount) | **GET** /accounts/{id} | Get information about a account
 *AccountsApi* | [**findAccountStatus**](docs/AccountsApi.md#findaccountstatus) | **GET** /accounts/{id}/status | Get account on
 *AccountsApi* | [**findAccounts**](docs/AccountsApi.md#findaccounts) | **GET** /accounts | Search accounts
@@ -76,15 +76,15 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**findSessionGroups**](docs/GroupsApi.md#findsessiongroups) | **GET** /session/groups | Get groups list session account joined
 *GroupsApi* | [**findSessionHides**](docs/GroupsApi.md#findsessionhides) | **GET** /session/hides | Get hidden groups list session account joined
 *GroupsApi* | [**hideGroup**](docs/GroupsApi.md#hidegroup) | **POST** /groups/{id}/hides | Hide a group
-*GroupsApi* | [**joinAccountToGroup**](docs/GroupsApi.md#joinaccounttogroup) | **POST** /accounts/{account_id}/groups/{group_id}/join | Join a account in a group
+*GroupsApi* | [**joinAccountToGroup**](docs/GroupsApi.md#joinaccounttogroup) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
 *GroupsApi* | [**joinToGroup**](docs/GroupsApi.md#jointogroup) | **POST** /groups/{id}/join | Join to a group,
-*GroupsApi* | [**leaveAccountFromGroup**](docs/GroupsApi.md#leaveaccountfromgroup) | **POST** /accounts/{account_id}/groups/{group_id}/leave | Leave a account from a group
+*GroupsApi* | [**leaveAccountFromGroup**](docs/GroupsApi.md#leaveaccountfromgroup) | **POST** /accounts/{accountId}/groups/{groupId}/leave | Leave a account from a group
 *GroupsApi* | [**leaveFromGroup**](docs/GroupsApi.md#leavefromgroup) | **POST** /groups/{id}/leave | Leave from a group
 *GroupsApi* | [**reportGroup**](docs/GroupsApi.md#reportgroup) | **POST** /groups/{id}/reports | Report a group
 *GroupsApi* | [**showGroup**](docs/GroupsApi.md#showgroup) | **DELETE** /groups/{id}/hides | Show a group
 *GroupsApi* | [**updateGroup**](docs/GroupsApi.md#updategroup) | **PUT** /groups/{id} | Update a group
 *InvitationsApi* | [**acceptGroupInvitation**](docs/InvitationsApi.md#acceptgroupinvitation) | **POST** /invitations/{id}/accept | Accept a invitation
-*InvitationsApi* | [**createGroupInvitationToAccount**](docs/InvitationsApi.md#creategroupinvitationtoaccount) | **POST** /accounts/{account_id}/groups/{group_id}/invitations | Create a invitation to a account
+*InvitationsApi* | [**createGroupInvitationToAccount**](docs/InvitationsApi.md#creategroupinvitationtoaccount) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a invitation to a account
 *InvitationsApi* | [**createGroupInvitationToAccounts**](docs/InvitationsApi.md#creategroupinvitationtoaccounts) | **POST** /groups/{id}/invitations | Post a invitation to some accounts
 *InvitationsApi* | [**findSessionGroupInvitations**](docs/InvitationsApi.md#findsessiongroupinvitations) | **GET** /session/invitations | Get invitations list session account received
 *InvitationsApi* | [**rejectGroupInvitation**](docs/InvitationsApi.md#rejectgroupinvitation) | **POST** /invitations/{id}/reject | Reject a invitation
@@ -130,7 +130,8 @@ Class | Method | HTTP request | Description
  - [io.github.cactacea.backend.AccountNameNotExists](docs/AccountNameNotExists.md)
  - [io.github.cactacea.backend.AccountStatus](docs/AccountStatus.md)
  - [io.github.cactacea.backend.Authentication](docs/Authentication.md)
- - [io.github.cactacea.backend.BadRequest](docs/BadRequest.md)
+ - [io.github.cactacea.backend.CactaceaError](docs/CactaceaError.md)
+ - [io.github.cactacea.backend.CactaceaErrors](docs/CactaceaErrors.md)
  - [io.github.cactacea.backend.Comment](docs/Comment.md)
  - [io.github.cactacea.backend.CommentCreated](docs/CommentCreated.md)
  - [io.github.cactacea.backend.CommentId](docs/CommentId.md)
@@ -153,7 +154,6 @@ Class | Method | HTTP request | Description
  - [io.github.cactacea.backend.MediumId](docs/MediumId.md)
  - [io.github.cactacea.backend.Message](docs/Message.md)
  - [io.github.cactacea.backend.MessageCreated](docs/MessageCreated.md)
- - [io.github.cactacea.backend.NotFound](docs/NotFound.md)
  - [io.github.cactacea.backend.PostAccountReportBody](docs/PostAccountReportBody.md)
  - [io.github.cactacea.backend.PostActiveStatusBody](docs/PostActiveStatusBody.md)
  - [io.github.cactacea.backend.PostCommentBody](docs/PostCommentBody.md)
@@ -174,7 +174,6 @@ Class | Method | HTTP request | Description
  - [io.github.cactacea.backend.PutSessionPasswordBody](docs/PutSessionPasswordBody.md)
  - [io.github.cactacea.backend.PutSessionProfileBody](docs/PutSessionProfileBody.md)
  - [io.github.cactacea.backend.PutSessionProfileImageBody](docs/PutSessionProfileImageBody.md)
- - [io.github.cactacea.backend.Unauthorized](docs/Unauthorized.md)
 
 
 <a name="documentation-for-authorization"></a>

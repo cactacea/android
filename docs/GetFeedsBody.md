@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 
 
 <a name="PrivacyTypeEnum"></a>
-## Enum: privacy_type
+## Enum: privacyType
 Name | Value
 ---- | -----
 privacyType | everyone, followers, friends, self

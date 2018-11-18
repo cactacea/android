@@ -14,9 +14,9 @@ Method | HTTP request | Description
 [**findSessionGroups**](GroupsApi.md#findSessionGroups) | **GET** /session/groups | Get groups list session account joined
 [**findSessionHides**](GroupsApi.md#findSessionHides) | **GET** /session/hides | Get hidden groups list session account joined
 [**hideGroup**](GroupsApi.md#hideGroup) | **POST** /groups/{id}/hides | Hide a group
-[**joinAccountToGroup**](GroupsApi.md#joinAccountToGroup) | **POST** /accounts/{account_id}/groups/{group_id}/join | Join a account in a group
+[**joinAccountToGroup**](GroupsApi.md#joinAccountToGroup) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
 [**joinToGroup**](GroupsApi.md#joinToGroup) | **POST** /groups/{id}/join | Join to a group,
-[**leaveAccountFromGroup**](GroupsApi.md#leaveAccountFromGroup) | **POST** /accounts/{account_id}/groups/{group_id}/leave | Leave a account from a group
+[**leaveAccountFromGroup**](GroupsApi.md#leaveAccountFromGroup) | **POST** /accounts/{accountId}/groups/{groupId}/leave | Leave a account from a group
 [**leaveFromGroup**](GroupsApi.md#leaveFromGroup) | **POST** /groups/{id}/leave | Leave from a group
 [**reportGroup**](GroupsApi.md#reportGroup) | **POST** /groups/{id}/reports | Report a group
 [**showGroup**](GroupsApi.md#showGroup) | **DELETE** /groups/{id}/hides | Show a group

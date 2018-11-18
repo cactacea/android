@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**acceptGroupInvitation**](InvitationsApi.md#acceptGroupInvitation) | **POST** /invitations/{id}/accept | Accept a invitation
-[**createGroupInvitationToAccount**](InvitationsApi.md#createGroupInvitationToAccount) | **POST** /accounts/{account_id}/groups/{group_id}/invitations | Create a invitation to a account
+[**createGroupInvitationToAccount**](InvitationsApi.md#createGroupInvitationToAccount) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a invitation to a account
 [**createGroupInvitationToAccounts**](InvitationsApi.md#createGroupInvitationToAccounts) | **POST** /groups/{id}/invitations | Post a invitation to some accounts
 [**findSessionGroupInvitations**](InvitationsApi.md#findSessionGroupInvitations) | **GET** /session/invitations | Get invitations list session account received
 [**rejectGroupInvitation**](InvitationsApi.md#rejectGroupInvitation) | **POST** /invitations/{id}/reject | Reject a invitation

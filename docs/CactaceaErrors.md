@@ -1,11 +1,10 @@
 
-# CactaceaError
+# CactaceaErrors
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **kotlin.Long** | code | 
-**message** | **kotlin.String** | message | 
+**errors** | [**kotlin.Array&lt;CactaceaError&gt;**](CactaceaError.md) |  | 
 
 
 

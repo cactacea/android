@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 
 
 <a name="ReportTypeEnum"></a>
-## Enum: report_type
+## Enum: reportType
 Name | Value
 ---- | -----
 reportType | none, spam, inappropriate

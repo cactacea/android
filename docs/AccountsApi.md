@@ -4,7 +4,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**existAccountName**](AccountsApi.md#existAccountName) | **GET** /account/{account_name} | Confirm account name exist
+[**existAccountName**](AccountsApi.md#existAccountName) | **GET** /account/{accountName} | Confirm account name exist
 [**findAccount**](AccountsApi.md#findAccount) | **GET** /accounts/{id} | Get information about a account
 [**findAccountStatus**](AccountsApi.md#findAccountStatus) | **GET** /accounts/{id}/status | Get account on
 [**findAccounts**](AccountsApi.md#findAccounts) | **GET** /accounts | Search accounts

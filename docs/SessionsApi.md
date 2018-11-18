@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="signIn"></a>
 # **signIn**
-> Authentication signIn(name, password, udid)
+> Authentication signIn(accountName, password, udid)
 
 Sign in
 
@@ -21,11 +21,11 @@ Sign in
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionsApi()
-val name : kotlin.String = name_example // kotlin.String | Account name.
+val accountName : kotlin.String = accountName_example // kotlin.String | Account name.
 val password : kotlin.String = password_example // kotlin.String | Account password.
 val udid : kotlin.String = udid_example // kotlin.String | Unique Device Identifier.
 try {
-    val result : Authentication = apiInstance.signIn(name, password, udid)
+    val result : Authentication = apiInstance.signIn(accountName, password, udid)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SessionsApi#signIn")
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **kotlin.String**| Account name. | [default to null]
+ **accountName** | **kotlin.String**| Account name. | [default to null]
  **password** | **kotlin.String**| Account password. | [default to null]
  **udid** | **kotlin.String**| Unique Device Identifier. | [default to null]
 
