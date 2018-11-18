@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 <a name="findFeeds"></a>
 # **findFeeds**
-> kotlin.Array&lt;Feed&gt; findFeeds(getFeedsBody, since, offset, count)
+> kotlin.Array&lt;Feed&gt; findFeeds(since, offset, feedPrivacyType, count)
 
 Search feeds
 
@@ -218,12 +218,12 @@ Search feeds
 //import io.github.cactacea.backend.*
 
 val apiInstance = FeedsApi()
-val getFeedsBody : GetFeedsBody =  // GetFeedsBody | 
 val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
+val feedPrivacyType : kotlin.String = feedPrivacyType_example // kotlin.String | Feed privacy type. By default the value is everyone.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Feed> = apiInstance.findFeeds(getFeedsBody, since, offset, count)
+    val result : kotlin.Array<Feed> = apiInstance.findFeeds(since, offset, feedPrivacyType, count)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling FeedsApi#findFeeds")
@@ -238,9 +238,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **getFeedsBody** | [**GetFeedsBody**](GetFeedsBody.md)|  |
  **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional] [default to null]
  **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional] [default to null]
+ **feedPrivacyType** | **kotlin.String**| Feed privacy type. By default the value is everyone. | [optional] [default to null] [enum: everyone, followers, friends, self]
  **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
 
 ### Return type

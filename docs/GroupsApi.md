@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 <a name="findGroups"></a>
 # **findGroups**
-> kotlin.Array&lt;Group&gt; findGroups(groupName, invitationOnly, privacyType, since, offset, count)
+> kotlin.Array&lt;Group&gt; findGroups(groupName, invitationOnly, groupPrivacyType, since, offset, count)
 
 Search groups
 
@@ -319,12 +319,12 @@ Search groups
 val apiInstance = GroupsApi()
 val groupName : kotlin.String = groupName_example // kotlin.String | Filters groups which group name start of.
 val invitationOnly : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups that invited accounts can join in.
-val privacyType : kotlin.String = privacyType_example // kotlin.String | Filters groups which can join in.
+val groupPrivacyType : kotlin.String = groupPrivacyType_example // kotlin.String | Filters groups which can join in.
 val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups which started on since or later.
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of messages. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Group> = apiInstance.findGroups(groupName, invitationOnly, privacyType, since, offset, count)
+    val result : kotlin.Array<Group> = apiInstance.findGroups(groupName, invitationOnly, groupPrivacyType, since, offset, count)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling GroupsApi#findGroups")
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupName** | **kotlin.String**| Filters groups which group name start of. | [optional] [default to null]
  **invitationOnly** | **java.math.BigDecimal**| Filters groups that invited accounts can join in. | [optional] [default to null]
- **privacyType** | **kotlin.String**| Filters groups which can join in. | [optional] [default to null] [enum: everyone, follows, followers, friends]
+ **groupPrivacyType** | **kotlin.String**| Filters groups which can join in. | [optional] [default to null] [enum: everyone, follows, followers, friends]
  **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional] [default to null]
  **offset** | **java.math.BigDecimal**| The offset of messages. By default the value is 0. | [optional] [default to null]
  **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
