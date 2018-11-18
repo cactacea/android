@@ -54,7 +54,7 @@ null (empty response body)
 
 <a name="uploadMedium"></a>
 # **uploadMedium**
-> MediumCreated uploadMedium()
+> MediumCreated uploadMedium(file)
 
 Upload a medium
 
@@ -65,8 +65,9 @@ Upload a medium
 //import io.github.cactacea.backend.*
 
 val apiInstance = MediumsApi()
+val file : java.io.File = BINARY_DATA_HERE // java.io.File | Upload a medium file
 try {
-    val result : MediumCreated = apiInstance.uploadMedium()
+    val result : MediumCreated = apiInstance.uploadMedium(file)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MediumsApi#uploadMedium")
@@ -78,7 +79,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **java.io.File**| Upload a medium file | [default to null]
 
 ### Return type
 
@@ -90,6 +94,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: multipart/form-data
  - **Accept**: */*
 

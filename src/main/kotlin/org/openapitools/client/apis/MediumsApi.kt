@@ -51,13 +51,14 @@ class MediumsApi(basePath: kotlin.String = "http://localhost") : ApiClient(baseP
     /**
     * Upload a medium
     * 
+    * @param file Upload a medium file 
     * @return MediumCreated
     */
     @Suppress("UNCHECKED_CAST")
-    fun uploadMedium() : MediumCreated {
-        val localVariableBody: kotlin.Any? = null
+    fun uploadMedium(file: java.io.File) : MediumCreated {
+        val localVariableBody: kotlin.Any? = mapOf("file" to "$file")
         val localVariableQuery: MultiValueMap = mapOf()
-        val localVariableHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val localVariableHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Content-Type" to "multipart/form-data")
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
             "/mediums",
