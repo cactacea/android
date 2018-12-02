@@ -142,6 +142,7 @@ Class | Method | HTTP request | Description
  - [io.github.cactacea.backend.FriendRequest](docs/FriendRequest.md)
  - [io.github.cactacea.backend.FriendRequestCreated](docs/FriendRequestCreated.md)
  - [io.github.cactacea.backend.FriendRequestId](docs/FriendRequestId.md)
+ - [io.github.cactacea.backend.GetSessionFriendsBody](docs/GetSessionFriendsBody.md)
  - [io.github.cactacea.backend.Group](docs/Group.md)
  - [io.github.cactacea.backend.GroupCreated](docs/GroupCreated.md)
  - [io.github.cactacea.backend.GroupId](docs/GroupId.md)

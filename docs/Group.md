@@ -11,8 +11,9 @@ Name | Type | Description | Notes
 **invitationOnly** | **kotlin.Boolean** |  | 
 **authorityType** | [**inline**](#AuthorityTypeEnum) |  | 
 **accountCount** | **kotlin.Long** |  | 
+**lastPostedAt** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 **organizedAt** | **kotlin.Long** |  | 
-**next** | **kotlin.Long** |  | 
+**next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 
 
 <a name="GroupPrivacyTypeEnum"></a>

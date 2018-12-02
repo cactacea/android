@@ -6,9 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **group** | [**Group**](Group.md) |  | 
-**by** | [**Account**](Account.md) |  | 
+**account** | [**Account**](Account.md) |  | 
 **invitationStatus** | [**inline**](#InvitationStatusEnum) |  | 
 **invitedAt** | **kotlin.Long** |  | 
+**next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 
 
 <a name="InvitationStatusEnum"></a>

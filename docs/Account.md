@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **accountName** | **kotlin.String** |  | 
-**displayName** | **kotlin.String** |  |  [optional]
+**displayName** | **kotlin.String** |  | 
 **profileImageUrl** | **kotlin.String** |  |  [optional]
 **friend** | **kotlin.Boolean** |  | 
 **friendRequestInProgress** | **kotlin.Boolean** |  | 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **location** | **kotlin.String** |  |  [optional]
 **bio** | **kotlin.String** |  |  [optional]
 **joinedAt** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
-**next** | **kotlin.Long** |  | 
+**next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 
 
 

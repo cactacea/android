@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **messageType** | [**inline**](#MessageTypeEnum) |  | 
 **message** | **kotlin.String** |  |  [optional]
 **medium** | [**Medium**](Medium.md) |  |  [optional]
-**by** | [**Account**](Account.md) |  | 
 **account** | [**Account**](Account.md) |  |  [optional]
 **unread** | **kotlin.Boolean** |  | 
 **accountCount** | **kotlin.Long** |  | 
@@ -16,6 +15,7 @@ Name | Type | Description | Notes
 **contentWarning** | **kotlin.Boolean** |  | 
 **contentDeleted** | **kotlin.Boolean** |  | 
 **postedAt** | **kotlin.Long** |  | 
+**next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 
 
 <a name="MessageTypeEnum"></a>

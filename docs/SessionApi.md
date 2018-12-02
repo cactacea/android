@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 <a name="findSessionFriends"></a>
 # **findSessionFriends**
-> kotlin.Array&lt;Account&gt; findSessionFriends(since, offset, count)
+> kotlin.Array&lt;Account&gt; findSessionFriends(getSessionFriendsBody, since, offset, count)
 
 Get friends list
 
@@ -259,11 +259,12 @@ Get friends list
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
+val getSessionFriendsBody : GetSessionFriendsBody =  // GetSessionFriendsBody | 
 val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friends which started on since or later.
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friends. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findSessionFriends(since, offset, count)
+    val result : kotlin.Array<Account> = apiInstance.findSessionFriends(getSessionFriendsBody, since, offset, count)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SessionApi#findSessionFriends")
@@ -278,6 +279,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **getSessionFriendsBody** | [**GetSessionFriendsBody**](GetSessionFriendsBody.md)|  |
  **since** | **java.math.BigDecimal**| Filters friends which started on since or later. | [optional] [default to null]
  **offset** | **java.math.BigDecimal**| The offset of friends. By default the value is 0. | [optional] [default to null]
  **count** | **java.math.BigDecimal**| Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]

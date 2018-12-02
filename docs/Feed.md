@@ -14,7 +14,8 @@ Name | Type | Description | Notes
 **contentWarning** | **kotlin.Boolean** |  | 
 **contentDeleted** | **kotlin.Boolean** |  | 
 **postedAt** | **kotlin.Long** |  | 
-**next** | **kotlin.Long** |  | 
+**likedAt** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
+**next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 
 
 

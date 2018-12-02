@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **account** | [**Account**](Account.md) |  | 
 **requestStatus** | [**inline**](#RequestStatusEnum) |  | 
 **requestedAt** | **kotlin.Long** |  | 
-**next** | **kotlin.Long** |  | 
+**next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 
 
 <a name="RequestStatusEnum"></a>

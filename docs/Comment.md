@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **contentWarning** | **kotlin.Boolean** |  | 
 **contentDeleted** | **kotlin.Boolean** |  | 
 **postedAt** | **kotlin.Long** |  | 
-**next** | **kotlin.Long** |  | 
+**next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 
 
 
