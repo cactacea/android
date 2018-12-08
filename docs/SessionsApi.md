@@ -1,6 +1,6 @@
 # SessionsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Sign in
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionsApi()
@@ -40,9 +40,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountName** | **kotlin.String**| Account name. | [default to null]
- **password** | **kotlin.String**| Account password. | [default to null]
- **udid** | **kotlin.String**| Unique Device Identifier. | [default to null]
+ **accountName** | **kotlin.String**| Account name. |
+ **password** | **kotlin.String**| Account password. |
+ **udid** | **kotlin.String**| Unique Device Identifier. |
 
 ### Return type
 
@@ -55,24 +55,24 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="signUp"></a>
 # **signUp**
-> Authentication signUp(postSignUpBody)
+> Authentication signUp(body)
 
 Sign up
 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionsApi()
-val postSignUpBody : PostSignUpBody =  // PostSignUpBody | 
+val body : PostSignUpBody =  // PostSignUpBody | 
 try {
-    val result : Authentication = apiInstance.signUp(postSignUpBody)
+    val result : Authentication = apiInstance.signUp(body)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SessionsApi#signUp")
@@ -87,7 +87,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **postSignUpBody** | [**PostSignUpBody**](PostSignUpBody.md)|  |
+ **body** | [**PostSignUpBody**](PostSignUpBody.md)|  |
 
 ### Return type
 
@@ -100,5 +100,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 

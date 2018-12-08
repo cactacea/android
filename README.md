@@ -1,4 +1,4 @@
-# org.openapitools.client - Kotlin client library for Cactacea backend API
+# io.swagger.client - Kotlin client library for Cactacea backend API
 
 ## Requires
 
@@ -25,13 +25,13 @@ This runs all tests and packages the library.
 
 * Supports JSON inputs/outputs, File inputs, and Form inputs.
 * Supports collection formats for query parameters: csv, tsv, ssv, pipes.
-* Some Kotlin and Java types are fully qualified to avoid conflicts with types defined in OpenAPI definitions.
+* Some Kotlin and Java types are fully qualified to avoid conflicts with types defined in Swagger definitions.
 * Implementation of ApiClient is intended to reduce method counts, specifically to benefit Android targets.
 
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -44,14 +44,17 @@ Class | Method | HTTP request | Description
 *BlocksApi* | [**block**](docs/BlocksApi.md#block) | **POST** /accounts/{id}/blocks | Block a account
 *BlocksApi* | [**findBlockingAccounts**](docs/BlocksApi.md#findblockingaccounts) | **GET** /session/blocks | Get blocking accounts list
 *BlocksApi* | [**unblock**](docs/BlocksApi.md#unblock) | **DELETE** /accounts/{id}/blocks | Unblock a account
+*CommentLikesApi* | [**findLikes**](docs/CommentLikesApi.md#findlikes) | **GET** /comments/{id}/likes | Get accounts list who liked on a comment
+*CommentLikesApi* | [**like**](docs/CommentLikesApi.md#like) | **POST** /comments/{id}/likes | Set a like on a comment
+*CommentLikesApi* | [**unlike**](docs/CommentLikesApi.md#unlike) | **DELETE** /comments/{id}/likes | Remove a like on a comment
 *CommentsApi* | [**deleteComment**](docs/CommentsApi.md#deletecomment) | **DELETE** /comments/{id} | Remove a comment
 *CommentsApi* | [**findComment**](docs/CommentsApi.md#findcomment) | **GET** /comments/{id} | Get basic information about a comment
-*CommentsApi* | [**findCommentLikes**](docs/CommentsApi.md#findcommentlikes) | **GET** /comments/{id}/likes | Get accounts list who liked on a comment
 *CommentsApi* | [**findComments**](docs/CommentsApi.md#findcomments) | **GET** /comments | Search comments
-*CommentsApi* | [**likeComment**](docs/CommentsApi.md#likecomment) | **POST** /comments/{id}/likes | Set a like on a comment
 *CommentsApi* | [**postComment**](docs/CommentsApi.md#postcomment) | **POST** /comments | Create a comment on a feed
 *CommentsApi* | [**reportComment**](docs/CommentsApi.md#reportcomment) | **POST** /comments/{id}/reports | Report a comment
-*CommentsApi* | [**unlikeComment**](docs/CommentsApi.md#unlikecomment) | **DELETE** /comments/{id}/likes | Remove a like on a comment
+*FeedLikesApi* | [**findLikes**](docs/FeedLikesApi.md#findlikes) | **GET** /feeds/{id}/likes | Get accounts list who set a like to a feed
+*FeedLikesApi* | [**like**](docs/FeedLikesApi.md#like) | **POST** /feeds/{id}/likes | Set a like on a feed
+*FeedLikesApi* | [**unlike**](docs/FeedLikesApi.md#unlike) | **DELETE** /feeds/{id}/likes | Remove a like on a feed
 *FeedsApi* | [**deleteFeed**](docs/FeedsApi.md#deletefeed) | **DELETE** /feeds/{id} | Delete a feed
 *FeedsApi* | [**findAccountFeeds**](docs/FeedsApi.md#findaccountfeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
 *FeedsApi* | [**findAccountLikes**](docs/FeedsApi.md#findaccountlikes) | **GET** /accounts/{id}/likes | Get account's liked feeds
@@ -89,6 +92,7 @@ Class | Method | HTTP request | Description
 *InvitationsApi* | [**findSessionGroupInvitations**](docs/InvitationsApi.md#findsessiongroupinvitations) | **GET** /session/invitations | Get invitations list session account received
 *InvitationsApi* | [**rejectGroupInvitation**](docs/InvitationsApi.md#rejectgroupinvitation) | **POST** /invitations/{id}/reject | Reject a invitation
 *MediumsApi* | [**deleteMedium**](docs/MediumsApi.md#deletemedium) | **DELETE** /mediums/{id} | Delete a medium
+*MediumsApi* | [**findMedium**](docs/MediumsApi.md#findmedium) | **GET** /mediums/:* | Get a medium
 *MediumsApi* | [**uploadMedium**](docs/MediumsApi.md#uploadmedium) | **POST** /mediums | Upload a medium
 *MessagesApi* | [**deleteMessage**](docs/MessagesApi.md#deletemessage) | **DELETE** /messages | Delete messages form a group
 *MessagesApi* | [**findMessages**](docs/MessagesApi.md#findmessages) | **GET** /messages | Search messages

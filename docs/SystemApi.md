@@ -1,6 +1,6 @@
 # SystemApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,7 +16,7 @@ Health checking
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = SystemApi()

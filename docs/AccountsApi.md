@@ -1,6 +1,6 @@
 # AccountsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Confirm account name exist
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = AccountsApi()
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountName** | **kotlin.String**| Account name. | [default to null]
+ **accountName** | **kotlin.String**| Account name. |
 
 ### Return type
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findAccount"></a>
 # **findAccount**
@@ -66,7 +66,7 @@ Get information about a account
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = AccountsApi()
@@ -87,7 +87,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. | [default to null]
+ **id** | **java.math.BigDecimal**| Account identifier. |
 
 ### Return type
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findAccountStatus"></a>
 # **findAccountStatus**
@@ -111,7 +111,7 @@ Get account on
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = AccountsApi()
@@ -132,7 +132,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. | [default to null]
+ **id** | **java.math.BigDecimal**| Account identifier. |
 
 ### Return type
 
@@ -145,27 +145,27 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findAccounts"></a>
 # **findAccounts**
-> kotlin.Array&lt;Account&gt; findAccounts(displayName, since, offset, count)
+> kotlin.Array&lt;Account&gt; findAccounts(accountName, since, offset, count)
 
 Search accounts
 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = AccountsApi()
-val displayName : kotlin.String = displayName_example // kotlin.String | Filters accounts whose display name start of.
+val accountName : kotlin.String = accountName_example // kotlin.String | Filters accounts whose account name start of.
 val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 accounts. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findAccounts(displayName, since, offset, count)
+    val result : kotlin.Array<Account> = apiInstance.findAccounts(accountName, since, offset, count)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#findAccounts")
@@ -180,10 +180,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **displayName** | **kotlin.String**| Filters accounts whose display name start of. | [optional] [default to null]
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional] [default to null]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional] [default to null]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 accounts. The page size can never be larger than 50. | [optional] [default to null]
+ **accountName** | **kotlin.String**| Filters accounts whose account name start of. | [optional]
+ **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 accounts. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
@@ -196,25 +196,25 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="reportAccount"></a>
 # **reportAccount**
-> reportAccount(id, postAccountReportBody)
+> reportAccount(id, body)
 
 Report a account
 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
-val postAccountReportBody : PostAccountReportBody =  // PostAccountReportBody | 
+val body : PostAccountReportBody =  // PostAccountReportBody | 
 try {
-    apiInstance.reportAccount(id, postAccountReportBody)
+    apiInstance.reportAccount(id, body)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#reportAccount")
     e.printStackTrace()
@@ -228,8 +228,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
- **postAccountReportBody** | [**PostAccountReportBody**](PostAccountReportBody.md)|  |
+ **id** | **java.math.BigDecimal**| Account Identifier. |
+ **body** | [**PostAccountReportBody**](PostAccountReportBody.md)|  |
 
 ### Return type
 
@@ -242,25 +242,25 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="updateDisplayName"></a>
 # **updateDisplayName**
-> updateDisplayName(id, putAccountDisplayNameBody)
+> updateDisplayName(id, body)
 
 Change display name to session account
 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
-val putAccountDisplayNameBody : PutAccountDisplayNameBody =  // PutAccountDisplayNameBody | 
+val body : PutAccountDisplayNameBody =  // PutAccountDisplayNameBody | 
 try {
-    apiInstance.updateDisplayName(id, putAccountDisplayNameBody)
+    apiInstance.updateDisplayName(id, body)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#updateDisplayName")
     e.printStackTrace()
@@ -274,8 +274,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. | [default to null]
- **putAccountDisplayNameBody** | [**PutAccountDisplayNameBody**](PutAccountDisplayNameBody.md)|  |
+ **id** | **java.math.BigDecimal**| Account Identifier. |
+ **body** | [**PutAccountDisplayNameBody**](PutAccountDisplayNameBody.md)|  |
 
 ### Return type
 
@@ -288,5 +288,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 

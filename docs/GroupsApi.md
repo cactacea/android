@@ -1,6 +1,6 @@
 # GroupsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,20 +25,20 @@ Method | HTTP request | Description
 
 <a name="createGroup"></a>
 # **createGroup**
-> GroupCreated createGroup(postGroupBody)
+> GroupCreated createGroup(body)
 
 Create a group
 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
-val postGroupBody : PostGroupBody =  // PostGroupBody | 
+val body : PostGroupBody =  // PostGroupBody | 
 try {
-    val result : GroupCreated = apiInstance.createGroup(postGroupBody)
+    val result : GroupCreated = apiInstance.createGroup(body)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling GroupsApi#createGroup")
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **postGroupBody** | [**PostGroupBody**](PostGroupBody.md)|  |
+ **body** | [**PostGroupBody**](PostGroupBody.md)|  |
 
 ### Return type
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="deleteGroup"></a>
 # **deleteGroup**
@@ -77,7 +77,7 @@ Hide a group and delete all messages
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -97,7 +97,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. | [default to null]
+ **id** | **java.math.BigDecimal**| Group identifier. |
 
 ### Return type
 
@@ -110,7 +110,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findAccountGroup"></a>
 # **findAccountGroup**
@@ -121,7 +121,7 @@ Get a direct message group to a account
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -142,7 +142,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. | [default to null]
+ **id** | **java.math.BigDecimal**| Account identifier. |
 
 ### Return type
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findAccountGroups"></a>
 # **findAccountGroups**
@@ -166,7 +166,7 @@ Get groups list a account joined
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -190,10 +190,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. | [default to null]
- **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional] [default to null]
- **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional] [default to null]
- **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 groups. The page size can never be larger than 50. | [optional] [default to null]
+ **id** | **java.math.BigDecimal**| Account identifier. |
+ **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 groups. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findGroup"></a>
 # **findGroup**
@@ -217,7 +217,7 @@ Get basic information about a group
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -238,7 +238,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. | [default to null]
+ **id** | **java.math.BigDecimal**| Group identifier. |
 
 ### Return type
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findGroupAccounts"></a>
 # **findGroupAccounts**
@@ -262,7 +262,7 @@ Get accounts list of a group
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -286,10 +286,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. | [default to null]
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional] [default to null]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional] [default to null]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
+ **id** | **java.math.BigDecimal**| Group identifier. |
+ **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findGroups"></a>
 # **findGroups**
@@ -313,7 +313,7 @@ Search groups
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -339,12 +339,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupName** | **kotlin.String**| Filters groups which group name start of. | [optional] [default to null]
- **invitationOnly** | **java.math.BigDecimal**| Filters groups that invited accounts can join in. | [optional] [default to null]
- **groupPrivacyType** | **kotlin.String**| Filters groups which can join in. | [optional] [default to null] [enum: everyone, follows, followers, friends]
- **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional] [default to null]
- **offset** | **java.math.BigDecimal**| The offset of messages. By default the value is 0. | [optional] [default to null]
- **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
+ **groupName** | **kotlin.String**| Filters groups which group name start of. | [optional]
+ **invitationOnly** | **java.math.BigDecimal**| Filters groups that invited accounts can join in. | [optional]
+ **groupPrivacyType** | **kotlin.String**| Filters groups which can join in. | [optional] [enum: everyone, follows, followers, friends]
+ **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of messages. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findSessionGroups"></a>
 # **findSessionGroups**
@@ -368,7 +368,7 @@ Get groups list session account joined
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -391,9 +391,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional] [default to null]
- **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional] [default to null]
- **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
+ **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="findSessionHides"></a>
 # **findSessionHides**
@@ -417,7 +417,7 @@ Get hidden groups list session account joined
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -440,9 +440,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional] [default to null]
- **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional] [default to null]
- **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional] [default to null]
+ **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="hideGroup"></a>
 # **hideGroup**
@@ -466,7 +466,7 @@ Hide a group
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -486,7 +486,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. | [default to null]
+ **id** | **java.math.BigDecimal**| Group identifier. |
 
 ### Return type
 
@@ -499,7 +499,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="joinAccountToGroup"></a>
 # **joinAccountToGroup**
@@ -510,7 +510,7 @@ Join a account in a group
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -531,8 +531,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **java.math.BigDecimal**| Account Identifier. | [default to null]
- **groupId** | **java.math.BigDecimal**| Group Identifier. | [default to null]
+ **accountId** | **java.math.BigDecimal**| Account Identifier. |
+ **groupId** | **java.math.BigDecimal**| Group Identifier. |
 
 ### Return type
 
@@ -545,7 +545,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="joinToGroup"></a>
 # **joinToGroup**
@@ -556,7 +556,7 @@ Join to a group,
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -576,7 +576,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. | [default to null]
+ **id** | **java.math.BigDecimal**| Group identifier. |
 
 ### Return type
 
@@ -589,7 +589,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="leaveAccountFromGroup"></a>
 # **leaveAccountFromGroup**
@@ -600,7 +600,7 @@ Leave a account from a group
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -621,8 +621,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **java.math.BigDecimal**| Account Identifier. | [default to null]
- **groupId** | **java.math.BigDecimal**| Group Identifier. | [default to null]
+ **accountId** | **java.math.BigDecimal**| Account Identifier. |
+ **groupId** | **java.math.BigDecimal**| Group Identifier. |
 
 ### Return type
 
@@ -635,7 +635,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="leaveFromGroup"></a>
 # **leaveFromGroup**
@@ -646,7 +646,7 @@ Leave from a group
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -666,7 +666,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group invitation identifier. | [default to null]
+ **id** | **java.math.BigDecimal**| Group invitation identifier. |
 
 ### Return type
 
@@ -679,25 +679,25 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="reportGroup"></a>
 # **reportGroup**
-> reportGroup(id, postGroupReportBody)
+> reportGroup(id, body)
 
 Report a group
 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
-val postGroupReportBody : PostGroupReportBody =  // PostGroupReportBody | 
+val body : PostGroupReportBody =  // PostGroupReportBody | 
 try {
-    apiInstance.reportGroup(id, postGroupReportBody)
+    apiInstance.reportGroup(id, body)
 } catch (e: ClientException) {
     println("4xx response calling GroupsApi#reportGroup")
     e.printStackTrace()
@@ -711,8 +711,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. | [default to null]
- **postGroupReportBody** | [**PostGroupReportBody**](PostGroupReportBody.md)|  |
+ **id** | **java.math.BigDecimal**| Group identifier. |
+ **body** | [**PostGroupReportBody**](PostGroupReportBody.md)|  |
 
 ### Return type
 
@@ -725,7 +725,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="showGroup"></a>
 # **showGroup**
@@ -736,7 +736,7 @@ Show a group
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
@@ -756,7 +756,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. | [default to null]
+ **id** | **java.math.BigDecimal**| Group identifier. |
 
 ### Return type
 
@@ -769,25 +769,25 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="updateGroup"></a>
 # **updateGroup**
-> updateGroup(id, putGroupBody)
+> updateGroup(id, body)
 
 Update a group
 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import io.swagger.client.infrastructure.*
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
-val putGroupBody : PutGroupBody =  // PutGroupBody | 
+val body : PutGroupBody =  // PutGroupBody | 
 try {
-    apiInstance.updateGroup(id, putGroupBody)
+    apiInstance.updateGroup(id, body)
 } catch (e: ClientException) {
     println("4xx response calling GroupsApi#updateGroup")
     e.printStackTrace()
@@ -801,8 +801,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. | [default to null]
- **putGroupBody** | [**PutGroupBody**](PutGroupBody.md)|  |
+ **id** | **java.math.BigDecimal**| Group identifier. |
+ **body** | [**PutGroupBody**](PutGroupBody.md)|  |
 
 ### Return type
 
@@ -815,5 +815,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
