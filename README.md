@@ -76,8 +76,6 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**findGroup**](docs/GroupsApi.md#findgroup) | **GET** /groups/{id} | Get basic information about a group
 *GroupsApi* | [**findGroupAccounts**](docs/GroupsApi.md#findgroupaccounts) | **GET** /groups/{id}/accounts | Get accounts list of a group
 *GroupsApi* | [**findGroups**](docs/GroupsApi.md#findgroups) | **GET** /groups | Search groups
-*GroupsApi* | [**findSessionGroups**](docs/GroupsApi.md#findsessiongroups) | **GET** /session/groups | Get groups list session account joined
-*GroupsApi* | [**findSessionHides**](docs/GroupsApi.md#findsessionhides) | **GET** /session/hides | Get hidden groups list session account joined
 *GroupsApi* | [**hideGroup**](docs/GroupsApi.md#hidegroup) | **POST** /groups/{id}/hides | Hide a group
 *GroupsApi* | [**joinAccountToGroup**](docs/GroupsApi.md#joinaccounttogroup) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
 *GroupsApi* | [**joinToGroup**](docs/GroupsApi.md#jointogroup) | **POST** /groups/{id}/join | Join to a group,
@@ -87,9 +85,8 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**showGroup**](docs/GroupsApi.md#showgroup) | **DELETE** /groups/{id}/hides | Show a group
 *GroupsApi* | [**updateGroup**](docs/GroupsApi.md#updategroup) | **PUT** /groups/{id} | Update a group
 *InvitationsApi* | [**acceptGroupInvitation**](docs/InvitationsApi.md#acceptgroupinvitation) | **POST** /invitations/{id}/accept | Accept a invitation
-*InvitationsApi* | [**createGroupInvitationToAccount**](docs/InvitationsApi.md#creategroupinvitationtoaccount) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a invitation to a account
-*InvitationsApi* | [**createGroupInvitationToAccounts**](docs/InvitationsApi.md#creategroupinvitationtoaccounts) | **POST** /groups/{id}/invitations | Post a invitation to some accounts
-*InvitationsApi* | [**findSessionGroupInvitations**](docs/InvitationsApi.md#findsessiongroupinvitations) | **GET** /session/invitations | Get invitations list session account received
+*InvitationsApi* | [**create**](docs/InvitationsApi.md#create) | **POST** /groups/{id}/invitations | Post a invitation to some accounts
+*InvitationsApi* | [**create_0**](docs/InvitationsApi.md#create_0) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a invitation to a account
 *InvitationsApi* | [**rejectGroupInvitation**](docs/InvitationsApi.md#rejectgroupinvitation) | **POST** /invitations/{id}/reject | Reject a invitation
 *MediumsApi* | [**deleteMedium**](docs/MediumsApi.md#deletemedium) | **DELETE** /mediums/{id} | Delete a medium
 *MediumsApi* | [**findMedium**](docs/MediumsApi.md#findmedium) | **GET** /mediums/:* | Get a medium
@@ -97,26 +94,29 @@ Class | Method | HTTP request | Description
 *MessagesApi* | [**deleteMessage**](docs/MessagesApi.md#deletemessage) | **DELETE** /messages | Delete messages form a group
 *MessagesApi* | [**findMessages**](docs/MessagesApi.md#findmessages) | **GET** /messages | Search messages
 *MessagesApi* | [**postMessage**](docs/MessagesApi.md#postmessage) | **POST** /messages | Post a message to a group
-*MutesApi* | [**findSessionMutes**](docs/MutesApi.md#findsessionmutes) | **GET** /session/mutes | Get accounts list session account muted
 *MutesApi* | [**muteAccount**](docs/MutesApi.md#muteaccount) | **POST** /accounts/{id}/mutes | Mute a account
 *MutesApi* | [**unmuteAccount**](docs/MutesApi.md#unmuteaccount) | **DELETE** /accounts/{id}/mutes | UnMute a account
-*RequestsApi* | [**accept**](docs/RequestsApi.md#accept) | **POST** /session/requests/{id}/accept | Accept a friend request
-*RequestsApi* | [**createFriendRequest**](docs/RequestsApi.md#createfriendrequest) | **POST** /accounts/{id}/requests | Create a friend request to a account
-*RequestsApi* | [**deleteRequest**](docs/RequestsApi.md#deleterequest) | **DELETE** /accounts/{id}/requests | Remove a friend request to a account
-*RequestsApi* | [**findSessionFriendRequests**](docs/RequestsApi.md#findsessionfriendrequests) | **GET** /session/requests | Get friend requests list session account created or received
-*RequestsApi* | [**reject**](docs/RequestsApi.md#reject) | **POST** /session/requests/{id}/reject | Reject a friend request
-*SessionApi* | [**deleteSessionProfileImage**](docs/SessionApi.md#deletesessionprofileimage) | **DELETE** /session/profile_image | Remove the profile image
-*SessionApi* | [**findSession**](docs/SessionApi.md#findsession) | **GET** /session | Get basic information about session account
-*SessionApi* | [**findSessionFeeds**](docs/SessionApi.md#findsessionfeeds) | **GET** /session/feeds | Get feeds list session account posted
-*SessionApi* | [**findSessionFollowers**](docs/SessionApi.md#findsessionfollowers) | **GET** /session/followers | Get accounts list session account is followed by
-*SessionApi* | [**findSessionFollows**](docs/SessionApi.md#findsessionfollows) | **GET** /session/follows | Get accounts list session account followed
-*SessionApi* | [**findSessionFriends**](docs/SessionApi.md#findsessionfriends) | **GET** /session/friends | Get friends list
-*SessionApi* | [**findSessionLikes**](docs/SessionApi.md#findsessionlikes) | **GET** /session/likes | Get feeds list session account set a like
+*RequestsApi* | [**accept**](docs/RequestsApi.md#accept) | **POST** /requests/{id}/accept | Accept a friend request
+*RequestsApi* | [**create**](docs/RequestsApi.md#create) | **POST** /accounts/{id}/requests | Create a friend request to a account
+*RequestsApi* | [**delete**](docs/RequestsApi.md#delete) | **DELETE** /accounts/{id}/requests | Remove a friend request to a account
+*RequestsApi* | [**reject**](docs/RequestsApi.md#reject) | **POST** /requests/{id}/reject | Reject a friend request
+*SessionApi* | [**deleteProfileImage**](docs/SessionApi.md#deleteprofileimage) | **DELETE** /session/profile_image | Remove the profile image
+*SessionApi* | [**find**](docs/SessionApi.md#find) | **GET** /session | Get basic information about session account
+*SessionApi* | [**findFeeds**](docs/SessionApi.md#findfeeds) | **GET** /session/feeds | Get feeds list session account posted
+*SessionApi* | [**findFollowers**](docs/SessionApi.md#findfollowers) | **GET** /session/followers | Get accounts list session account is followed by
+*SessionApi* | [**findFollows**](docs/SessionApi.md#findfollows) | **GET** /session/follows | Get accounts list session account followed
+*SessionApi* | [**findFriendRequests**](docs/SessionApi.md#findfriendrequests) | **GET** /session/requests | Get friend requests list session account created or received
+*SessionApi* | [**findFriends**](docs/SessionApi.md#findfriends) | **GET** /session/friends | Get friends list
+*SessionApi* | [**findGroupInvitations**](docs/SessionApi.md#findgroupinvitations) | **GET** /session/invitations | Get invitations list session account received
+*SessionApi* | [**findGroups**](docs/SessionApi.md#findgroups) | **GET** /session/groups | Get groups list session account joined
+*SessionApi* | [**findHides**](docs/SessionApi.md#findhides) | **GET** /session/hides | Get hidden groups list session account joined
+*SessionApi* | [**findLikes**](docs/SessionApi.md#findlikes) | **GET** /session/likes | Get feeds list session account set a like
+*SessionApi* | [**findMutes**](docs/SessionApi.md#findmutes) | **GET** /session/mutes | Get accounts list session account muted
 *SessionApi* | [**signOut**](docs/SessionApi.md#signout) | **DELETE** /session | Sign out
-*SessionApi* | [**updateSessionAccountName**](docs/SessionApi.md#updatesessionaccountname) | **PUT** /session/account_name | Update the account name
-*SessionApi* | [**updateSessionPassword**](docs/SessionApi.md#updatesessionpassword) | **PUT** /session/password | Update the password
-*SessionApi* | [**updateSessionProfile**](docs/SessionApi.md#updatesessionprofile) | **PUT** /session/profile | Update the profile
-*SessionApi* | [**updateSessionProfileImage**](docs/SessionApi.md#updatesessionprofileimage) | **PUT** /session/profile_image | Update the profile image
+*SessionApi* | [**updateAccountName**](docs/SessionApi.md#updateaccountname) | **PUT** /session/account_name | Update the account name
+*SessionApi* | [**updatePassword**](docs/SessionApi.md#updatepassword) | **PUT** /session/password | Update the password
+*SessionApi* | [**updateProfile**](docs/SessionApi.md#updateprofile) | **PUT** /session/profile | Update the profile
+*SessionApi* | [**updateProfileImage**](docs/SessionApi.md#updateprofileimage) | **PUT** /session/profile_image | Update the profile image
 *SessionsApi* | [**signIn**](docs/SessionsApi.md#signin) | **GET** /sessions | Sign in
 *SessionsApi* | [**signUp**](docs/SessionsApi.md#signup) | **POST** /sessions | Sign up
 *SettingsApi* | [**findSessionPushNotificationSettings**](docs/SettingsApi.md#findsessionpushnotificationsettings) | **GET** /session/push_notification | Get push notification settings

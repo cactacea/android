@@ -60,7 +60,7 @@ null (empty response body)
 
 <a name="findAccountFeeds"></a>
 # **findAccountFeeds**
-> Feed findAccountFeeds(id, since, offset, count)
+> kotlin.Array&lt;Feed&gt; findAccountFeeds(id, since, offset, count)
 
 Get feeds list a account posted
 
@@ -76,7 +76,7 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds 
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : Feed = apiInstance.findAccountFeeds(id, since, offset, count)
+    val result : kotlin.Array<Feed> = apiInstance.findAccountFeeds(id, since, offset, count)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling FeedsApi#findAccountFeeds")
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Feed**](Feed.md)
+[**kotlin.Array&lt;Feed&gt;**](Feed.md)
 
 ### Authorization
 
