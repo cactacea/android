@@ -67,6 +67,10 @@ Class | Method | HTTP request | Description
 *FollowsApi* | [**findFollows**](docs/FollowsApi.md#findfollows) | **GET** /accounts/{id}/follows | Get accounts list a account followed
 *FollowsApi* | [**follow**](docs/FollowsApi.md#follow) | **POST** /accounts/{id}/follows | Follow a account
 *FollowsApi* | [**unfollow**](docs/FollowsApi.md#unfollow) | **DELETE** /accounts/{id}/follows | UnFollow a account
+*FriendRequestsApi* | [**accept**](docs/FriendRequestsApi.md#accept) | **POST** /requests/{id}/accept | Accept a friend request
+*FriendRequestsApi* | [**create**](docs/FriendRequestsApi.md#create) | **POST** /accounts/{id}/requests | Create a friend request to a account
+*FriendRequestsApi* | [**delete**](docs/FriendRequestsApi.md#delete) | **DELETE** /accounts/{id}/requests | Remove a friend request to a account
+*FriendRequestsApi* | [**reject**](docs/FriendRequestsApi.md#reject) | **POST** /requests/{id}/reject | Reject a friend request
 *FriendsApi* | [**deleteFriend**](docs/FriendsApi.md#deletefriend) | **DELETE** /accounts/{id}/friends | Remove friendship to a account
 *FriendsApi* | [**findAccountFriends**](docs/FriendsApi.md#findaccountfriends) | **GET** /accounts/{id}/friends | Get a account's friends list
 *GroupsApi* | [**createGroup**](docs/GroupsApi.md#creategroup) | **POST** /groups | Create a group
@@ -96,10 +100,6 @@ Class | Method | HTTP request | Description
 *MessagesApi* | [**postMessage**](docs/MessagesApi.md#postmessage) | **POST** /messages | Post a message to a group
 *MutesApi* | [**muteAccount**](docs/MutesApi.md#muteaccount) | **POST** /accounts/{id}/mutes | Mute a account
 *MutesApi* | [**unmuteAccount**](docs/MutesApi.md#unmuteaccount) | **DELETE** /accounts/{id}/mutes | UnMute a account
-*RequestsApi* | [**accept**](docs/RequestsApi.md#accept) | **POST** /requests/{id}/accept | Accept a friend request
-*RequestsApi* | [**create**](docs/RequestsApi.md#create) | **POST** /accounts/{id}/requests | Create a friend request to a account
-*RequestsApi* | [**delete**](docs/RequestsApi.md#delete) | **DELETE** /accounts/{id}/requests | Remove a friend request to a account
-*RequestsApi* | [**reject**](docs/RequestsApi.md#reject) | **POST** /requests/{id}/reject | Reject a friend request
 *SessionApi* | [**deleteProfileImage**](docs/SessionApi.md#deleteprofileimage) | **DELETE** /session/profile_image | Remove the profile image
 *SessionApi* | [**find**](docs/SessionApi.md#find) | **GET** /session | Get basic information about session account
 *SessionApi* | [**findFeeds**](docs/SessionApi.md#findfeeds) | **GET** /session/feeds | Get feeds list session account posted
