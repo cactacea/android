@@ -4,16 +4,16 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteComment**](CommentsApi.md#deleteComment) | **DELETE** /comments/{id} | Remove a comment
+[**delete**](CommentsApi.md#delete) | **DELETE** /comments/{id} | Remove a comment
 [**findComment**](CommentsApi.md#findComment) | **GET** /comments/{id} | Get basic information about a comment
 [**findComments**](CommentsApi.md#findComments) | **GET** /comments | Search comments
-[**postComment**](CommentsApi.md#postComment) | **POST** /comments | Create a comment on a feed
-[**reportComment**](CommentsApi.md#reportComment) | **POST** /comments/{id}/reports | Report a comment
+[**post**](CommentsApi.md#post) | **POST** /comments | Create a comment on a feed
+[**report**](CommentsApi.md#report) | **POST** /comments/{id}/reports | Report a comment
 
 
-<a name="deleteComment"></a>
-# **deleteComment**
-> deleteComment(id)
+<a name="delete"></a>
+# **delete**
+> delete(id)
 
 Remove a comment
 
@@ -26,12 +26,12 @@ Remove a comment
 val apiInstance = CommentsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Comment Identifier.
 try {
-    apiInstance.deleteComment(id)
+    apiInstance.delete(id)
 } catch (e: ClientException) {
-    println("4xx response calling CommentsApi#deleteComment")
+    println("4xx response calling CommentsApi#delete")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CommentsApi#deleteComment")
+    println("5xx response calling CommentsApi#delete")
     e.printStackTrace()
 }
 ```
@@ -151,9 +151,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="postComment"></a>
-# **postComment**
-> CommentCreated postComment(body)
+<a name="post"></a>
+# **post**
+> CommentCreated post(body)
 
 Create a comment on a feed
 
@@ -166,13 +166,13 @@ Create a comment on a feed
 val apiInstance = CommentsApi()
 val body : PostCommentBody =  // PostCommentBody | 
 try {
-    val result : CommentCreated = apiInstance.postComment(body)
+    val result : CommentCreated = apiInstance.post(body)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling CommentsApi#postComment")
+    println("4xx response calling CommentsApi#post")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CommentsApi#postComment")
+    println("5xx response calling CommentsApi#post")
     e.printStackTrace()
 }
 ```
@@ -196,9 +196,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="reportComment"></a>
-# **reportComment**
-> reportComment(id, body)
+<a name="report"></a>
+# **report**
+> report(id, body)
 
 Report a comment
 
@@ -212,12 +212,12 @@ val apiInstance = CommentsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Comment Identifier.
 val body : PostCommentReportBody =  // PostCommentReportBody | 
 try {
-    apiInstance.reportComment(id, body)
+    apiInstance.report(id, body)
 } catch (e: ClientException) {
-    println("4xx response calling CommentsApi#reportComment")
+    println("4xx response calling CommentsApi#report")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CommentsApi#reportComment")
+    println("5xx response calling CommentsApi#report")
     e.printStackTrace()
 }
 ```

@@ -4,54 +4,8 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**block**](BlocksApi.md#block) | **POST** /accounts/{id}/blocks | Block a account
 [**findBlockingAccounts**](BlocksApi.md#findBlockingAccounts) | **GET** /session/blocks | Get blocking accounts list
-[**unblock**](BlocksApi.md#unblock) | **DELETE** /accounts/{id}/blocks | Unblock a account
 
-
-<a name="block"></a>
-# **block**
-> block(id)
-
-Block a account
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = BlocksApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
-try {
-    apiInstance.block(id)
-} catch (e: ClientException) {
-    println("4xx response calling BlocksApi#block")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling BlocksApi#block")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
 
 <a name="findBlockingAccounts"></a>
 # **findBlockingAccounts**
@@ -92,50 +46,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**kotlin.Array&lt;Account&gt;**](Account.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="unblock"></a>
-# **unblock**
-> unblock(id)
-
-Unblock a account
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = BlocksApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
-try {
-    apiInstance.unblock(id)
-} catch (e: ClientException) {
-    println("4xx response calling BlocksApi#unblock")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling BlocksApi#unblock")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. |
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

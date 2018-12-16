@@ -4,26 +4,22 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createGroup**](GroupsApi.md#createGroup) | **POST** /groups | Create a group
-[**deleteGroup**](GroupsApi.md#deleteGroup) | **DELETE** /groups/{id} | Hide a group and delete all messages
-[**findAccountGroup**](GroupsApi.md#findAccountGroup) | **GET** /accounts/{id}/group | Get a direct message group to a account
-[**findAccountGroups**](GroupsApi.md#findAccountGroups) | **GET** /accounts/{id}/groups | Get groups list a account joined
+[**create**](GroupsApi.md#create) | **POST** /groups | Create a group
+[**delete**](GroupsApi.md#delete) | **DELETE** /groups/{id} | Hide a group and delete all messages
+[**findAccounts**](GroupsApi.md#findAccounts) | **GET** /groups/{id}/accounts | Get accounts list of a group
 [**findGroup**](GroupsApi.md#findGroup) | **GET** /groups/{id} | Get basic information about a group
-[**findGroupAccounts**](GroupsApi.md#findGroupAccounts) | **GET** /groups/{id}/accounts | Get accounts list of a group
 [**findGroups**](GroupsApi.md#findGroups) | **GET** /groups | Search groups
-[**hideGroup**](GroupsApi.md#hideGroup) | **POST** /groups/{id}/hides | Hide a group
-[**joinAccountToGroup**](GroupsApi.md#joinAccountToGroup) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
-[**joinToGroup**](GroupsApi.md#joinToGroup) | **POST** /groups/{id}/join | Join to a group,
-[**leaveAccountFromGroup**](GroupsApi.md#leaveAccountFromGroup) | **POST** /accounts/{accountId}/groups/{groupId}/leave | Leave a account from a group
-[**leaveFromGroup**](GroupsApi.md#leaveFromGroup) | **POST** /groups/{id}/leave | Leave from a group
-[**reportGroup**](GroupsApi.md#reportGroup) | **POST** /groups/{id}/reports | Report a group
-[**showGroup**](GroupsApi.md#showGroup) | **DELETE** /groups/{id}/hides | Show a group
-[**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /groups/{id} | Update a group
+[**hide**](GroupsApi.md#hide) | **POST** /groups/{id}/hides | Hide a group
+[**join**](GroupsApi.md#join) | **POST** /groups/{id}/join | Join to a group,
+[**leave**](GroupsApi.md#leave) | **POST** /groups/{id}/leave | Leave from a group
+[**report**](GroupsApi.md#report) | **POST** /groups/{id}/reports | Report a group
+[**show**](GroupsApi.md#show) | **DELETE** /groups/{id}/hides | Show a group
+[**update**](GroupsApi.md#update) | **PUT** /groups/{id} | Update a group
 
 
-<a name="createGroup"></a>
-# **createGroup**
-> GroupCreated createGroup(body)
+<a name="create"></a>
+# **create**
+> GroupCreated create(body)
 
 Create a group
 
@@ -36,13 +32,13 @@ Create a group
 val apiInstance = GroupsApi()
 val body : PostGroupBody =  // PostGroupBody | 
 try {
-    val result : GroupCreated = apiInstance.createGroup(body)
+    val result : GroupCreated = apiInstance.create(body)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling GroupsApi#createGroup")
+    println("4xx response calling GroupsApi#create")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupsApi#createGroup")
+    println("5xx response calling GroupsApi#create")
     e.printStackTrace()
 }
 ```
@@ -66,9 +62,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="deleteGroup"></a>
-# **deleteGroup**
-> deleteGroup(id)
+<a name="delete"></a>
+# **delete**
+> delete(id)
 
 Hide a group and delete all messages
 
@@ -81,12 +77,12 @@ Hide a group and delete all messages
 val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
 try {
-    apiInstance.deleteGroup(id)
+    apiInstance.delete(id)
 } catch (e: ClientException) {
-    println("4xx response calling GroupsApi#deleteGroup")
+    println("4xx response calling GroupsApi#delete")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupsApi#deleteGroup")
+    println("5xx response calling GroupsApi#delete")
     e.printStackTrace()
 }
 ```
@@ -110,56 +106,11 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findAccountGroup"></a>
-# **findAccountGroup**
-> Group findAccountGroup(id)
+<a name="findAccounts"></a>
+# **findAccounts**
+> kotlin.Array&lt;Group&gt; findAccounts(id, since, offset, count)
 
-Get a direct message group to a account
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = GroupsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
-try {
-    val result : Group = apiInstance.findAccountGroup(id)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling GroupsApi#findAccountGroup")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling GroupsApi#findAccountGroup")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. |
-
-### Return type
-
-[**Group**](Group.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findAccountGroups"></a>
-# **findAccountGroups**
-> kotlin.Array&lt;Group&gt; findAccountGroups(id, since, offset, count)
-
-Get groups list a account joined
+Get accounts list of a group
 
 ### Example
 ```kotlin
@@ -168,18 +119,18 @@ Get groups list a account joined
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of groups. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of groups returned on one result page. By default the value is 20 groups. The page size can never be larger than 50.
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Group> = apiInstance.findAccountGroups(id, since, offset, count)
+    val result : kotlin.Array<Group> = apiInstance.findAccounts(id, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling GroupsApi#findAccountGroups")
+    println("4xx response calling GroupsApi#findAccounts")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupsApi#findAccountGroups")
+    println("5xx response calling GroupsApi#findAccounts")
     e.printStackTrace()
 }
 ```
@@ -188,10 +139,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. |
- **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 groups. The page size can never be larger than 50. | [optional]
+ **id** | **java.math.BigDecimal**| Group identifier. |
+ **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
@@ -241,57 +192,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Group**](Group.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findGroupAccounts"></a>
-# **findGroupAccounts**
-> kotlin.Array&lt;Group&gt; findGroupAccounts(id, since, offset, count)
-
-Get accounts list of a group
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = GroupsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Group> = apiInstance.findGroupAccounts(id, since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling GroupsApi#findGroupAccounts")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling GroupsApi#findGroupAccounts")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. |
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Group&gt;**](Group.md)
 
 ### Authorization
 
@@ -357,9 +257,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="hideGroup"></a>
-# **hideGroup**
-> hideGroup(id)
+<a name="hide"></a>
+# **hide**
+> hide(id)
 
 Hide a group
 
@@ -372,12 +272,12 @@ Hide a group
 val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
 try {
-    apiInstance.hideGroup(id)
+    apiInstance.hide(id)
 } catch (e: ClientException) {
-    println("4xx response calling GroupsApi#hideGroup")
+    println("4xx response calling GroupsApi#hide")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupsApi#hideGroup")
+    println("5xx response calling GroupsApi#hide")
     e.printStackTrace()
 }
 ```
@@ -401,55 +301,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="joinAccountToGroup"></a>
-# **joinAccountToGroup**
-> joinAccountToGroup(accountId, groupId)
-
-Join a account in a group
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = GroupsApi()
-val accountId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
-val groupId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group Identifier.
-try {
-    apiInstance.joinAccountToGroup(accountId, groupId)
-} catch (e: ClientException) {
-    println("4xx response calling GroupsApi#joinAccountToGroup")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling GroupsApi#joinAccountToGroup")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **java.math.BigDecimal**| Account Identifier. |
- **groupId** | **java.math.BigDecimal**| Group Identifier. |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="joinToGroup"></a>
-# **joinToGroup**
-> joinToGroup(id)
+<a name="join"></a>
+# **join**
+> join(id)
 
 Join to a group,
 
@@ -462,12 +316,12 @@ Join to a group,
 val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
 try {
-    apiInstance.joinToGroup(id)
+    apiInstance.join(id)
 } catch (e: ClientException) {
-    println("4xx response calling GroupsApi#joinToGroup")
+    println("4xx response calling GroupsApi#join")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupsApi#joinToGroup")
+    println("5xx response calling GroupsApi#join")
     e.printStackTrace()
 }
 ```
@@ -491,55 +345,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="leaveAccountFromGroup"></a>
-# **leaveAccountFromGroup**
-> leaveAccountFromGroup(accountId, groupId)
-
-Leave a account from a group
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = GroupsApi()
-val accountId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
-val groupId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group Identifier.
-try {
-    apiInstance.leaveAccountFromGroup(accountId, groupId)
-} catch (e: ClientException) {
-    println("4xx response calling GroupsApi#leaveAccountFromGroup")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling GroupsApi#leaveAccountFromGroup")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **java.math.BigDecimal**| Account Identifier. |
- **groupId** | **java.math.BigDecimal**| Group Identifier. |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="leaveFromGroup"></a>
-# **leaveFromGroup**
-> leaveFromGroup(id)
+<a name="leave"></a>
+# **leave**
+> leave(id)
 
 Leave from a group
 
@@ -552,12 +360,12 @@ Leave from a group
 val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group invitation identifier.
 try {
-    apiInstance.leaveFromGroup(id)
+    apiInstance.leave(id)
 } catch (e: ClientException) {
-    println("4xx response calling GroupsApi#leaveFromGroup")
+    println("4xx response calling GroupsApi#leave")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupsApi#leaveFromGroup")
+    println("5xx response calling GroupsApi#leave")
     e.printStackTrace()
 }
 ```
@@ -581,9 +389,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="reportGroup"></a>
-# **reportGroup**
-> reportGroup(id, body)
+<a name="report"></a>
+# **report**
+> report(id, body)
 
 Report a group
 
@@ -597,12 +405,12 @@ val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
 val body : PostGroupReportBody =  // PostGroupReportBody | 
 try {
-    apiInstance.reportGroup(id, body)
+    apiInstance.report(id, body)
 } catch (e: ClientException) {
-    println("4xx response calling GroupsApi#reportGroup")
+    println("4xx response calling GroupsApi#report")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupsApi#reportGroup")
+    println("5xx response calling GroupsApi#report")
     e.printStackTrace()
 }
 ```
@@ -627,9 +435,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="showGroup"></a>
-# **showGroup**
-> showGroup(id)
+<a name="show"></a>
+# **show**
+> show(id)
 
 Show a group
 
@@ -642,12 +450,12 @@ Show a group
 val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
 try {
-    apiInstance.showGroup(id)
+    apiInstance.show(id)
 } catch (e: ClientException) {
-    println("4xx response calling GroupsApi#showGroup")
+    println("4xx response calling GroupsApi#show")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupsApi#showGroup")
+    println("5xx response calling GroupsApi#show")
     e.printStackTrace()
 }
 ```
@@ -671,9 +479,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="updateGroup"></a>
-# **updateGroup**
-> updateGroup(id, body)
+<a name="update"></a>
+# **update**
+> update(id, body)
 
 Update a group
 
@@ -687,12 +495,12 @@ val apiInstance = GroupsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
 val body : PutGroupBody =  // PutGroupBody | 
 try {
-    apiInstance.updateGroup(id, body)
+    apiInstance.update(id, body)
 } catch (e: ClientException) {
-    println("4xx response calling GroupsApi#updateGroup")
+    println("4xx response calling GroupsApi#update")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling GroupsApi#updateGroup")
+    println("5xx response calling GroupsApi#update")
     e.printStackTrace()
 }
 ```

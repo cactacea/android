@@ -4,19 +4,17 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteFeed**](FeedsApi.md#deleteFeed) | **DELETE** /feeds/{id} | Delete a feed
-[**findAccountFeeds**](FeedsApi.md#findAccountFeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
-[**findAccountLikes**](FeedsApi.md#findAccountLikes) | **GET** /accounts/{id}/likes | Get account&#39;s liked feeds
+[**delete**](FeedsApi.md#delete) | **DELETE** /feeds/{id} | Delete a feed
 [**findFeed**](FeedsApi.md#findFeed) | **GET** /feeds/{id} | Get basic information about a feed
 [**findFeeds**](FeedsApi.md#findFeeds) | **GET** /feeds | Search feeds
-[**postFeed**](FeedsApi.md#postFeed) | **POST** /feeds | Post a feed
-[**reportFeed**](FeedsApi.md#reportFeed) | **POST** /feeds/{id}/reports | Report a feed
-[**updateFeed**](FeedsApi.md#updateFeed) | **PUT** /feeds/{id} | Update a feed
+[**post**](FeedsApi.md#post) | **POST** /feeds | Post a feed
+[**report**](FeedsApi.md#report) | **POST** /feeds/{id}/reports | Report a feed
+[**update**](FeedsApi.md#update) | **PUT** /feeds/{id} | Update a feed
 
 
-<a name="deleteFeed"></a>
-# **deleteFeed**
-> deleteFeed(id)
+<a name="delete"></a>
+# **delete**
+> delete(id)
 
 Delete a feed
 
@@ -29,12 +27,12 @@ Delete a feed
 val apiInstance = FeedsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
 try {
-    apiInstance.deleteFeed(id)
+    apiInstance.delete(id)
 } catch (e: ClientException) {
-    println("4xx response calling FeedsApi#deleteFeed")
+    println("4xx response calling FeedsApi#delete")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedsApi#deleteFeed")
+    println("5xx response calling FeedsApi#delete")
     e.printStackTrace()
 }
 ```
@@ -48,108 +46,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findAccountFeeds"></a>
-# **findAccountFeeds**
-> kotlin.Array&lt;Feed&gt; findAccountFeeds(id, since, offset, count)
-
-Get feeds list a account posted
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = FeedsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Feed> = apiInstance.findAccountFeeds(id, since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling FeedsApi#findAccountFeeds")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling FeedsApi#findAccountFeeds")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Feed&gt;**](Feed.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findAccountLikes"></a>
-# **findAccountLikes**
-> kotlin.Array&lt;Feed&gt; findAccountLikes(id, since, offset, count)
-
-Get account&#39;s liked feeds
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = FeedsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Feed> = apiInstance.findAccountLikes(id, since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling FeedsApi#findAccountLikes")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling FeedsApi#findAccountLikes")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Feed&gt;**](Feed.md)
 
 ### Authorization
 
@@ -256,9 +152,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="postFeed"></a>
-# **postFeed**
-> FeedCreated postFeed(body)
+<a name="post"></a>
+# **post**
+> FeedCreated post(body)
 
 Post a feed
 
@@ -271,13 +167,13 @@ Post a feed
 val apiInstance = FeedsApi()
 val body : PostFeedBody =  // PostFeedBody | 
 try {
-    val result : FeedCreated = apiInstance.postFeed(body)
+    val result : FeedCreated = apiInstance.post(body)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FeedsApi#postFeed")
+    println("4xx response calling FeedsApi#post")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedsApi#postFeed")
+    println("5xx response calling FeedsApi#post")
     e.printStackTrace()
 }
 ```
@@ -301,9 +197,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="reportFeed"></a>
-# **reportFeed**
-> reportFeed(id, body)
+<a name="report"></a>
+# **report**
+> report(id, body)
 
 Report a feed
 
@@ -317,12 +213,12 @@ val apiInstance = FeedsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
 val body : PostFeedReportBody =  // PostFeedReportBody | 
 try {
-    apiInstance.reportFeed(id, body)
+    apiInstance.report(id, body)
 } catch (e: ClientException) {
-    println("4xx response calling FeedsApi#reportFeed")
+    println("4xx response calling FeedsApi#report")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedsApi#reportFeed")
+    println("5xx response calling FeedsApi#report")
     e.printStackTrace()
 }
 ```
@@ -347,9 +243,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="updateFeed"></a>
-# **updateFeed**
-> updateFeed(id, body)
+<a name="update"></a>
+# **update**
+> update(id, body)
 
 Update a feed
 
@@ -363,12 +259,12 @@ val apiInstance = FeedsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
 val body : PutFeedBody =  // PutFeedBody | 
 try {
-    apiInstance.updateFeed(id, body)
+    apiInstance.update(id, body)
 } catch (e: ClientException) {
-    println("4xx response calling FeedsApi#updateFeed")
+    println("4xx response calling FeedsApi#update")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedsApi#updateFeed")
+    println("5xx response calling FeedsApi#update")
     e.printStackTrace()
 }
 ```

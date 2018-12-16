@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteMessage**](MessagesApi.md#deleteMessage) | **DELETE** /messages | Delete messages form a group
-[**findMessages**](MessagesApi.md#findMessages) | **GET** /messages | Search messages
-[**postMessage**](MessagesApi.md#postMessage) | **POST** /messages | Post a message to a group
+[**delete**](MessagesApi.md#delete) | **DELETE** /messages | Delete messages form a group
+[**find**](MessagesApi.md#find) | **GET** /messages | Search messages
+[**post**](MessagesApi.md#post) | **POST** /messages | Post a message to a group
 
 
-<a name="deleteMessage"></a>
-# **deleteMessage**
-> deleteMessage(body)
+<a name="delete"></a>
+# **delete**
+> delete(body)
 
 Delete messages form a group
 
@@ -24,12 +24,12 @@ Delete messages form a group
 val apiInstance = MessagesApi()
 val body : DeleteMessagesBody =  // DeleteMessagesBody | 
 try {
-    apiInstance.deleteMessage(body)
+    apiInstance.delete(body)
 } catch (e: ClientException) {
-    println("4xx response calling MessagesApi#deleteMessage")
+    println("4xx response calling MessagesApi#delete")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MessagesApi#deleteMessage")
+    println("5xx response calling MessagesApi#delete")
     e.printStackTrace()
 }
 ```
@@ -53,9 +53,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findMessages"></a>
-# **findMessages**
-> Message findMessages(id, ascending, since, offset, count)
+<a name="find"></a>
+# **find**
+> Message find(id, ascending, since, offset, count)
 
 Search messages
 
@@ -72,13 +72,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters messag
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of messages. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : Message = apiInstance.findMessages(id, ascending, since, offset, count)
+    val result : Message = apiInstance.find(id, ascending, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MessagesApi#findMessages")
+    println("4xx response calling MessagesApi#find")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MessagesApi#findMessages")
+    println("5xx response calling MessagesApi#find")
     e.printStackTrace()
 }
 ```
@@ -106,9 +106,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="postMessage"></a>
-# **postMessage**
-> MessageCreated postMessage(body)
+<a name="post"></a>
+# **post**
+> MessageCreated post(body)
 
 Post a message to a group
 
@@ -121,13 +121,13 @@ Post a message to a group
 val apiInstance = MessagesApi()
 val body : PostMessageBody =  // PostMessageBody | 
 try {
-    val result : MessageCreated = apiInstance.postMessage(body)
+    val result : MessageCreated = apiInstance.post(body)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MessagesApi#postMessage")
+    println("4xx response calling MessagesApi#post")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MessagesApi#postMessage")
+    println("5xx response calling MessagesApi#post")
     e.printStackTrace()
 }
 ```

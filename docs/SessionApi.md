@@ -5,17 +5,19 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteProfileImage**](SessionApi.md#deleteProfileImage) | **DELETE** /session/profile_image | Remove the profile image
+[**existAccountName**](SessionApi.md#existAccountName) | **GET** /session/account_name/{accountName} | Confirm account name exist
 [**find**](SessionApi.md#find) | **GET** /session | Get basic information about session account
+[**findAccounts**](SessionApi.md#findAccounts) | **GET** /session/accounts | Search accounts
 [**findFeeds**](SessionApi.md#findFeeds) | **GET** /session/feeds | Get feeds list session account posted
 [**findFollowers**](SessionApi.md#findFollowers) | **GET** /session/followers | Get accounts list session account is followed by
-[**findFollows**](SessionApi.md#findFollows) | **GET** /session/follows | Get accounts list session account followed
+[**findFollowing**](SessionApi.md#findFollowing) | **GET** /session/following | Get accounts list session account followed
 [**findFriendRequests**](SessionApi.md#findFriendRequests) | **GET** /session/requests | Get friend requests list session account created or received
 [**findFriends**](SessionApi.md#findFriends) | **GET** /session/friends | Get friends list
 [**findGroupInvitations**](SessionApi.md#findGroupInvitations) | **GET** /session/invitations | Get invitations list session account received
 [**findGroups**](SessionApi.md#findGroups) | **GET** /session/groups | Get groups list session account joined
-[**findHides**](SessionApi.md#findHides) | **GET** /session/hides | Get hidden groups list session account joined
+[**findHiddenGroups**](SessionApi.md#findHiddenGroups) | **GET** /session/hides | Get hidden groups list session account joined
 [**findLikes**](SessionApi.md#findLikes) | **GET** /session/likes | Get feeds list session account set a like
-[**findMutes**](SessionApi.md#findMutes) | **GET** /session/mutes | Get accounts list session account muted
+[**findMutingAccounts**](SessionApi.md#findMutingAccounts) | **GET** /session/mutes | Get accounts list session account muted
 [**signOut**](SessionApi.md#signOut) | **DELETE** /session | Sign out
 [**updateAccountName**](SessionApi.md#updateAccountName) | **PUT** /session/account_name | Update the account name
 [**updatePassword**](SessionApi.md#updatePassword) | **PUT** /session/password | Update the password
@@ -63,6 +65,51 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="existAccountName"></a>
+# **existAccountName**
+> AccountNameNotExists existAccountName(accountName)
+
+Confirm account name exist
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val accountName : kotlin.String = accountName_example // kotlin.String | Account name.
+try {
+    val result : AccountNameNotExists = apiInstance.existAccountName(accountName)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#existAccountName")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#existAccountName")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountName** | **kotlin.String**| Account name. |
+
+### Return type
+
+[**AccountNameNotExists**](AccountNameNotExists.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="find"></a>
 # **find**
 > Account find()
@@ -94,6 +141,57 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Account**](Account.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findAccounts"></a>
+# **findAccounts**
+> kotlin.Array&lt;Account&gt; findAccounts(accountName, since, offset, count)
+
+Search accounts
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val accountName : kotlin.String = accountName_example // kotlin.String | Filters accounts whose account name start of.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 accounts. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Account> = apiInstance.findAccounts(accountName, since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findAccounts")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findAccounts")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountName** | **kotlin.String**| Filters accounts whose account name start of. | [optional]
+ **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 accounts. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Account&gt;**](Account.md)
 
 ### Authorization
 
@@ -202,9 +300,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findFollows"></a>
-# **findFollows**
-> kotlin.Array&lt;Account&gt; findFollows(since, offset, count)
+<a name="findFollowing"></a>
+# **findFollowing**
+> kotlin.Array&lt;Account&gt; findFollowing(since, offset, count)
 
 Get accounts list session account followed
 
@@ -219,13 +317,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters follow
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of follower. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findFollows(since, offset, count)
+    val result : kotlin.Array<Account> = apiInstance.findFollowing(since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findFollows")
+    println("4xx response calling SessionApi#findFollowing")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findFollows")
+    println("5xx response calling SessionApi#findFollowing")
     e.printStackTrace()
 }
 ```
@@ -451,9 +549,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findHides"></a>
-# **findHides**
-> kotlin.Array&lt;Group&gt; findHides(since, offset, count)
+<a name="findHiddenGroups"></a>
+# **findHiddenGroups**
+> kotlin.Array&lt;Group&gt; findHiddenGroups(since, offset, count)
 
 Get hidden groups list session account joined
 
@@ -468,13 +566,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of groups. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Group> = apiInstance.findHides(since, offset, count)
+    val result : kotlin.Array<Group> = apiInstance.findHiddenGroups(since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findHides")
+    println("4xx response calling SessionApi#findHiddenGroups")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findHides")
+    println("5xx response calling SessionApi#findHiddenGroups")
     e.printStackTrace()
 }
 ```
@@ -549,9 +647,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findMutes"></a>
-# **findMutes**
-> kotlin.Array&lt;Account&gt; findMutes(since, offset, count)
+<a name="findMutingAccounts"></a>
+# **findMutingAccounts**
+> kotlin.Array&lt;Account&gt; findMutingAccounts(since, offset, count)
 
 Get accounts list session account muted
 
@@ -566,13 +664,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accoun
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findMutes(since, offset, count)
+    val result : kotlin.Array<Account> = apiInstance.findMutingAccounts(since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findMutes")
+    println("4xx response calling SessionApi#findMutingAccounts")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findMutes")
+    println("5xx response calling SessionApi#findMutingAccounts")
     e.printStackTrace()
 }
 ```
