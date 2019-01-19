@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Enum: privacyType
 Name | Value
 ---- | -----
-privacyType | everyone, follows, followers, friends
+privacyType | everyone, following, followers, friends
 
 
 <a name="AuthorityTypeEnum"></a>

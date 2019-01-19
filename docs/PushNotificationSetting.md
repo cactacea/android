@@ -4,10 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**followerFeed** | **kotlin.Boolean** |  | 
-**feedComment** | **kotlin.Boolean** |  | 
+**feed** | **kotlin.Boolean** |  | 
+**comment** | **kotlin.Boolean** |  | 
+**friendRequest** | **kotlin.Boolean** |  | 
+**message** | **kotlin.Boolean** |  | 
 **groupMessage** | **kotlin.Boolean** |  | 
-**directMessage** | **kotlin.Boolean** |  | 
 **groupInvitation** | **kotlin.Boolean** |  | 
 **showMessage** | **kotlin.Boolean** |  | 
 

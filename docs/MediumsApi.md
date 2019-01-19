@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteMedium**](MediumsApi.md#deleteMedium) | **DELETE** /mediums/{id} | Delete a medium
+[**delete**](MediumsApi.md#delete) | **DELETE** /mediums/{id} | Delete a medium
 [**findMedium**](MediumsApi.md#findMedium) | **GET** /mediums/:* | Get a medium
-[**uploadMedium**](MediumsApi.md#uploadMedium) | **POST** /mediums | Upload a medium
+[**upload**](MediumsApi.md#upload) | **POST** /mediums | Upload a medium
 
 
-<a name="deleteMedium"></a>
-# **deleteMedium**
-> deleteMedium(id)
+<a name="delete"></a>
+# **delete**
+> delete(id)
 
 Delete a medium
 
@@ -24,12 +24,12 @@ Delete a medium
 val apiInstance = MediumsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Medium identifier.
 try {
-    apiInstance.deleteMedium(id)
+    apiInstance.delete(id)
 } catch (e: ClientException) {
-    println("4xx response calling MediumsApi#deleteMedium")
+    println("4xx response calling MediumsApi#delete")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MediumsApi#deleteMedium")
+    println("5xx response calling MediumsApi#delete")
     e.printStackTrace()
 }
 ```
@@ -93,9 +93,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="uploadMedium"></a>
-# **uploadMedium**
-> kotlin.Array&lt;MediumCreated&gt; uploadMedium(file)
+<a name="upload"></a>
+# **upload**
+> kotlin.Array&lt;MediumCreated&gt; upload(file)
 
 Upload a medium
 
@@ -108,13 +108,13 @@ Upload a medium
 val apiInstance = MediumsApi()
 val file : java.io.File = /path/to/file.txt // java.io.File | Upload a medium file
 try {
-    val result : kotlin.Array<MediumCreated> = apiInstance.uploadMedium(file)
+    val result : kotlin.Array<MediumCreated> = apiInstance.upload(file)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MediumsApi#uploadMedium")
+    println("4xx response calling MediumsApi#upload")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MediumsApi#uploadMedium")
+    println("5xx response calling MediumsApi#upload")
     e.printStackTrace()
 }
 ```

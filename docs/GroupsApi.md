@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupName** | **kotlin.String**| Filters groups which group name start of. | [optional]
  **invitationOnly** | **java.math.BigDecimal**| Filters groups that invited accounts can join in. | [optional]
- **groupPrivacyType** | **kotlin.String**| Filters groups which can join in. | [optional] [enum: everyone, follows, followers, friends]
+ **groupPrivacyType** | **kotlin.String**| Filters groups which can join in. | [optional] [enum: everyone, following, followers, friends]
  **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
  **offset** | **java.math.BigDecimal**| The offset of messages. By default the value is 0. | [optional]
  **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
@@ -358,7 +358,7 @@ Leave from a group
 //import io.github.cactacea.backend.*
 
 val apiInstance = GroupsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group invitation identifier.
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group groupInvitation identifier.
 try {
     apiInstance.leave(id)
 } catch (e: ClientException) {
@@ -374,7 +374,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group invitation identifier. |
+ **id** | **java.math.BigDecimal**| Group groupInvitation identifier. |
 
 ### Return type
 

@@ -22,6 +22,10 @@ package io.github.cactacea.backend
  * @param friendRequestInProgress 
  * @param following 
  * @param isFollower 
+ * @param followingCount 
+ * @param followerCount 
+ * @param friendCount 
+ * @param feedsCount 
  * @param muting 
  * @param blocking 
  * @param web 
@@ -31,7 +35,7 @@ package io.github.cactacea.backend
  * @param joinedAt 
  * @param next 
  */
-data class Account (
+data class AccountDetail (
     val id: java.math.BigDecimal,
     val accountName: kotlin.String,
     val displayName: kotlin.String,
@@ -39,6 +43,10 @@ data class Account (
     val friendRequestInProgress: kotlin.Boolean,
     val following: kotlin.Boolean,
     val isFollower: kotlin.Boolean,
+    val followingCount: kotlin.Long,
+    val followerCount: kotlin.Long,
+    val friendCount: kotlin.Long,
+    val feedsCount: kotlin.Long,
     val muting: kotlin.Boolean,
     val blocking: kotlin.Boolean,
     val profileImageUrl: kotlin.String? = null,

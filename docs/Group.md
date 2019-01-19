@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **id** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **name** | **kotlin.String** |  |  [optional]
 **message** | [**Message**](Message.md) |  |  [optional]
-**groupPrivacyType** | [**inline**](#GroupPrivacyTypeEnum) |  | 
 **invitationOnly** | **kotlin.Boolean** |  | 
+**privacyType** | [**inline**](#PrivacyTypeEnum) |  | 
 **authorityType** | [**inline**](#AuthorityTypeEnum) |  | 
 **accountCount** | **kotlin.Long** |  | 
 **lastPostedAt** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
@@ -16,11 +16,11 @@ Name | Type | Description | Notes
 **next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 
 
-<a name="GroupPrivacyTypeEnum"></a>
-## Enum: groupPrivacyType
+<a name="PrivacyTypeEnum"></a>
+## Enum: privacyType
 Name | Value
 ---- | -----
-groupPrivacyType | everyone, follows, followers, friends
+privacyType | everyone, following, followers, friends
 
 
 <a name="AuthorityTypeEnum"></a>

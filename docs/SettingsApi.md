@@ -4,15 +4,15 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findSessionPushNotificationSettings**](SettingsApi.md#findSessionPushNotificationSettings) | **GET** /session/push_notification | Get push notification settings
-[**updateSessionDeviceStatus**](SettingsApi.md#updateSessionDeviceStatus) | **POST** /session/status | Update device status
-[**updateSessionPushNotificationSettings**](SettingsApi.md#updateSessionPushNotificationSettings) | **PUT** /session/push_notification | Update ths push notification settings
-[**updateSessionPushToken**](SettingsApi.md#updateSessionPushToken) | **POST** /session/push_token | Update device push token
+[**findPushNotificationSettings**](SettingsApi.md#findPushNotificationSettings) | **GET** /session/push_notification | Get push notification settings
+[**updateDeviceStatus**](SettingsApi.md#updateDeviceStatus) | **POST** /session/status | Update device status
+[**updatePushNotificationSettings**](SettingsApi.md#updatePushNotificationSettings) | **PUT** /session/push_notification | Update ths push notification settings
+[**updatePushToken**](SettingsApi.md#updatePushToken) | **POST** /session/push_token | Update device push token
 
 
-<a name="findSessionPushNotificationSettings"></a>
-# **findSessionPushNotificationSettings**
-> PushNotificationSetting findSessionPushNotificationSettings()
+<a name="findPushNotificationSettings"></a>
+# **findPushNotificationSettings**
+> PushNotificationSetting findPushNotificationSettings()
 
 Get push notification settings
 
@@ -24,13 +24,13 @@ Get push notification settings
 
 val apiInstance = SettingsApi()
 try {
-    val result : PushNotificationSetting = apiInstance.findSessionPushNotificationSettings()
+    val result : PushNotificationSetting = apiInstance.findPushNotificationSettings()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SettingsApi#findSessionPushNotificationSettings")
+    println("4xx response calling SettingsApi#findPushNotificationSettings")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SettingsApi#findSessionPushNotificationSettings")
+    println("5xx response calling SettingsApi#findPushNotificationSettings")
     e.printStackTrace()
 }
 ```
@@ -51,9 +51,9 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="updateSessionDeviceStatus"></a>
-# **updateSessionDeviceStatus**
-> updateSessionDeviceStatus(body)
+<a name="updateDeviceStatus"></a>
+# **updateDeviceStatus**
+> updateDeviceStatus(body)
 
 Update device status
 
@@ -66,12 +66,12 @@ Update device status
 val apiInstance = SettingsApi()
 val body : PostActiveStatusBody =  // PostActiveStatusBody | 
 try {
-    apiInstance.updateSessionDeviceStatus(body)
+    apiInstance.updateDeviceStatus(body)
 } catch (e: ClientException) {
-    println("4xx response calling SettingsApi#updateSessionDeviceStatus")
+    println("4xx response calling SettingsApi#updateDeviceStatus")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SettingsApi#updateSessionDeviceStatus")
+    println("5xx response calling SettingsApi#updateDeviceStatus")
     e.printStackTrace()
 }
 ```
@@ -95,9 +95,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="updateSessionPushNotificationSettings"></a>
-# **updateSessionPushNotificationSettings**
-> updateSessionPushNotificationSettings()
+<a name="updatePushNotificationSettings"></a>
+# **updatePushNotificationSettings**
+> updatePushNotificationSettings(body)
 
 Update ths push notification settings
 
@@ -108,19 +108,23 @@ Update ths push notification settings
 //import io.github.cactacea.backend.*
 
 val apiInstance = SettingsApi()
+val body : PutNotificationSettingBody =  // PutNotificationSettingBody | 
 try {
-    apiInstance.updateSessionPushNotificationSettings()
+    apiInstance.updatePushNotificationSettings(body)
 } catch (e: ClientException) {
-    println("4xx response calling SettingsApi#updateSessionPushNotificationSettings")
+    println("4xx response calling SettingsApi#updatePushNotificationSettings")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SettingsApi#updateSessionPushNotificationSettings")
+    println("5xx response calling SettingsApi#updatePushNotificationSettings")
     e.printStackTrace()
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PutNotificationSettingBody**](PutNotificationSettingBody.md)|  |
 
 ### Return type
 
@@ -135,9 +139,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="updateSessionPushToken"></a>
-# **updateSessionPushToken**
-> updateSessionPushToken(body)
+<a name="updatePushToken"></a>
+# **updatePushToken**
+> updatePushToken(body)
 
 Update device push token
 
@@ -150,12 +154,12 @@ Update device push token
 val apiInstance = SettingsApi()
 val body : PostDevicePushTokenBody =  // PostDevicePushTokenBody | 
 try {
-    apiInstance.updateSessionPushToken(body)
+    apiInstance.updatePushToken(body)
 } catch (e: ClientException) {
-    println("4xx response calling SettingsApi#updateSessionPushToken")
+    println("4xx response calling SettingsApi#updatePushToken")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SettingsApi#updateSessionPushToken")
+    println("5xx response calling SettingsApi#updatePushToken")
     e.printStackTrace()
 }
 ```

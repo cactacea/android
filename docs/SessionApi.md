@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteProfileImage**](SessionApi.md#deleteProfileImage) | **DELETE** /session/profile_image | Remove the profile image
 [**existAccountName**](SessionApi.md#existAccountName) | **GET** /session/account_name/{accountName} | Confirm account name exist
-[**find**](SessionApi.md#find) | **GET** /session | Get basic information about session account
 [**findAccounts**](SessionApi.md#findAccounts) | **GET** /session/accounts | Search accounts
 [**findFeeds**](SessionApi.md#findFeeds) | **GET** /session/feeds | Get feeds list session account posted
 [**findFollowers**](SessionApi.md#findFollowers) | **GET** /session/followers | Get accounts list session account is followed by
@@ -14,10 +13,11 @@ Method | HTTP request | Description
 [**findFriendRequests**](SessionApi.md#findFriendRequests) | **GET** /session/requests | Get friend requests list session account created or received
 [**findFriends**](SessionApi.md#findFriends) | **GET** /session/friends | Get friends list
 [**findGroupInvitations**](SessionApi.md#findGroupInvitations) | **GET** /session/invitations | Get invitations list session account received
-[**findGroups**](SessionApi.md#findGroups) | **GET** /session/groups | Get groups list session account joined
-[**findHiddenGroups**](SessionApi.md#findHiddenGroups) | **GET** /session/hides | Get hidden groups list session account joined
+[**findGroups**](SessionApi.md#findGroups) | **GET** /session/groups | Get groups list session account groupJoined
+[**findHiddenGroups**](SessionApi.md#findHiddenGroups) | **GET** /session/hides | Get hidden groups list session account groupJoined
 [**findLikes**](SessionApi.md#findLikes) | **GET** /session/likes | Get feeds list session account set a like
 [**findMutingAccounts**](SessionApi.md#findMutingAccounts) | **GET** /session/mutes | Get accounts list session account muted
+[**findSession**](SessionApi.md#findSession) | **GET** /session | Get basic information about session account
 [**signOut**](SessionApi.md#signOut) | **DELETE** /session | Sign out
 [**updateAccountName**](SessionApi.md#updateAccountName) | **PUT** /session/account_name | Update the account name
 [**updatePassword**](SessionApi.md#updatePassword) | **PUT** /session/password | Update the password
@@ -100,47 +100,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AccountNameNotExists**](AccountNameNotExists.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="find"></a>
-# **find**
-> Account find()
-
-Get basic information about session account
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-try {
-    val result : Account = apiInstance.find()
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#find")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#find")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Account**](Account.md)
 
 ### Authorization
 
@@ -504,7 +463,7 @@ Name | Type | Description  | Notes
 # **findGroups**
 > kotlin.Array&lt;Group&gt; findGroups(since, offset, count)
 
-Get groups list session account joined
+Get groups list session account groupJoined
 
 ### Example
 ```kotlin
@@ -553,7 +512,7 @@ Name | Type | Description  | Notes
 # **findHiddenGroups**
 > kotlin.Array&lt;Group&gt; findHiddenGroups(since, offset, count)
 
-Get hidden groups list session account joined
+Get hidden groups list session account groupJoined
 
 ### Example
 ```kotlin
@@ -686,6 +645,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**kotlin.Array&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSession"></a>
+# **findSession**
+> AccountDetail findSession()
+
+Get basic information about session account
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+try {
+    val result : AccountDetail = apiInstance.findSession()
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSession")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSession")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AccountDetail**](AccountDetail.md)
 
 ### Authorization
 

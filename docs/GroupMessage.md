@@ -1,22 +1,17 @@
 
-# Message
+# GroupMessage
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
-**groupId** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **messageType** | [**inline**](#MessageTypeEnum) |  | 
 **message** | **kotlin.String** |  |  [optional]
-**medium** | [**Medium**](Medium.md) |  |  [optional]
-**account** | [**Account**](Account.md) |  | 
-**unread** | **kotlin.Boolean** |  | 
 **accountCount** | **kotlin.Long** |  | 
 **readAccountCount** | **kotlin.Long** |  | 
 **contentWarning** | **kotlin.Boolean** |  | 
 **contentDeleted** | **kotlin.Boolean** |  | 
 **postedAt** | **kotlin.Long** |  | 
-**next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
 
 
 <a name="MessageTypeEnum"></a>

@@ -5,8 +5,9 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete**](MessagesApi.md#delete) | **DELETE** /messages | Delete messages form a group
-[**find**](MessagesApi.md#find) | **GET** /messages | Search messages
-[**post**](MessagesApi.md#post) | **POST** /messages | Post a message to a group
+[**findMessages**](MessagesApi.md#findMessages) | **GET** /messages | Search messages
+[**postMedium**](MessagesApi.md#postMedium) | **POST** /messages/medium | Send a medium to a group
+[**postText**](MessagesApi.md#postText) | **POST** /messages/text | Send a text to a group
 
 
 <a name="delete"></a>
@@ -53,9 +54,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="find"></a>
-# **find**
-> Message find(id, ascending, since, offset, count)
+<a name="findMessages"></a>
+# **findMessages**
+> kotlin.Array&lt;Message&gt; findMessages(id, ascending, since, offset, count)
 
 Search messages
 
@@ -72,13 +73,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters messag
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of messages. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : Message = apiInstance.find(id, ascending, since, offset, count)
+    val result : kotlin.Array<Message> = apiInstance.findMessages(id, ascending, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MessagesApi#find")
+    println("4xx response calling MessagesApi#findMessages")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MessagesApi#find")
+    println("5xx response calling MessagesApi#findMessages")
     e.printStackTrace()
 }
 ```
@@ -95,6 +96,51 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+[**kotlin.Array&lt;Message&gt;**](Message.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="postMedium"></a>
+# **postMedium**
+> Message postMedium(body)
+
+Send a medium to a group
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = MessagesApi()
+val body : PostMediumBody =  // PostMediumBody | 
+try {
+    val result : Message = apiInstance.postMedium(body)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling MessagesApi#postMedium")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling MessagesApi#postMedium")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PostMediumBody**](PostMediumBody.md)|  |
+
+### Return type
+
 [**Message**](Message.md)
 
 ### Authorization
@@ -106,11 +152,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="post"></a>
-# **post**
-> MessageCreated post(body)
+<a name="postText"></a>
+# **postText**
+> Message postText(body)
 
-Post a message to a group
+Send a text to a group
 
 ### Example
 ```kotlin
@@ -119,15 +165,15 @@ Post a message to a group
 //import io.github.cactacea.backend.*
 
 val apiInstance = MessagesApi()
-val body : PostMessageBody =  // PostMessageBody | 
+val body : PostTextBody =  // PostTextBody | 
 try {
-    val result : MessageCreated = apiInstance.post(body)
+    val result : Message = apiInstance.postText(body)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MessagesApi#post")
+    println("4xx response calling MessagesApi#postText")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MessagesApi#post")
+    println("5xx response calling MessagesApi#postText")
     e.printStackTrace()
 }
 ```
@@ -136,11 +182,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostMessageBody**](PostMessageBody.md)|  |
+ **body** | [**PostTextBody**](PostTextBody.md)|  |
 
 ### Return type
 
-[**MessageCreated**](MessageCreated.md)
+[**Message**](Message.md)
 
 ### Authorization
 

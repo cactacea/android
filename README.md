@@ -36,17 +36,17 @@ All URIs are relative to *https://localhost*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**block**](docs/AccountsApi.md#block) | **POST** /accounts/{id}/blocks | Block a account
-*AccountsApi* | [**find**](docs/AccountsApi.md#find) | **GET** /accounts/{id} | Get information about a account
+*AccountsApi* | [**findDetail**](docs/AccountsApi.md#finddetail) | **GET** /accounts/{id} | Get information about a account
 *AccountsApi* | [**findFeeds**](docs/AccountsApi.md#findfeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
 *AccountsApi* | [**findFollowers**](docs/AccountsApi.md#findfollowers) | **GET** /accounts/{id}/followers | Get accounts list a account is followed by
 *AccountsApi* | [**findFollowing**](docs/AccountsApi.md#findfollowing) | **GET** /accounts/{id}/following | Get accounts list a account following
 *AccountsApi* | [**findFriends**](docs/AccountsApi.md#findfriends) | **GET** /accounts/{id}/friends | Get a account's friends list
 *AccountsApi* | [**findGroup**](docs/AccountsApi.md#findgroup) | **GET** /accounts/{id}/group | Get a direct message group to a account
-*AccountsApi* | [**findGroups**](docs/AccountsApi.md#findgroups) | **GET** /accounts/{id}/groups | Get groups list a account joined
+*AccountsApi* | [**findGroups**](docs/AccountsApi.md#findgroups) | **GET** /accounts/{id}/groups | Get groups list a account groupJoined
 *AccountsApi* | [**findLikes**](docs/AccountsApi.md#findlikes) | **GET** /accounts/{id}/likes | Get account's liked feeds
 *AccountsApi* | [**findStatus**](docs/AccountsApi.md#findstatus) | **GET** /accounts/{id}/status | Get account on
 *AccountsApi* | [**follow**](docs/AccountsApi.md#follow) | **POST** /accounts/{id}/follow | Follow a account
-*AccountsApi* | [**invite**](docs/AccountsApi.md#invite) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a invitation to a account
+*AccountsApi* | [**invite**](docs/AccountsApi.md#invite) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a groupInvitation to a account
 *AccountsApi* | [**join**](docs/AccountsApi.md#join) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
 *AccountsApi* | [**leave**](docs/AccountsApi.md#leave) | **POST** /accounts/{accountId}/groups/{groupId}/leave | Leave a account from a group
 *AccountsApi* | [**mute**](docs/AccountsApi.md#mute) | **POST** /accounts/{id}/mutes | Mute a account
@@ -89,18 +89,18 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**report**](docs/GroupsApi.md#report) | **POST** /groups/{id}/reports | Report a group
 *GroupsApi* | [**show**](docs/GroupsApi.md#show) | **DELETE** /groups/{id}/hides | Show a group
 *GroupsApi* | [**update**](docs/GroupsApi.md#update) | **PUT** /groups/{id} | Update a group
-*InvitationsApi* | [**accept**](docs/InvitationsApi.md#accept) | **POST** /invitations/{id}/accept | Accept a invitation
-*InvitationsApi* | [**create**](docs/InvitationsApi.md#create) | **POST** /groups/{id}/invitations | Post a invitation to some accounts
-*InvitationsApi* | [**reject**](docs/InvitationsApi.md#reject) | **POST** /invitations/{id}/reject | Reject a invitation
-*MediumsApi* | [**deleteMedium**](docs/MediumsApi.md#deletemedium) | **DELETE** /mediums/{id} | Delete a medium
+*InvitationsApi* | [**accept**](docs/InvitationsApi.md#accept) | **POST** /invitations/{id}/accept | Accept a groupInvitation
+*InvitationsApi* | [**create**](docs/InvitationsApi.md#create) | **POST** /groups/{id}/invitations | Post a groupInvitation to some accounts
+*InvitationsApi* | [**reject**](docs/InvitationsApi.md#reject) | **POST** /invitations/{id}/reject | Reject a groupInvitation
+*MediumsApi* | [**delete**](docs/MediumsApi.md#delete) | **DELETE** /mediums/{id} | Delete a medium
 *MediumsApi* | [**findMedium**](docs/MediumsApi.md#findmedium) | **GET** /mediums/:* | Get a medium
-*MediumsApi* | [**uploadMedium**](docs/MediumsApi.md#uploadmedium) | **POST** /mediums | Upload a medium
+*MediumsApi* | [**upload**](docs/MediumsApi.md#upload) | **POST** /mediums | Upload a medium
 *MessagesApi* | [**delete**](docs/MessagesApi.md#delete) | **DELETE** /messages | Delete messages form a group
-*MessagesApi* | [**find**](docs/MessagesApi.md#find) | **GET** /messages | Search messages
-*MessagesApi* | [**post**](docs/MessagesApi.md#post) | **POST** /messages | Post a message to a group
+*MessagesApi* | [**findMessages**](docs/MessagesApi.md#findmessages) | **GET** /messages | Search messages
+*MessagesApi* | [**postMedium**](docs/MessagesApi.md#postmedium) | **POST** /messages/medium | Send a medium to a group
+*MessagesApi* | [**postText**](docs/MessagesApi.md#posttext) | **POST** /messages/text | Send a text to a group
 *SessionApi* | [**deleteProfileImage**](docs/SessionApi.md#deleteprofileimage) | **DELETE** /session/profile_image | Remove the profile image
 *SessionApi* | [**existAccountName**](docs/SessionApi.md#existaccountname) | **GET** /session/account_name/{accountName} | Confirm account name exist
-*SessionApi* | [**find**](docs/SessionApi.md#find) | **GET** /session | Get basic information about session account
 *SessionApi* | [**findAccounts**](docs/SessionApi.md#findaccounts) | **GET** /session/accounts | Search accounts
 *SessionApi* | [**findFeeds**](docs/SessionApi.md#findfeeds) | **GET** /session/feeds | Get feeds list session account posted
 *SessionApi* | [**findFollowers**](docs/SessionApi.md#findfollowers) | **GET** /session/followers | Get accounts list session account is followed by
@@ -108,10 +108,11 @@ Class | Method | HTTP request | Description
 *SessionApi* | [**findFriendRequests**](docs/SessionApi.md#findfriendrequests) | **GET** /session/requests | Get friend requests list session account created or received
 *SessionApi* | [**findFriends**](docs/SessionApi.md#findfriends) | **GET** /session/friends | Get friends list
 *SessionApi* | [**findGroupInvitations**](docs/SessionApi.md#findgroupinvitations) | **GET** /session/invitations | Get invitations list session account received
-*SessionApi* | [**findGroups**](docs/SessionApi.md#findgroups) | **GET** /session/groups | Get groups list session account joined
-*SessionApi* | [**findHiddenGroups**](docs/SessionApi.md#findhiddengroups) | **GET** /session/hides | Get hidden groups list session account joined
+*SessionApi* | [**findGroups**](docs/SessionApi.md#findgroups) | **GET** /session/groups | Get groups list session account groupJoined
+*SessionApi* | [**findHiddenGroups**](docs/SessionApi.md#findhiddengroups) | **GET** /session/hides | Get hidden groups list session account groupJoined
 *SessionApi* | [**findLikes**](docs/SessionApi.md#findlikes) | **GET** /session/likes | Get feeds list session account set a like
 *SessionApi* | [**findMutingAccounts**](docs/SessionApi.md#findmutingaccounts) | **GET** /session/mutes | Get accounts list session account muted
+*SessionApi* | [**findSession**](docs/SessionApi.md#findsession) | **GET** /session | Get basic information about session account
 *SessionApi* | [**signOut**](docs/SessionApi.md#signout) | **DELETE** /session | Sign out
 *SessionApi* | [**updateAccountName**](docs/SessionApi.md#updateaccountname) | **PUT** /session/account_name | Update the account name
 *SessionApi* | [**updatePassword**](docs/SessionApi.md#updatepassword) | **PUT** /session/password | Update the password
@@ -119,10 +120,10 @@ Class | Method | HTTP request | Description
 *SessionApi* | [**updateProfileImage**](docs/SessionApi.md#updateprofileimage) | **PUT** /session/profile_image | Update the profile image
 *SessionsApi* | [**signIn**](docs/SessionsApi.md#signin) | **GET** /sessions | Sign in
 *SessionsApi* | [**signUp**](docs/SessionsApi.md#signup) | **POST** /sessions | Sign up
-*SettingsApi* | [**findSessionPushNotificationSettings**](docs/SettingsApi.md#findsessionpushnotificationsettings) | **GET** /session/push_notification | Get push notification settings
-*SettingsApi* | [**updateSessionDeviceStatus**](docs/SettingsApi.md#updatesessiondevicestatus) | **POST** /session/status | Update device status
-*SettingsApi* | [**updateSessionPushNotificationSettings**](docs/SettingsApi.md#updatesessionpushnotificationsettings) | **PUT** /session/push_notification | Update ths push notification settings
-*SettingsApi* | [**updateSessionPushToken**](docs/SettingsApi.md#updatesessionpushtoken) | **POST** /session/push_token | Update device push token
+*SettingsApi* | [**findPushNotificationSettings**](docs/SettingsApi.md#findpushnotificationsettings) | **GET** /session/push_notification | Get push notification settings
+*SettingsApi* | [**updateDeviceStatus**](docs/SettingsApi.md#updatedevicestatus) | **POST** /session/status | Update device status
+*SettingsApi* | [**updatePushNotificationSettings**](docs/SettingsApi.md#updatepushnotificationsettings) | **PUT** /session/push_notification | Update ths push notification settings
+*SettingsApi* | [**updatePushToken**](docs/SettingsApi.md#updatepushtoken) | **POST** /session/push_token | Update device push token
 *SystemApi* | [**pingGet**](docs/SystemApi.md#pingget) | **GET** /ping | Health checking
 
 
@@ -130,6 +131,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [io.github.cactacea.backend.Account](docs/Account.md)
+ - [io.github.cactacea.backend.AccountDetail](docs/AccountDetail.md)
  - [io.github.cactacea.backend.AccountId](docs/AccountId.md)
  - [io.github.cactacea.backend.AccountNameNotExists](docs/AccountNameNotExists.md)
  - [io.github.cactacea.backend.AccountStatus](docs/AccountStatus.md)
@@ -156,7 +158,6 @@ Class | Method | HTTP request | Description
  - [io.github.cactacea.backend.MediumCreated](docs/MediumCreated.md)
  - [io.github.cactacea.backend.MediumId](docs/MediumId.md)
  - [io.github.cactacea.backend.Message](docs/Message.md)
- - [io.github.cactacea.backend.MessageCreated](docs/MessageCreated.md)
  - [io.github.cactacea.backend.PostAccountReportBody](docs/PostAccountReportBody.md)
  - [io.github.cactacea.backend.PostActiveStatusBody](docs/PostActiveStatusBody.md)
  - [io.github.cactacea.backend.PostCommentBody](docs/PostCommentBody.md)
@@ -167,12 +168,14 @@ Class | Method | HTTP request | Description
  - [io.github.cactacea.backend.PostGroupBody](docs/PostGroupBody.md)
  - [io.github.cactacea.backend.PostGroupReportBody](docs/PostGroupReportBody.md)
  - [io.github.cactacea.backend.PostInvitationAccountsBody](docs/PostInvitationAccountsBody.md)
- - [io.github.cactacea.backend.PostMessageBody](docs/PostMessageBody.md)
+ - [io.github.cactacea.backend.PostMediumBody](docs/PostMediumBody.md)
  - [io.github.cactacea.backend.PostSignUpBody](docs/PostSignUpBody.md)
+ - [io.github.cactacea.backend.PostTextBody](docs/PostTextBody.md)
  - [io.github.cactacea.backend.PushNotificationSetting](docs/PushNotificationSetting.md)
  - [io.github.cactacea.backend.PutAccountDisplayNameBody](docs/PutAccountDisplayNameBody.md)
  - [io.github.cactacea.backend.PutFeedBody](docs/PutFeedBody.md)
  - [io.github.cactacea.backend.PutGroupBody](docs/PutGroupBody.md)
+ - [io.github.cactacea.backend.PutNotificationSettingBody](docs/PutNotificationSettingBody.md)
  - [io.github.cactacea.backend.PutSessionAccountNameBody](docs/PutSessionAccountNameBody.md)
  - [io.github.cactacea.backend.PutSessionPasswordBody](docs/PutSessionPasswordBody.md)
  - [io.github.cactacea.backend.PutSessionProfileBody](docs/PutSessionProfileBody.md)
@@ -207,7 +210,7 @@ Class | Method | HTTP request | Description
   - feed_likes: to like and unlike feed on a user’s behalf
   - follower_list: to read the list of followers and followed-by users
   - groups: to create and delete groups on a user&#39;s behalf
-  - relationships: to follows and unfollow accounts on a user’s behalf
+  - relationships: to following and unfollow accounts on a user’s behalf
   - reports: to report account, feed, group and comment on a user’s behalf
   - group_invitations: to create, delete, accept and reject invitations on a user&#39;s behalf
   - media: to create and delete media on a user’s behalf

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account** | [**Account**](Account.md) |  | 
+**account** | [**AccountDetail**](AccountDetail.md) |  | 
 **accessToken** | **kotlin.String** |  | 
 
 

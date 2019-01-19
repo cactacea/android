@@ -4,16 +4,16 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accept**](InvitationsApi.md#accept) | **POST** /invitations/{id}/accept | Accept a invitation
-[**create**](InvitationsApi.md#create) | **POST** /groups/{id}/invitations | Post a invitation to some accounts
-[**reject**](InvitationsApi.md#reject) | **POST** /invitations/{id}/reject | Reject a invitation
+[**accept**](InvitationsApi.md#accept) | **POST** /invitations/{id}/accept | Accept a groupInvitation
+[**create**](InvitationsApi.md#create) | **POST** /groups/{id}/invitations | Post a groupInvitation to some accounts
+[**reject**](InvitationsApi.md#reject) | **POST** /invitations/{id}/reject | Reject a groupInvitation
 
 
 <a name="accept"></a>
 # **accept**
 > accept(id)
 
-Accept a invitation
+Accept a groupInvitation
 
 ### Example
 ```kotlin
@@ -22,7 +22,7 @@ Accept a invitation
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group invitation identifier.
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group groupInvitation identifier.
 try {
     apiInstance.accept(id)
 } catch (e: ClientException) {
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group invitation identifier. |
+ **id** | **java.math.BigDecimal**| Group groupInvitation identifier. |
 
 ### Return type
 
@@ -57,7 +57,7 @@ null (empty response body)
 # **create**
 > InvitationCreated create(id, body)
 
-Post a invitation to some accounts
+Post a groupInvitation to some accounts
 
 ### Example
 ```kotlin
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 # **reject**
 > reject(id)
 
-Reject a invitation
+Reject a groupInvitation
 
 ### Example
 ```kotlin
@@ -113,7 +113,7 @@ Reject a invitation
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group invitation identifier.
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group groupInvitation identifier.
 try {
     apiInstance.reject(id)
 } catch (e: ClientException) {
@@ -129,7 +129,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group invitation identifier. |
+ **id** | **java.math.BigDecimal**| Group groupInvitation identifier. |
 
 ### Return type
 

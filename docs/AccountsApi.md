@@ -5,17 +5,17 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**block**](AccountsApi.md#block) | **POST** /accounts/{id}/blocks | Block a account
-[**find**](AccountsApi.md#find) | **GET** /accounts/{id} | Get information about a account
+[**findDetail**](AccountsApi.md#findDetail) | **GET** /accounts/{id} | Get information about a account
 [**findFeeds**](AccountsApi.md#findFeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
 [**findFollowers**](AccountsApi.md#findFollowers) | **GET** /accounts/{id}/followers | Get accounts list a account is followed by
 [**findFollowing**](AccountsApi.md#findFollowing) | **GET** /accounts/{id}/following | Get accounts list a account following
 [**findFriends**](AccountsApi.md#findFriends) | **GET** /accounts/{id}/friends | Get a account&#39;s friends list
 [**findGroup**](AccountsApi.md#findGroup) | **GET** /accounts/{id}/group | Get a direct message group to a account
-[**findGroups**](AccountsApi.md#findGroups) | **GET** /accounts/{id}/groups | Get groups list a account joined
+[**findGroups**](AccountsApi.md#findGroups) | **GET** /accounts/{id}/groups | Get groups list a account groupJoined
 [**findLikes**](AccountsApi.md#findLikes) | **GET** /accounts/{id}/likes | Get account&#39;s liked feeds
 [**findStatus**](AccountsApi.md#findStatus) | **GET** /accounts/{id}/status | Get account on
 [**follow**](AccountsApi.md#follow) | **POST** /accounts/{id}/follow | Follow a account
-[**invite**](AccountsApi.md#invite) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a invitation to a account
+[**invite**](AccountsApi.md#invite) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a groupInvitation to a account
 [**join**](AccountsApi.md#join) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
 [**leave**](AccountsApi.md#leave) | **POST** /accounts/{accountId}/groups/{groupId}/leave | Leave a account from a group
 [**mute**](AccountsApi.md#mute) | **POST** /accounts/{id}/mutes | Mute a account
@@ -73,9 +73,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="find"></a>
-# **find**
-> Account find(id)
+<a name="findDetail"></a>
+# **findDetail**
+> AccountDetail findDetail(id)
 
 Get information about a account
 
@@ -88,13 +88,13 @@ Get information about a account
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
 try {
-    val result : Account = apiInstance.find(id)
+    val result : AccountDetail = apiInstance.findDetail(id)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#find")
+    println("4xx response calling AccountsApi#findDetail")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#find")
+    println("5xx response calling AccountsApi#findDetail")
     e.printStackTrace()
 }
 ```
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Account**](Account.md)
+[**AccountDetail**](AccountDetail.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 <a name="findFriends"></a>
 # **findFriends**
-> Account findFriends(id, since, offset, count)
+> kotlin.Array&lt;Account&gt; findFriends(id, since, offset, count)
 
 Get a account&#39;s friends list
 
@@ -289,7 +289,7 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friend
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friends. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : Account = apiInstance.findFriends(id, since, offset, count)
+    val result : kotlin.Array<Account> = apiInstance.findFriends(id, since, offset, count)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#findFriends")
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Account**](Account.md)
+[**kotlin.Array&lt;Account&gt;**](Account.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 # **findGroups**
 > kotlin.Array&lt;Group&gt; findGroups(id, since, offset, count)
 
-Get groups list a account joined
+Get groups list a account groupJoined
 
 ### Example
 ```kotlin
@@ -562,7 +562,7 @@ null (empty response body)
 # **invite**
 > InvitationCreated invite(accountId, groupId)
 
-Create a invitation to a account
+Create a groupInvitation to a account
 
 ### Example
 ```kotlin
