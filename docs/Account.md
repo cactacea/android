@@ -12,6 +12,10 @@ Name | Type | Description | Notes
 **friendRequestInProgress** | **kotlin.Boolean** |  | 
 **following** | **kotlin.Boolean** |  | 
 **isFollower** | **kotlin.Boolean** |  | 
+**followingCount** | **kotlin.Long** |  | 
+**followerCount** | **kotlin.Long** |  | 
+**friendCount** | **kotlin.Long** |  | 
+**feedsCount** | **kotlin.Long** |  | 
 **muting** | **kotlin.Boolean** |  | 
 **blocking** | **kotlin.Boolean** |  | 
 **web** | **kotlin.String** |  |  [optional]

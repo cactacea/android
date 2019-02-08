@@ -131,7 +131,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [io.github.cactacea.backend.Account](docs/Account.md)
- - [io.github.cactacea.backend.AccountDetail](docs/AccountDetail.md)
  - [io.github.cactacea.backend.AccountId](docs/AccountId.md)
  - [io.github.cactacea.backend.AccountNameNotExists](docs/AccountNameNotExists.md)
  - [io.github.cactacea.backend.AccountStatus](docs/AccountStatus.md)

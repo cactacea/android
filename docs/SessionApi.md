@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 <a name="findSession"></a>
 # **findSession**
-> AccountDetail findSession()
+> Account findSession()
 
 Get basic information about session account
 
@@ -669,7 +669,7 @@ Get basic information about session account
 
 val apiInstance = SessionApi()
 try {
-    val result : AccountDetail = apiInstance.findSession()
+    val result : Account = apiInstance.findSession()
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SessionApi#findSession")
@@ -685,7 +685,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AccountDetail**](AccountDetail.md)
+[**Account**](Account.md)
 
 ### Authorization
 

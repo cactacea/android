@@ -75,7 +75,7 @@ null (empty response body)
 
 <a name="findDetail"></a>
 # **findDetail**
-> AccountDetail findDetail(id)
+> Account findDetail(id)
 
 Get information about a account
 
@@ -88,7 +88,7 @@ Get information about a account
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
 try {
-    val result : AccountDetail = apiInstance.findDetail(id)
+    val result : Account = apiInstance.findDetail(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#findDetail")
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountDetail**](AccountDetail.md)
+[**Account**](Account.md)
 
 ### Authorization
 
