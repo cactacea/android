@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**block**](AccountsApi.md#block) | **POST** /accounts/{id}/blocks | Block a account
-[**findDetail**](AccountsApi.md#findDetail) | **GET** /accounts/{id} | Get information about a account
+[**find**](AccountsApi.md#find) | **GET** /accounts/{id} | Get information about a account
 [**findFeeds**](AccountsApi.md#findFeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
 [**findFollowers**](AccountsApi.md#findFollowers) | **GET** /accounts/{id}/followers | Get accounts list a account is followed by
 [**findFollowing**](AccountsApi.md#findFollowing) | **GET** /accounts/{id}/following | Get accounts list a account following
@@ -73,9 +73,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findDetail"></a>
-# **findDetail**
-> Account findDetail(id)
+<a name="find"></a>
+# **find**
+> Account find(id)
 
 Get information about a account
 
@@ -88,13 +88,13 @@ Get information about a account
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
 try {
-    val result : Account = apiInstance.findDetail(id)
+    val result : Account = apiInstance.find(id)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#findDetail")
+    println("4xx response calling AccountsApi#find")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#findDetail")
+    println("5xx response calling AccountsApi#find")
     e.printStackTrace()
 }
 ```

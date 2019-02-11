@@ -36,7 +36,7 @@ All URIs are relative to *https://localhost*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**block**](docs/AccountsApi.md#block) | **POST** /accounts/{id}/blocks | Block a account
-*AccountsApi* | [**findDetail**](docs/AccountsApi.md#finddetail) | **GET** /accounts/{id} | Get information about a account
+*AccountsApi* | [**find**](docs/AccountsApi.md#find) | **GET** /accounts/{id} | Get information about a account
 *AccountsApi* | [**findFeeds**](docs/AccountsApi.md#findfeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
 *AccountsApi* | [**findFollowers**](docs/AccountsApi.md#findfollowers) | **GET** /accounts/{id}/followers | Get accounts list a account is followed by
 *AccountsApi* | [**findFollowing**](docs/AccountsApi.md#findfollowing) | **GET** /accounts/{id}/following | Get accounts list a account following
