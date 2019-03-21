@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **followingCount** | **kotlin.Long** |  | 
 **followerCount** | **kotlin.Long** |  | 
 **friendCount** | **kotlin.Long** |  | 
-**feedsCount** | **kotlin.Long** |  | 
+**feedCount** | **kotlin.Long** |  | 
 **muting** | **kotlin.Boolean** |  | 
 **blocking** | **kotlin.Boolean** |  | 
 **web** | **kotlin.String** |  |  [optional]

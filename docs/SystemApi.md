@@ -4,12 +4,12 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**pingGet**](SystemApi.md#pingGet) | **GET** /ping | Health checking
+[**ping**](SystemApi.md#ping) | **GET** /ping | Health checking
 
 
-<a name="pingGet"></a>
-# **pingGet**
-> pingGet()
+<a name="ping"></a>
+# **ping**
+> ping()
 
 Health checking
 
@@ -21,12 +21,12 @@ Health checking
 
 val apiInstance = SystemApi()
 try {
-    apiInstance.pingGet()
+    apiInstance.ping()
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#pingGet")
+    println("4xx response calling SystemApi#ping")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#pingGet")
+    println("5xx response calling SystemApi#ping")
     e.printStackTrace()
 }
 ```

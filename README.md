@@ -124,7 +124,7 @@ Class | Method | HTTP request | Description
 *SettingsApi* | [**updateDeviceStatus**](docs/SettingsApi.md#updatedevicestatus) | **POST** /session/status | Update device status
 *SettingsApi* | [**updatePushNotificationSettings**](docs/SettingsApi.md#updatepushnotificationsettings) | **PUT** /session/push_notification | Update ths push notification settings
 *SettingsApi* | [**updatePushToken**](docs/SettingsApi.md#updatepushtoken) | **POST** /session/push_token | Update device push token
-*SystemApi* | [**pingGet**](docs/SystemApi.md#pingget) | **GET** /ping | Health checking
+*SystemApi* | [**ping**](docs/SystemApi.md#ping) | **GET** /ping | Health checking
 
 
 <a name="documentation-for-models"></a>
