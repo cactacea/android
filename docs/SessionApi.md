@@ -6,18 +6,18 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteProfileImage**](SessionApi.md#deleteProfileImage) | **DELETE** /session/profile_image | Remove the profile image
 [**existAccountName**](SessionApi.md#existAccountName) | **GET** /session/account_name/{accountName} | Confirm account name exist
-[**findAccounts**](SessionApi.md#findAccounts) | **GET** /session/accounts | Search accounts
-[**findFeeds**](SessionApi.md#findFeeds) | **GET** /session/feeds | Get feeds list session account posted
-[**findFollowers**](SessionApi.md#findFollowers) | **GET** /session/followers | Get accounts list session account is followed by
-[**findFollowing**](SessionApi.md#findFollowing) | **GET** /session/following | Get accounts list session account followed
+[**findAccounts**](SessionApi.md#findAccounts) | **GET** /accounts | Find accounts
 [**findFriendRequests**](SessionApi.md#findFriendRequests) | **GET** /session/requests | Get friend requests list session account created or received
-[**findFriends**](SessionApi.md#findFriends) | **GET** /session/friends | Get friends list
 [**findGroupInvitations**](SessionApi.md#findGroupInvitations) | **GET** /session/invitations | Get invitations list session account received
-[**findGroups**](SessionApi.md#findGroups) | **GET** /session/groups | Get groups list session account groupJoined
 [**findHiddenGroups**](SessionApi.md#findHiddenGroups) | **GET** /session/hides | Get hidden groups list session account groupJoined
-[**findLikes**](SessionApi.md#findLikes) | **GET** /session/likes | Get feeds list session account set a like
 [**findMutingAccounts**](SessionApi.md#findMutingAccounts) | **GET** /session/mutes | Get accounts list session account muted
 [**findSession**](SessionApi.md#findSession) | **GET** /session | Get basic information about session account
+[**findSessionFeeds**](SessionApi.md#findSessionFeeds) | **GET** /session/feeds | Get feeds list session account posted
+[**findSessionFeedsLiked**](SessionApi.md#findSessionFeedsLiked) | **GET** /session/likes | Get feeds list session account set a like
+[**findSessionFollowers**](SessionApi.md#findSessionFollowers) | **GET** /session/followers | Get accounts list session account is followed by
+[**findSessionFollowing**](SessionApi.md#findSessionFollowing) | **GET** /session/following | Get accounts list session account followed
+[**findSessionFriends**](SessionApi.md#findSessionFriends) | **GET** /session/friends | Get friends list
+[**findSessionGroups**](SessionApi.md#findSessionGroups) | **GET** /session/groups | Get groups list session account groupJoined
 [**signOut**](SessionApi.md#signOut) | **DELETE** /session | Sign out
 [**updateAccountName**](SessionApi.md#updateAccountName) | **PUT** /session/account_name | Update the account name
 [**updatePassword**](SessionApi.md#updatePassword) | **PUT** /session/password | Update the password
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 # **findAccounts**
 > kotlin.Array&lt;Account&gt; findAccounts(accountName, since, offset, count)
 
-Search accounts
+Find accounts
 
 ### Example
 ```kotlin
@@ -147,153 +147,6 @@ Name | Type | Description  | Notes
  **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
  **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
  **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 accounts. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Account&gt;**](Account.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findFeeds"></a>
-# **findFeeds**
-> kotlin.Array&lt;Feed&gt; findFeeds(since, offset, count)
-
-Get feeds list session account posted
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Feed> = apiInstance.findFeeds(since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findFeeds")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findFeeds")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Feed&gt;**](Feed.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findFollowers"></a>
-# **findFollowers**
-> kotlin.Array&lt;Account&gt; findFollowers(since, offset, count)
-
-Get accounts list session account is followed by
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters followers which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of followers. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Account> = apiInstance.findFollowers(since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findFollowers")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findFollowers")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters followers which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of followers. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Account&gt;**](Account.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findFollowing"></a>
-# **findFollowing**
-> kotlin.Array&lt;Account&gt; findFollowing(since, offset, count)
-
-Get accounts list session account followed
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters follower which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of follower. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Account> = apiInstance.findFollowing(since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findFollowing")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findFollowing")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters follower which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of follower. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
@@ -359,57 +212,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findFriends"></a>
-# **findFriends**
-> kotlin.Array&lt;Account&gt; findFriends(since, offset, count, sortType)
-
-Get friends list
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friends which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friends. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-val sortType : kotlin.String = sortType_example // kotlin.String | Friends which sorted by accountName or friendsAt. Default is friendsAt.
-try {
-    val result : kotlin.Array<Account> = apiInstance.findFriends(since, offset, count, sortType)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findFriends")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findFriends")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters friends which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of friends. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
- **sortType** | **kotlin.String**| Friends which sorted by accountName or friendsAt. Default is friendsAt. | [optional] [enum: friendsAt, accountName]
-
-### Return type
-
-[**kotlin.Array&lt;Account&gt;**](Account.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="findGroupInvitations"></a>
 # **findGroupInvitations**
 > kotlin.Array&lt;GroupInvitation&gt; findGroupInvitations(since, offset, count)
@@ -459,55 +261,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findGroups"></a>
-# **findGroups**
-> kotlin.Array&lt;Group&gt; findGroups(since, offset, count)
-
-Get groups list session account groupJoined
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of groups. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Group> = apiInstance.findGroups(since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findGroups")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findGroups")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Group&gt;**](Group.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="findHiddenGroups"></a>
 # **findHiddenGroups**
 > kotlin.Array&lt;Group&gt; findHiddenGroups(since, offset, count)
@@ -547,55 +300,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**kotlin.Array&lt;Group&gt;**](Group.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findLikes"></a>
-# **findLikes**
-> kotlin.Array&lt;Feed&gt; findLikes(since, offset, count)
-
-Get feeds list session account set a like
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters entries which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Feed> = apiInstance.findLikes(since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findLikes")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findLikes")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters entries which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Feed&gt;**](Feed.md)
 
 ### Authorization
 
@@ -686,6 +390,302 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Account**](Account.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionFeeds"></a>
+# **findSessionFeeds**
+> kotlin.Array&lt;Feed&gt; findSessionFeeds(since, offset, count)
+
+Get feeds list session account posted
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Feed> = apiInstance.findSessionFeeds(since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionFeeds")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionFeeds")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Feed&gt;**](Feed.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionFeedsLiked"></a>
+# **findSessionFeedsLiked**
+> kotlin.Array&lt;Feed&gt; findSessionFeedsLiked(since, offset, count)
+
+Get feeds list session account set a like
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters entries which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Feed> = apiInstance.findSessionFeedsLiked(since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionFeedsLiked")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionFeedsLiked")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **since** | **java.math.BigDecimal**| Filters entries which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Feed&gt;**](Feed.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionFollowers"></a>
+# **findSessionFollowers**
+> kotlin.Array&lt;Account&gt; findSessionFollowers(since, offset, count)
+
+Get accounts list session account is followed by
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters followers which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of followers. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Account> = apiInstance.findSessionFollowers(since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionFollowers")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionFollowers")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **since** | **java.math.BigDecimal**| Filters followers which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of followers. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionFollowing"></a>
+# **findSessionFollowing**
+> kotlin.Array&lt;Account&gt; findSessionFollowing(since, offset, count)
+
+Get accounts list session account followed
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters follower which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of follower. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Account> = apiInstance.findSessionFollowing(since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionFollowing")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionFollowing")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **since** | **java.math.BigDecimal**| Filters follower which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of follower. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionFriends"></a>
+# **findSessionFriends**
+> kotlin.Array&lt;Account&gt; findSessionFriends(since, offset, count, sortType)
+
+Get friends list
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friends which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friends. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+val sortType : kotlin.String = sortType_example // kotlin.String | Friends which sorted by accountName or friendsAt. Default is friendsAt.
+try {
+    val result : kotlin.Array<Account> = apiInstance.findSessionFriends(since, offset, count, sortType)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionFriends")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionFriends")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **since** | **java.math.BigDecimal**| Filters friends which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of friends. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **sortType** | **kotlin.String**| Friends which sorted by accountName or friendsAt. Default is friendsAt. | [optional] [enum: friendsAt, accountName]
+
+### Return type
+
+[**kotlin.Array&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionGroups"></a>
+# **findSessionGroups**
+> kotlin.Array&lt;Group&gt; findSessionGroups(since, offset, count)
+
+Get groups list session account groupJoined
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of groups. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Group> = apiInstance.findSessionGroups(since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionGroups")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionGroups")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Group&gt;**](Group.md)
 
 ### Authorization
 

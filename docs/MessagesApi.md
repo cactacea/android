@@ -4,15 +4,15 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete**](MessagesApi.md#delete) | **DELETE** /messages | Delete messages form a group
+[**deleteMessage**](MessagesApi.md#deleteMessage) | **DELETE** /messages | Delete messages form a group
 [**findMessages**](MessagesApi.md#findMessages) | **GET** /messages | Search messages
 [**postMedium**](MessagesApi.md#postMedium) | **POST** /messages/medium | Send a medium to a group
 [**postText**](MessagesApi.md#postText) | **POST** /messages/text | Send a text to a group
 
 
-<a name="delete"></a>
-# **delete**
-> delete(body)
+<a name="deleteMessage"></a>
+# **deleteMessage**
+> deleteMessage(body)
 
 Delete messages form a group
 
@@ -25,12 +25,12 @@ Delete messages form a group
 val apiInstance = MessagesApi()
 val body : DeleteMessagesBody =  // DeleteMessagesBody | 
 try {
-    apiInstance.delete(body)
+    apiInstance.deleteMessage(body)
 } catch (e: ClientException) {
-    println("4xx response calling MessagesApi#delete")
+    println("4xx response calling MessagesApi#deleteMessage")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MessagesApi#delete")
+    println("5xx response calling MessagesApi#deleteMessage")
     e.printStackTrace()
 }
 ```

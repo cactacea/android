@@ -5,28 +5,28 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**block**](AccountsApi.md#block) | **POST** /accounts/{id}/blocks | Block a account
-[**find**](AccountsApi.md#find) | **GET** /accounts/{id} | Get information about a account
-[**findFeeds**](AccountsApi.md#findFeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
-[**findFollowers**](AccountsApi.md#findFollowers) | **GET** /accounts/{id}/followers | Get accounts list a account is followed by
+[**findAccount**](AccountsApi.md#findAccount) | **GET** /accounts/{id} | Get information about a account
+[**findAccountFeeds**](AccountsApi.md#findAccountFeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
+[**findAccountFeedsLiked**](AccountsApi.md#findAccountFeedsLiked) | **GET** /accounts/{id}/likes | Get account&#39;s liked feeds
+[**findAccountFollowers**](AccountsApi.md#findAccountFollowers) | **GET** /accounts/{id}/followers | Get accounts list a account is followed by
+[**findAccountFriends**](AccountsApi.md#findAccountFriends) | **GET** /accounts/{id}/friends | Get a account&#39;s friends list
+[**findAccountGroup**](AccountsApi.md#findAccountGroup) | **GET** /accounts/{id}/group | Get a direct message group to a account
+[**findAccountGroups**](AccountsApi.md#findAccountGroups) | **GET** /accounts/{id}/groups | Get groups list a account groupJoined
+[**findAccountStatus**](AccountsApi.md#findAccountStatus) | **GET** /accounts/{id}/status | Get account on
 [**findFollowing**](AccountsApi.md#findFollowing) | **GET** /accounts/{id}/following | Get accounts list a account following
-[**findFriends**](AccountsApi.md#findFriends) | **GET** /accounts/{id}/friends | Get a account&#39;s friends list
-[**findGroup**](AccountsApi.md#findGroup) | **GET** /accounts/{id}/group | Get a direct message group to a account
-[**findGroups**](AccountsApi.md#findGroups) | **GET** /accounts/{id}/groups | Get groups list a account groupJoined
-[**findLikes**](AccountsApi.md#findLikes) | **GET** /accounts/{id}/likes | Get account&#39;s liked feeds
-[**findStatus**](AccountsApi.md#findStatus) | **GET** /accounts/{id}/status | Get account on
-[**follow**](AccountsApi.md#follow) | **POST** /accounts/{id}/follow | Follow a account
-[**invite**](AccountsApi.md#invite) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a groupInvitation to a account
-[**join**](AccountsApi.md#join) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
-[**leave**](AccountsApi.md#leave) | **POST** /accounts/{accountId}/groups/{groupId}/leave | Leave a account from a group
-[**mute**](AccountsApi.md#mute) | **POST** /accounts/{id}/mutes | Mute a account
-[**report**](AccountsApi.md#report) | **POST** /accounts/{id}/reports | Report a account
+[**followAccount**](AccountsApi.md#followAccount) | **POST** /accounts/{id}/follow | Follow a account
+[**inviteAccount**](AccountsApi.md#inviteAccount) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a groupInvitation to a account
+[**joinAccount**](AccountsApi.md#joinAccount) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
+[**leaveAccount**](AccountsApi.md#leaveAccount) | **POST** /accounts/{accountId}/groups/{groupId}/leave | Leave a account from a group
+[**muteAccount**](AccountsApi.md#muteAccount) | **POST** /accounts/{id}/mutes | Mute a account
+[**reportAccount**](AccountsApi.md#reportAccount) | **POST** /accounts/{id}/reports | Report a account
 [**request**](AccountsApi.md#request) | **POST** /accounts/{id}/requests | Create a friend request to a account
 [**unblock**](AccountsApi.md#unblock) | **DELETE** /accounts/{id}/blocks | Unblock a account
-[**unfollow**](AccountsApi.md#unfollow) | **DELETE** /accounts/{id}/follow | UnFollow a account
+[**unfollowAccount**](AccountsApi.md#unfollowAccount) | **DELETE** /accounts/{id}/follow | UnFollow a account
 [**unfriend**](AccountsApi.md#unfriend) | **DELETE** /accounts/{id}/friends | Remove friendship to a account
-[**unmute**](AccountsApi.md#unmute) | **DELETE** /accounts/{id}/mutes | Unmute a account
+[**unmuteAccount**](AccountsApi.md#unmuteAccount) | **DELETE** /accounts/{id}/mutes | Unmute a account
 [**unrequest**](AccountsApi.md#unrequest) | **DELETE** /accounts/{id}/requests | Remove a friend request to a account
-[**updateDisplayName**](AccountsApi.md#updateDisplayName) | **PUT** /accounts/{id}/display_name | Change display name to session account
+[**updateAccountDisplayName**](AccountsApi.md#updateAccountDisplayName) | **PUT** /accounts/{id}/display_name | Change display name to session account
 
 
 <a name="block"></a>
@@ -73,9 +73,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="find"></a>
-# **find**
-> Account find(id)
+<a name="findAccount"></a>
+# **findAccount**
+> Account findAccount(id)
 
 Get information about a account
 
@@ -88,13 +88,13 @@ Get information about a account
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
 try {
-    val result : Account = apiInstance.find(id)
+    val result : Account = apiInstance.findAccount(id)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#find")
+    println("4xx response calling AccountsApi#findAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#find")
+    println("5xx response calling AccountsApi#findAccount")
     e.printStackTrace()
 }
 ```
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findFeeds"></a>
-# **findFeeds**
-> kotlin.Array&lt;Feed&gt; findFeeds(id, since, offset, count)
+<a name="findAccountFeeds"></a>
+# **findAccountFeeds**
+> kotlin.Array&lt;Feed&gt; findAccountFeeds(id, since, offset, count)
 
 Get feeds list a account posted
 
@@ -136,13 +136,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds 
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Feed> = apiInstance.findFeeds(id, since, offset, count)
+    val result : kotlin.Array<Feed> = apiInstance.findAccountFeeds(id, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#findFeeds")
+    println("4xx response calling AccountsApi#findAccountFeeds")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#findFeeds")
+    println("5xx response calling AccountsApi#findAccountFeeds")
     e.printStackTrace()
 }
 ```
@@ -169,9 +169,60 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findFollowers"></a>
-# **findFollowers**
-> kotlin.Array&lt;Account&gt; findFollowers(id, since, offset, count)
+<a name="findAccountFeedsLiked"></a>
+# **findAccountFeedsLiked**
+> kotlin.Array&lt;Feed&gt; findAccountFeedsLiked(id, since, offset, count)
+
+Get account&#39;s liked feeds
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = AccountsApi()
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Feed> = apiInstance.findAccountFeedsLiked(id, since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AccountsApi#findAccountFeedsLiked")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AccountsApi#findAccountFeedsLiked")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **java.math.BigDecimal**| Account Identifier. |
+ **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Feed&gt;**](Feed.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findAccountFollowers"></a>
+# **findAccountFollowers**
+> kotlin.Array&lt;Account&gt; findAccountFollowers(id, since, offset, count)
 
 Get accounts list a account is followed by
 
@@ -187,13 +238,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters follow
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of followers. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findFollowers(id, since, offset, count)
+    val result : kotlin.Array<Account> = apiInstance.findAccountFollowers(id, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#findFollowers")
+    println("4xx response calling AccountsApi#findAccountFollowers")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#findFollowers")
+    println("5xx response calling AccountsApi#findAccountFollowers")
     e.printStackTrace()
 }
 ```
@@ -210,6 +261,198 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**kotlin.Array&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findAccountFriends"></a>
+# **findAccountFriends**
+> kotlin.Array&lt;Account&gt; findAccountFriends(id, since, offset, count)
+
+Get a account&#39;s friends list
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = AccountsApi()
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friends which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friends. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Account> = apiInstance.findAccountFriends(id, since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AccountsApi#findAccountFriends")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AccountsApi#findAccountFriends")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **java.math.BigDecimal**| Account Identifier. |
+ **since** | **java.math.BigDecimal**| Filters friends which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of friends. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findAccountGroup"></a>
+# **findAccountGroup**
+> Group findAccountGroup(id)
+
+Get a direct message group to a account
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = AccountsApi()
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
+try {
+    val result : Group = apiInstance.findAccountGroup(id)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AccountsApi#findAccountGroup")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AccountsApi#findAccountGroup")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **java.math.BigDecimal**| Account identifier. |
+
+### Return type
+
+[**Group**](Group.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findAccountGroups"></a>
+# **findAccountGroups**
+> kotlin.Array&lt;Group&gt; findAccountGroups(id, since, offset, count)
+
+Get groups list a account groupJoined
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = AccountsApi()
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of groups. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of groups returned on one result page. By default the value is 20 groups. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Group> = apiInstance.findAccountGroups(id, since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AccountsApi#findAccountGroups")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AccountsApi#findAccountGroups")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **java.math.BigDecimal**| Account identifier. |
+ **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 groups. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Group&gt;**](Group.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findAccountStatus"></a>
+# **findAccountStatus**
+> AccountStatus findAccountStatus(id)
+
+Get account on
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = AccountsApi()
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
+try {
+    val result : AccountStatus = apiInstance.findAccountStatus(id)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AccountsApi#findAccountStatus")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AccountsApi#findAccountStatus")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **java.math.BigDecimal**| Account identifier. |
+
+### Return type
+
+[**AccountStatus**](AccountStatus.md)
 
 ### Authorization
 
@@ -271,252 +514,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findFriends"></a>
-# **findFriends**
-> kotlin.Array&lt;Account&gt; findFriends(id, since, offset, count)
-
-Get a account&#39;s friends list
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = AccountsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friends which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friends. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Account> = apiInstance.findFriends(id, since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling AccountsApi#findFriends")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling AccountsApi#findFriends")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
- **since** | **java.math.BigDecimal**| Filters friends which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of friends. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Account&gt;**](Account.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findGroup"></a>
-# **findGroup**
-> Group findGroup(id)
-
-Get a direct message group to a account
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = AccountsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
-try {
-    val result : Group = apiInstance.findGroup(id)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling AccountsApi#findGroup")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling AccountsApi#findGroup")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. |
-
-### Return type
-
-[**Group**](Group.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findGroups"></a>
-# **findGroups**
-> kotlin.Array&lt;Group&gt; findGroups(id, since, offset, count)
-
-Get groups list a account groupJoined
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = AccountsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of groups. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of groups returned on one result page. By default the value is 20 groups. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Group> = apiInstance.findGroups(id, since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling AccountsApi#findGroups")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling AccountsApi#findGroups")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. |
- **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 groups. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Group&gt;**](Group.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findLikes"></a>
-# **findLikes**
-> kotlin.Array&lt;Feed&gt; findLikes(id, since, offset, count)
-
-Get account&#39;s liked feeds
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = AccountsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Feed> = apiInstance.findLikes(id, since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling AccountsApi#findLikes")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling AccountsApi#findLikes")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account Identifier. |
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of entries returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Feed&gt;**](Feed.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findStatus"></a>
-# **findStatus**
-> AccountStatus findStatus(id)
-
-Get account on
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = AccountsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
-try {
-    val result : AccountStatus = apiInstance.findStatus(id)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling AccountsApi#findStatus")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling AccountsApi#findStatus")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Account identifier. |
-
-### Return type
-
-[**AccountStatus**](AccountStatus.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="follow"></a>
-# **follow**
-> follow(id)
+<a name="followAccount"></a>
+# **followAccount**
+> followAccount(id)
 
 Follow a account
 
@@ -529,12 +529,12 @@ Follow a account
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
 try {
-    apiInstance.follow(id)
+    apiInstance.followAccount(id)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#follow")
+    println("4xx response calling AccountsApi#followAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#follow")
+    println("5xx response calling AccountsApi#followAccount")
     e.printStackTrace()
 }
 ```
@@ -558,9 +558,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="invite"></a>
-# **invite**
-> InvitationCreated invite(accountId, groupId)
+<a name="inviteAccount"></a>
+# **inviteAccount**
+> InvitationCreated inviteAccount(accountId, groupId)
 
 Create a groupInvitation to a account
 
@@ -574,13 +574,13 @@ val apiInstance = AccountsApi()
 val accountId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
 val groupId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group Identifier.
 try {
-    val result : InvitationCreated = apiInstance.invite(accountId, groupId)
+    val result : InvitationCreated = apiInstance.inviteAccount(accountId, groupId)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#invite")
+    println("4xx response calling AccountsApi#inviteAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#invite")
+    println("5xx response calling AccountsApi#inviteAccount")
     e.printStackTrace()
 }
 ```
@@ -605,9 +605,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="join"></a>
-# **join**
-> join(accountId, groupId)
+<a name="joinAccount"></a>
+# **joinAccount**
+> joinAccount(accountId, groupId)
 
 Join a account in a group
 
@@ -621,12 +621,12 @@ val apiInstance = AccountsApi()
 val accountId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
 val groupId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group Identifier.
 try {
-    apiInstance.join(accountId, groupId)
+    apiInstance.joinAccount(accountId, groupId)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#join")
+    println("4xx response calling AccountsApi#joinAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#join")
+    println("5xx response calling AccountsApi#joinAccount")
     e.printStackTrace()
 }
 ```
@@ -651,9 +651,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="leave"></a>
-# **leave**
-> leave(accountId, groupId)
+<a name="leaveAccount"></a>
+# **leaveAccount**
+> leaveAccount(accountId, groupId)
 
 Leave a account from a group
 
@@ -667,12 +667,12 @@ val apiInstance = AccountsApi()
 val accountId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
 val groupId : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group Identifier.
 try {
-    apiInstance.leave(accountId, groupId)
+    apiInstance.leaveAccount(accountId, groupId)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#leave")
+    println("4xx response calling AccountsApi#leaveAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#leave")
+    println("5xx response calling AccountsApi#leaveAccount")
     e.printStackTrace()
 }
 ```
@@ -697,9 +697,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="mute"></a>
-# **mute**
-> mute(id)
+<a name="muteAccount"></a>
+# **muteAccount**
+> muteAccount(id)
 
 Mute a account
 
@@ -712,12 +712,12 @@ Mute a account
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
 try {
-    apiInstance.mute(id)
+    apiInstance.muteAccount(id)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#mute")
+    println("4xx response calling AccountsApi#muteAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#mute")
+    println("5xx response calling AccountsApi#muteAccount")
     e.printStackTrace()
 }
 ```
@@ -741,9 +741,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="report"></a>
-# **report**
-> report(id, body)
+<a name="reportAccount"></a>
+# **reportAccount**
+> reportAccount(id, body)
 
 Report a account
 
@@ -757,12 +757,12 @@ val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
 val body : PostAccountReportBody =  // PostAccountReportBody | 
 try {
-    apiInstance.report(id, body)
+    apiInstance.reportAccount(id, body)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#report")
+    println("4xx response calling AccountsApi#reportAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#report")
+    println("5xx response calling AccountsApi#reportAccount")
     e.printStackTrace()
 }
 ```
@@ -876,9 +876,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="unfollow"></a>
-# **unfollow**
-> unfollow(id)
+<a name="unfollowAccount"></a>
+# **unfollowAccount**
+> unfollowAccount(id)
 
 UnFollow a account
 
@@ -891,12 +891,12 @@ UnFollow a account
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
 try {
-    apiInstance.unfollow(id)
+    apiInstance.unfollowAccount(id)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#unfollow")
+    println("4xx response calling AccountsApi#unfollowAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#unfollow")
+    println("5xx response calling AccountsApi#unfollowAccount")
     e.printStackTrace()
 }
 ```
@@ -964,9 +964,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="unmute"></a>
-# **unmute**
-> unmute(id)
+<a name="unmuteAccount"></a>
+# **unmuteAccount**
+> unmuteAccount(id)
 
 Unmute a account
 
@@ -979,12 +979,12 @@ Unmute a account
 val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account identifier.
 try {
-    apiInstance.unmute(id)
+    apiInstance.unmuteAccount(id)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#unmute")
+    println("4xx response calling AccountsApi#unmuteAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#unmute")
+    println("5xx response calling AccountsApi#unmuteAccount")
     e.printStackTrace()
 }
 ```
@@ -1052,9 +1052,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="updateDisplayName"></a>
-# **updateDisplayName**
-> updateDisplayName(id, body)
+<a name="updateAccountDisplayName"></a>
+# **updateAccountDisplayName**
+> updateAccountDisplayName(id, body)
 
 Change display name to session account
 
@@ -1068,12 +1068,12 @@ val apiInstance = AccountsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Account Identifier.
 val body : PutAccountDisplayNameBody =  // PutAccountDisplayNameBody | 
 try {
-    apiInstance.updateDisplayName(id, body)
+    apiInstance.updateAccountDisplayName(id, body)
 } catch (e: ClientException) {
-    println("4xx response calling AccountsApi#updateDisplayName")
+    println("4xx response calling AccountsApi#updateAccountDisplayName")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountsApi#updateDisplayName")
+    println("5xx response calling AccountsApi#updateAccountDisplayName")
     e.printStackTrace()
 }
 ```

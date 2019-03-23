@@ -4,17 +4,17 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete**](FeedsApi.md#delete) | **DELETE** /feeds/{id} | Delete a feed
+[**deleteFeed**](FeedsApi.md#deleteFeed) | **DELETE** /feeds/{id} | Delete a feed
 [**findFeed**](FeedsApi.md#findFeed) | **GET** /feeds/{id} | Get basic information about a feed
-[**findFeeds**](FeedsApi.md#findFeeds) | **GET** /feeds | Search feeds
-[**post**](FeedsApi.md#post) | **POST** /feeds | Post a feed
-[**report**](FeedsApi.md#report) | **POST** /feeds/{id}/reports | Report a feed
-[**update**](FeedsApi.md#update) | **PUT** /feeds/{id} | Update a feed
+[**findFeeds**](FeedsApi.md#findFeeds) | **GET** /feeds | Find feeds
+[**postFeed**](FeedsApi.md#postFeed) | **POST** /feeds | Post a feed
+[**reportFeed**](FeedsApi.md#reportFeed) | **POST** /feeds/{id}/reports | Report a feed
+[**updateFeed**](FeedsApi.md#updateFeed) | **PUT** /feeds/{id} | Update a feed
 
 
-<a name="delete"></a>
-# **delete**
-> delete(id)
+<a name="deleteFeed"></a>
+# **deleteFeed**
+> deleteFeed(id)
 
 Delete a feed
 
@@ -27,12 +27,12 @@ Delete a feed
 val apiInstance = FeedsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
 try {
-    apiInstance.delete(id)
+    apiInstance.deleteFeed(id)
 } catch (e: ClientException) {
-    println("4xx response calling FeedsApi#delete")
+    println("4xx response calling FeedsApi#deleteFeed")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedsApi#delete")
+    println("5xx response calling FeedsApi#deleteFeed")
     e.printStackTrace()
 }
 ```
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 # **findFeeds**
 > kotlin.Array&lt;Feed&gt; findFeeds(since, offset, feedPrivacyType, count)
 
-Search feeds
+Find feeds
 
 ### Example
 ```kotlin
@@ -152,9 +152,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="post"></a>
-# **post**
-> FeedCreated post(body)
+<a name="postFeed"></a>
+# **postFeed**
+> FeedCreated postFeed(body)
 
 Post a feed
 
@@ -167,13 +167,13 @@ Post a feed
 val apiInstance = FeedsApi()
 val body : PostFeedBody =  // PostFeedBody | 
 try {
-    val result : FeedCreated = apiInstance.post(body)
+    val result : FeedCreated = apiInstance.postFeed(body)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FeedsApi#post")
+    println("4xx response calling FeedsApi#postFeed")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedsApi#post")
+    println("5xx response calling FeedsApi#postFeed")
     e.printStackTrace()
 }
 ```
@@ -197,9 +197,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="report"></a>
-# **report**
-> report(id, body)
+<a name="reportFeed"></a>
+# **reportFeed**
+> reportFeed(id, body)
 
 Report a feed
 
@@ -213,12 +213,12 @@ val apiInstance = FeedsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
 val body : PostFeedReportBody =  // PostFeedReportBody | 
 try {
-    apiInstance.report(id, body)
+    apiInstance.reportFeed(id, body)
 } catch (e: ClientException) {
-    println("4xx response calling FeedsApi#report")
+    println("4xx response calling FeedsApi#reportFeed")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedsApi#report")
+    println("5xx response calling FeedsApi#reportFeed")
     e.printStackTrace()
 }
 ```
@@ -243,9 +243,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="update"></a>
-# **update**
-> update(id, body)
+<a name="updateFeed"></a>
+# **updateFeed**
+> updateFeed(id, body)
 
 Update a feed
 
@@ -259,12 +259,12 @@ val apiInstance = FeedsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
 val body : PutFeedBody =  // PutFeedBody | 
 try {
-    apiInstance.update(id, body)
+    apiInstance.updateFeed(id, body)
 } catch (e: ClientException) {
-    println("4xx response calling FeedsApi#update")
+    println("4xx response calling FeedsApi#updateFeed")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedsApi#update")
+    println("5xx response calling FeedsApi#updateFeed")
     e.printStackTrace()
 }
 ```

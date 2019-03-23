@@ -36,83 +36,83 @@ All URIs are relative to *https://localhost*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**block**](docs/AccountsApi.md#block) | **POST** /accounts/{id}/blocks | Block a account
-*AccountsApi* | [**find**](docs/AccountsApi.md#find) | **GET** /accounts/{id} | Get information about a account
-*AccountsApi* | [**findFeeds**](docs/AccountsApi.md#findfeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
-*AccountsApi* | [**findFollowers**](docs/AccountsApi.md#findfollowers) | **GET** /accounts/{id}/followers | Get accounts list a account is followed by
+*AccountsApi* | [**findAccount**](docs/AccountsApi.md#findaccount) | **GET** /accounts/{id} | Get information about a account
+*AccountsApi* | [**findAccountFeeds**](docs/AccountsApi.md#findaccountfeeds) | **GET** /accounts/{id}/feeds | Get feeds list a account posted
+*AccountsApi* | [**findAccountFeedsLiked**](docs/AccountsApi.md#findaccountfeedsliked) | **GET** /accounts/{id}/likes | Get account's liked feeds
+*AccountsApi* | [**findAccountFollowers**](docs/AccountsApi.md#findaccountfollowers) | **GET** /accounts/{id}/followers | Get accounts list a account is followed by
+*AccountsApi* | [**findAccountFriends**](docs/AccountsApi.md#findaccountfriends) | **GET** /accounts/{id}/friends | Get a account's friends list
+*AccountsApi* | [**findAccountGroup**](docs/AccountsApi.md#findaccountgroup) | **GET** /accounts/{id}/group | Get a direct message group to a account
+*AccountsApi* | [**findAccountGroups**](docs/AccountsApi.md#findaccountgroups) | **GET** /accounts/{id}/groups | Get groups list a account groupJoined
+*AccountsApi* | [**findAccountStatus**](docs/AccountsApi.md#findaccountstatus) | **GET** /accounts/{id}/status | Get account on
 *AccountsApi* | [**findFollowing**](docs/AccountsApi.md#findfollowing) | **GET** /accounts/{id}/following | Get accounts list a account following
-*AccountsApi* | [**findFriends**](docs/AccountsApi.md#findfriends) | **GET** /accounts/{id}/friends | Get a account's friends list
-*AccountsApi* | [**findGroup**](docs/AccountsApi.md#findgroup) | **GET** /accounts/{id}/group | Get a direct message group to a account
-*AccountsApi* | [**findGroups**](docs/AccountsApi.md#findgroups) | **GET** /accounts/{id}/groups | Get groups list a account groupJoined
-*AccountsApi* | [**findLikes**](docs/AccountsApi.md#findlikes) | **GET** /accounts/{id}/likes | Get account's liked feeds
-*AccountsApi* | [**findStatus**](docs/AccountsApi.md#findstatus) | **GET** /accounts/{id}/status | Get account on
-*AccountsApi* | [**follow**](docs/AccountsApi.md#follow) | **POST** /accounts/{id}/follow | Follow a account
-*AccountsApi* | [**invite**](docs/AccountsApi.md#invite) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a groupInvitation to a account
-*AccountsApi* | [**join**](docs/AccountsApi.md#join) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
-*AccountsApi* | [**leave**](docs/AccountsApi.md#leave) | **POST** /accounts/{accountId}/groups/{groupId}/leave | Leave a account from a group
-*AccountsApi* | [**mute**](docs/AccountsApi.md#mute) | **POST** /accounts/{id}/mutes | Mute a account
-*AccountsApi* | [**report**](docs/AccountsApi.md#report) | **POST** /accounts/{id}/reports | Report a account
+*AccountsApi* | [**followAccount**](docs/AccountsApi.md#followaccount) | **POST** /accounts/{id}/follow | Follow a account
+*AccountsApi* | [**inviteAccount**](docs/AccountsApi.md#inviteaccount) | **POST** /accounts/{accountId}/groups/{groupId}/invitations | Create a groupInvitation to a account
+*AccountsApi* | [**joinAccount**](docs/AccountsApi.md#joinaccount) | **POST** /accounts/{accountId}/groups/{groupId}/join | Join a account in a group
+*AccountsApi* | [**leaveAccount**](docs/AccountsApi.md#leaveaccount) | **POST** /accounts/{accountId}/groups/{groupId}/leave | Leave a account from a group
+*AccountsApi* | [**muteAccount**](docs/AccountsApi.md#muteaccount) | **POST** /accounts/{id}/mutes | Mute a account
+*AccountsApi* | [**reportAccount**](docs/AccountsApi.md#reportaccount) | **POST** /accounts/{id}/reports | Report a account
 *AccountsApi* | [**request**](docs/AccountsApi.md#request) | **POST** /accounts/{id}/requests | Create a friend request to a account
 *AccountsApi* | [**unblock**](docs/AccountsApi.md#unblock) | **DELETE** /accounts/{id}/blocks | Unblock a account
-*AccountsApi* | [**unfollow**](docs/AccountsApi.md#unfollow) | **DELETE** /accounts/{id}/follow | UnFollow a account
+*AccountsApi* | [**unfollowAccount**](docs/AccountsApi.md#unfollowaccount) | **DELETE** /accounts/{id}/follow | UnFollow a account
 *AccountsApi* | [**unfriend**](docs/AccountsApi.md#unfriend) | **DELETE** /accounts/{id}/friends | Remove friendship to a account
-*AccountsApi* | [**unmute**](docs/AccountsApi.md#unmute) | **DELETE** /accounts/{id}/mutes | Unmute a account
+*AccountsApi* | [**unmuteAccount**](docs/AccountsApi.md#unmuteaccount) | **DELETE** /accounts/{id}/mutes | Unmute a account
 *AccountsApi* | [**unrequest**](docs/AccountsApi.md#unrequest) | **DELETE** /accounts/{id}/requests | Remove a friend request to a account
-*AccountsApi* | [**updateDisplayName**](docs/AccountsApi.md#updatedisplayname) | **PUT** /accounts/{id}/display_name | Change display name to session account
+*AccountsApi* | [**updateAccountDisplayName**](docs/AccountsApi.md#updateaccountdisplayname) | **PUT** /accounts/{id}/display_name | Change display name to session account
 *BlocksApi* | [**findBlockingAccounts**](docs/BlocksApi.md#findblockingaccounts) | **GET** /session/blocks | Get blocking accounts list
-*CommentLikesApi* | [**findLikes**](docs/CommentLikesApi.md#findlikes) | **GET** /comments/{id}/likes | Get accounts list who liked on a comment
-*CommentLikesApi* | [**like**](docs/CommentLikesApi.md#like) | **POST** /comments/{id}/likes | Set a like on a comment
-*CommentLikesApi* | [**unlike**](docs/CommentLikesApi.md#unlike) | **DELETE** /comments/{id}/likes | Remove a like on a comment
-*CommentsApi* | [**delete**](docs/CommentsApi.md#delete) | **DELETE** /comments/{id} | Remove a comment
+*CommentLikesApi* | [**findAccountsLikedComment**](docs/CommentLikesApi.md#findaccountslikedcomment) | **GET** /comments/{id}/likes | Get accounts list who liked on a comment
+*CommentLikesApi* | [**likeComment**](docs/CommentLikesApi.md#likecomment) | **POST** /comments/{id}/likes | Set a like on a comment
+*CommentLikesApi* | [**unlikeComment**](docs/CommentLikesApi.md#unlikecomment) | **DELETE** /comments/{id}/likes | Remove a like on a comment
+*CommentsApi* | [**deleteComment**](docs/CommentsApi.md#deletecomment) | **DELETE** /comments/{id} | Delete a comment
 *CommentsApi* | [**findComment**](docs/CommentsApi.md#findcomment) | **GET** /comments/{id} | Get basic information about a comment
 *CommentsApi* | [**findComments**](docs/CommentsApi.md#findcomments) | **GET** /comments | Search comments
-*CommentsApi* | [**post**](docs/CommentsApi.md#post) | **POST** /comments | Create a comment on a feed
-*CommentsApi* | [**report**](docs/CommentsApi.md#report) | **POST** /comments/{id}/reports | Report a comment
-*FeedLikesApi* | [**findLikes**](docs/FeedLikesApi.md#findlikes) | **GET** /feeds/{id}/likes | Get accounts list who set a like to a feed
-*FeedLikesApi* | [**like**](docs/FeedLikesApi.md#like) | **POST** /feeds/{id}/likes | Set a like on a feed
-*FeedLikesApi* | [**unlike**](docs/FeedLikesApi.md#unlike) | **DELETE** /feeds/{id}/likes | Remove a like on a feed
-*FeedsApi* | [**delete**](docs/FeedsApi.md#delete) | **DELETE** /feeds/{id} | Delete a feed
+*CommentsApi* | [**postComment**](docs/CommentsApi.md#postcomment) | **POST** /comments | Create a comment on a feed
+*CommentsApi* | [**reportComment**](docs/CommentsApi.md#reportcomment) | **POST** /comments/{id}/reports | Report a comment
+*FeedLikesApi* | [**findAccountsLikedFeed**](docs/FeedLikesApi.md#findaccountslikedfeed) | **GET** /feeds/{id}/likes | Get accounts list who set a like to a feed
+*FeedLikesApi* | [**likeFeed**](docs/FeedLikesApi.md#likefeed) | **POST** /feeds/{id}/likes | Set a like on a feed
+*FeedLikesApi* | [**unlikeFeed**](docs/FeedLikesApi.md#unlikefeed) | **DELETE** /feeds/{id}/likes | Remove a like on a feed
+*FeedsApi* | [**deleteFeed**](docs/FeedsApi.md#deletefeed) | **DELETE** /feeds/{id} | Delete a feed
 *FeedsApi* | [**findFeed**](docs/FeedsApi.md#findfeed) | **GET** /feeds/{id} | Get basic information about a feed
-*FeedsApi* | [**findFeeds**](docs/FeedsApi.md#findfeeds) | **GET** /feeds | Search feeds
-*FeedsApi* | [**post**](docs/FeedsApi.md#post) | **POST** /feeds | Post a feed
-*FeedsApi* | [**report**](docs/FeedsApi.md#report) | **POST** /feeds/{id}/reports | Report a feed
-*FeedsApi* | [**update**](docs/FeedsApi.md#update) | **PUT** /feeds/{id} | Update a feed
-*FriendRequestsApi* | [**accept**](docs/FriendRequestsApi.md#accept) | **POST** /requests/{id}/accept | Accept a friend request
-*FriendRequestsApi* | [**reject**](docs/FriendRequestsApi.md#reject) | **POST** /requests/{id}/reject | Reject a friend request
-*GroupsApi* | [**create**](docs/GroupsApi.md#create) | **POST** /groups | Create a group
-*GroupsApi* | [**delete**](docs/GroupsApi.md#delete) | **DELETE** /groups/{id} | Hide a group and delete all messages
-*GroupsApi* | [**findAccounts**](docs/GroupsApi.md#findaccounts) | **GET** /groups/{id}/accounts | Get accounts list of a group
+*FeedsApi* | [**findFeeds**](docs/FeedsApi.md#findfeeds) | **GET** /feeds | Find feeds
+*FeedsApi* | [**postFeed**](docs/FeedsApi.md#postfeed) | **POST** /feeds | Post a feed
+*FeedsApi* | [**reportFeed**](docs/FeedsApi.md#reportfeed) | **POST** /feeds/{id}/reports | Report a feed
+*FeedsApi* | [**updateFeed**](docs/FeedsApi.md#updatefeed) | **PUT** /feeds/{id} | Update a feed
+*FriendRequestsApi* | [**acceptRequest**](docs/FriendRequestsApi.md#acceptrequest) | **POST** /requests/{id}/accept | Accept a friend request
+*FriendRequestsApi* | [**rejectRequest**](docs/FriendRequestsApi.md#rejectrequest) | **POST** /requests/{id}/reject | Reject a friend request
+*GroupsApi* | [**createGroup**](docs/GroupsApi.md#creategroup) | **POST** /groups | Create a group
+*GroupsApi* | [**deleteGroup**](docs/GroupsApi.md#deletegroup) | **DELETE** /groups/{id} | Hide a group and delete all messages
 *GroupsApi* | [**findGroup**](docs/GroupsApi.md#findgroup) | **GET** /groups/{id} | Get basic information about a group
-*GroupsApi* | [**findGroups**](docs/GroupsApi.md#findgroups) | **GET** /groups | Search groups
-*GroupsApi* | [**hide**](docs/GroupsApi.md#hide) | **POST** /groups/{id}/hides | Hide a group
-*GroupsApi* | [**join**](docs/GroupsApi.md#join) | **POST** /groups/{id}/join | Join to a group,
-*GroupsApi* | [**leave**](docs/GroupsApi.md#leave) | **POST** /groups/{id}/leave | Leave from a group
-*GroupsApi* | [**report**](docs/GroupsApi.md#report) | **POST** /groups/{id}/reports | Report a group
-*GroupsApi* | [**show**](docs/GroupsApi.md#show) | **DELETE** /groups/{id}/hides | Show a group
-*GroupsApi* | [**update**](docs/GroupsApi.md#update) | **PUT** /groups/{id} | Update a group
-*InvitationsApi* | [**accept**](docs/InvitationsApi.md#accept) | **POST** /invitations/{id}/accept | Accept a groupInvitation
-*InvitationsApi* | [**create**](docs/InvitationsApi.md#create) | **POST** /groups/{id}/invitations | Post a groupInvitation to some accounts
-*InvitationsApi* | [**reject**](docs/InvitationsApi.md#reject) | **POST** /invitations/{id}/reject | Reject a groupInvitation
-*MediumsApi* | [**delete**](docs/MediumsApi.md#delete) | **DELETE** /mediums/{id} | Delete a medium
+*GroupsApi* | [**findGroupAccounts**](docs/GroupsApi.md#findgroupaccounts) | **GET** /groups/{id}/accounts | Get accounts list of a group
+*GroupsApi* | [**hideGroup**](docs/GroupsApi.md#hidegroup) | **POST** /groups/{id}/hides | Hide a group
+*GroupsApi* | [**joinGroup**](docs/GroupsApi.md#joingroup) | **POST** /groups/{id}/join | Join to a group,
+*GroupsApi* | [**leaveGroup**](docs/GroupsApi.md#leavegroup) | **POST** /groups/{id}/leave | Leave from a group
+*GroupsApi* | [**reportGroup**](docs/GroupsApi.md#reportgroup) | **POST** /groups/{id}/reports | Report a group
+*GroupsApi* | [**searchGroups**](docs/GroupsApi.md#searchgroups) | **GET** /groups | Search groups
+*GroupsApi* | [**showGroup**](docs/GroupsApi.md#showgroup) | **DELETE** /groups/{id}/hides | Show a group
+*GroupsApi* | [**updateGroup**](docs/GroupsApi.md#updategroup) | **PUT** /groups/{id} | Update a group
+*InvitationsApi* | [**acceptInvitation**](docs/InvitationsApi.md#acceptinvitation) | **POST** /invitations/{id}/accept | Accept a groupInvitation
+*InvitationsApi* | [**inviteAccounts**](docs/InvitationsApi.md#inviteaccounts) | **POST** /groups/{id}/invitations | Post a groupInvitation to some accounts
+*InvitationsApi* | [**rejectInvitation**](docs/InvitationsApi.md#rejectinvitation) | **POST** /invitations/{id}/reject | Reject a groupInvitation
+*MediumsApi* | [**deleteMedium**](docs/MediumsApi.md#deletemedium) | **DELETE** /mediums/{id} | Delete a medium
 *MediumsApi* | [**findMedium**](docs/MediumsApi.md#findmedium) | **GET** /mediums/:* | Get a medium
-*MediumsApi* | [**upload**](docs/MediumsApi.md#upload) | **POST** /mediums | Upload a medium
-*MessagesApi* | [**delete**](docs/MessagesApi.md#delete) | **DELETE** /messages | Delete messages form a group
+*MediumsApi* | [**uploadMedium**](docs/MediumsApi.md#uploadmedium) | **POST** /mediums | Upload a medium
+*MessagesApi* | [**deleteMessage**](docs/MessagesApi.md#deletemessage) | **DELETE** /messages | Delete messages form a group
 *MessagesApi* | [**findMessages**](docs/MessagesApi.md#findmessages) | **GET** /messages | Search messages
 *MessagesApi* | [**postMedium**](docs/MessagesApi.md#postmedium) | **POST** /messages/medium | Send a medium to a group
 *MessagesApi* | [**postText**](docs/MessagesApi.md#posttext) | **POST** /messages/text | Send a text to a group
 *SessionApi* | [**deleteProfileImage**](docs/SessionApi.md#deleteprofileimage) | **DELETE** /session/profile_image | Remove the profile image
 *SessionApi* | [**existAccountName**](docs/SessionApi.md#existaccountname) | **GET** /session/account_name/{accountName} | Confirm account name exist
-*SessionApi* | [**findAccounts**](docs/SessionApi.md#findaccounts) | **GET** /session/accounts | Search accounts
-*SessionApi* | [**findFeeds**](docs/SessionApi.md#findfeeds) | **GET** /session/feeds | Get feeds list session account posted
-*SessionApi* | [**findFollowers**](docs/SessionApi.md#findfollowers) | **GET** /session/followers | Get accounts list session account is followed by
-*SessionApi* | [**findFollowing**](docs/SessionApi.md#findfollowing) | **GET** /session/following | Get accounts list session account followed
+*SessionApi* | [**findAccounts**](docs/SessionApi.md#findaccounts) | **GET** /accounts | Find accounts
 *SessionApi* | [**findFriendRequests**](docs/SessionApi.md#findfriendrequests) | **GET** /session/requests | Get friend requests list session account created or received
-*SessionApi* | [**findFriends**](docs/SessionApi.md#findfriends) | **GET** /session/friends | Get friends list
 *SessionApi* | [**findGroupInvitations**](docs/SessionApi.md#findgroupinvitations) | **GET** /session/invitations | Get invitations list session account received
-*SessionApi* | [**findGroups**](docs/SessionApi.md#findgroups) | **GET** /session/groups | Get groups list session account groupJoined
 *SessionApi* | [**findHiddenGroups**](docs/SessionApi.md#findhiddengroups) | **GET** /session/hides | Get hidden groups list session account groupJoined
-*SessionApi* | [**findLikes**](docs/SessionApi.md#findlikes) | **GET** /session/likes | Get feeds list session account set a like
 *SessionApi* | [**findMutingAccounts**](docs/SessionApi.md#findmutingaccounts) | **GET** /session/mutes | Get accounts list session account muted
 *SessionApi* | [**findSession**](docs/SessionApi.md#findsession) | **GET** /session | Get basic information about session account
+*SessionApi* | [**findSessionFeeds**](docs/SessionApi.md#findsessionfeeds) | **GET** /session/feeds | Get feeds list session account posted
+*SessionApi* | [**findSessionFeedsLiked**](docs/SessionApi.md#findsessionfeedsliked) | **GET** /session/likes | Get feeds list session account set a like
+*SessionApi* | [**findSessionFollowers**](docs/SessionApi.md#findsessionfollowers) | **GET** /session/followers | Get accounts list session account is followed by
+*SessionApi* | [**findSessionFollowing**](docs/SessionApi.md#findsessionfollowing) | **GET** /session/following | Get accounts list session account followed
+*SessionApi* | [**findSessionFriends**](docs/SessionApi.md#findsessionfriends) | **GET** /session/friends | Get friends list
+*SessionApi* | [**findSessionGroups**](docs/SessionApi.md#findsessiongroups) | **GET** /session/groups | Get groups list session account groupJoined
 *SessionApi* | [**signOut**](docs/SessionApi.md#signout) | **DELETE** /session | Sign out
 *SessionApi* | [**updateAccountName**](docs/SessionApi.md#updateaccountname) | **PUT** /session/account_name | Update the account name
 *SessionApi* | [**updatePassword**](docs/SessionApi.md#updatepassword) | **PUT** /session/password | Update the password

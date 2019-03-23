@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accept**](InvitationsApi.md#accept) | **POST** /invitations/{id}/accept | Accept a groupInvitation
-[**create**](InvitationsApi.md#create) | **POST** /groups/{id}/invitations | Post a groupInvitation to some accounts
-[**reject**](InvitationsApi.md#reject) | **POST** /invitations/{id}/reject | Reject a groupInvitation
+[**acceptInvitation**](InvitationsApi.md#acceptInvitation) | **POST** /invitations/{id}/accept | Accept a groupInvitation
+[**inviteAccounts**](InvitationsApi.md#inviteAccounts) | **POST** /groups/{id}/invitations | Post a groupInvitation to some accounts
+[**rejectInvitation**](InvitationsApi.md#rejectInvitation) | **POST** /invitations/{id}/reject | Reject a groupInvitation
 
 
-<a name="accept"></a>
-# **accept**
-> accept(id)
+<a name="acceptInvitation"></a>
+# **acceptInvitation**
+> acceptInvitation(id)
 
 Accept a groupInvitation
 
@@ -24,12 +24,12 @@ Accept a groupInvitation
 val apiInstance = InvitationsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group groupInvitation identifier.
 try {
-    apiInstance.accept(id)
+    apiInstance.acceptInvitation(id)
 } catch (e: ClientException) {
-    println("4xx response calling InvitationsApi#accept")
+    println("4xx response calling InvitationsApi#acceptInvitation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling InvitationsApi#accept")
+    println("5xx response calling InvitationsApi#acceptInvitation")
     e.printStackTrace()
 }
 ```
@@ -53,9 +53,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="create"></a>
-# **create**
-> InvitationCreated create(id, body)
+<a name="inviteAccounts"></a>
+# **inviteAccounts**
+> InvitationCreated inviteAccounts(id, body)
 
 Post a groupInvitation to some accounts
 
@@ -69,13 +69,13 @@ val apiInstance = InvitationsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group Identifier.
 val body : PostInvitationAccountsBody =  // PostInvitationAccountsBody | 
 try {
-    val result : InvitationCreated = apiInstance.create(id, body)
+    val result : InvitationCreated = apiInstance.inviteAccounts(id, body)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling InvitationsApi#create")
+    println("4xx response calling InvitationsApi#inviteAccounts")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling InvitationsApi#create")
+    println("5xx response calling InvitationsApi#inviteAccounts")
     e.printStackTrace()
 }
 ```
@@ -100,9 +100,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="reject"></a>
-# **reject**
-> reject(id)
+<a name="rejectInvitation"></a>
+# **rejectInvitation**
+> rejectInvitation(id)
 
 Reject a groupInvitation
 
@@ -115,12 +115,12 @@ Reject a groupInvitation
 val apiInstance = InvitationsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group groupInvitation identifier.
 try {
-    apiInstance.reject(id)
+    apiInstance.rejectInvitation(id)
 } catch (e: ClientException) {
-    println("4xx response calling InvitationsApi#reject")
+    println("4xx response calling InvitationsApi#rejectInvitation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling InvitationsApi#reject")
+    println("5xx response calling InvitationsApi#rejectInvitation")
     e.printStackTrace()
 }
 ```

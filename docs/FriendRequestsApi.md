@@ -4,13 +4,13 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accept**](FriendRequestsApi.md#accept) | **POST** /requests/{id}/accept | Accept a friend request
-[**reject**](FriendRequestsApi.md#reject) | **POST** /requests/{id}/reject | Reject a friend request
+[**acceptRequest**](FriendRequestsApi.md#acceptRequest) | **POST** /requests/{id}/accept | Accept a friend request
+[**rejectRequest**](FriendRequestsApi.md#rejectRequest) | **POST** /requests/{id}/reject | Reject a friend request
 
 
-<a name="accept"></a>
-# **accept**
-> accept(id)
+<a name="acceptRequest"></a>
+# **acceptRequest**
+> acceptRequest(id)
 
 Accept a friend request
 
@@ -23,12 +23,12 @@ Accept a friend request
 val apiInstance = FriendRequestsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Friend request Identifier.
 try {
-    apiInstance.accept(id)
+    apiInstance.acceptRequest(id)
 } catch (e: ClientException) {
-    println("4xx response calling FriendRequestsApi#accept")
+    println("4xx response calling FriendRequestsApi#acceptRequest")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FriendRequestsApi#accept")
+    println("5xx response calling FriendRequestsApi#acceptRequest")
     e.printStackTrace()
 }
 ```
@@ -52,9 +52,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="reject"></a>
-# **reject**
-> reject(id)
+<a name="rejectRequest"></a>
+# **rejectRequest**
+> rejectRequest(id)
 
 Reject a friend request
 
@@ -67,12 +67,12 @@ Reject a friend request
 val apiInstance = FriendRequestsApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Friend request Identifier.
 try {
-    apiInstance.reject(id)
+    apiInstance.rejectRequest(id)
 } catch (e: ClientException) {
-    println("4xx response calling FriendRequestsApi#reject")
+    println("4xx response calling FriendRequestsApi#rejectRequest")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FriendRequestsApi#reject")
+    println("5xx response calling FriendRequestsApi#rejectRequest")
     e.printStackTrace()
 }
 ```

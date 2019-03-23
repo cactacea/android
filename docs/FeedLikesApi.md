@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findLikes**](FeedLikesApi.md#findLikes) | **GET** /feeds/{id}/likes | Get accounts list who set a like to a feed
-[**like**](FeedLikesApi.md#like) | **POST** /feeds/{id}/likes | Set a like on a feed
-[**unlike**](FeedLikesApi.md#unlike) | **DELETE** /feeds/{id}/likes | Remove a like on a feed
+[**findAccountsLikedFeed**](FeedLikesApi.md#findAccountsLikedFeed) | **GET** /feeds/{id}/likes | Get accounts list who set a like to a feed
+[**likeFeed**](FeedLikesApi.md#likeFeed) | **POST** /feeds/{id}/likes | Set a like on a feed
+[**unlikeFeed**](FeedLikesApi.md#unlikeFeed) | **DELETE** /feeds/{id}/likes | Remove a like on a feed
 
 
-<a name="findLikes"></a>
-# **findLikes**
-> kotlin.Array&lt;Account&gt; findLikes(id, since, offset, count)
+<a name="findAccountsLikedFeed"></a>
+# **findAccountsLikedFeed**
+> kotlin.Array&lt;Account&gt; findAccountsLikedFeed(id, since, offset, count)
 
 Get accounts list who set a like to a feed
 
@@ -27,13 +27,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accoun
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findLikes(id, since, offset, count)
+    val result : kotlin.Array<Account> = apiInstance.findAccountsLikedFeed(id, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FeedLikesApi#findLikes")
+    println("4xx response calling FeedLikesApi#findAccountsLikedFeed")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedLikesApi#findLikes")
+    println("5xx response calling FeedLikesApi#findAccountsLikedFeed")
     e.printStackTrace()
 }
 ```
@@ -60,9 +60,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="like"></a>
-# **like**
-> like(id)
+<a name="likeFeed"></a>
+# **likeFeed**
+> likeFeed(id)
 
 Set a like on a feed
 
@@ -75,12 +75,12 @@ Set a like on a feed
 val apiInstance = FeedLikesApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
 try {
-    apiInstance.like(id)
+    apiInstance.likeFeed(id)
 } catch (e: ClientException) {
-    println("4xx response calling FeedLikesApi#like")
+    println("4xx response calling FeedLikesApi#likeFeed")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedLikesApi#like")
+    println("5xx response calling FeedLikesApi#likeFeed")
     e.printStackTrace()
 }
 ```
@@ -104,9 +104,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="unlike"></a>
-# **unlike**
-> unlike(id)
+<a name="unlikeFeed"></a>
+# **unlikeFeed**
+> unlikeFeed(id)
 
 Remove a like on a feed
 
@@ -119,12 +119,12 @@ Remove a like on a feed
 val apiInstance = FeedLikesApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
 try {
-    apiInstance.unlike(id)
+    apiInstance.unlikeFeed(id)
 } catch (e: ClientException) {
-    println("4xx response calling FeedLikesApi#unlike")
+    println("4xx response calling FeedLikesApi#unlikeFeed")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedLikesApi#unlike")
+    println("5xx response calling FeedLikesApi#unlikeFeed")
     e.printStackTrace()
 }
 ```

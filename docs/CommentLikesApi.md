@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findLikes**](CommentLikesApi.md#findLikes) | **GET** /comments/{id}/likes | Get accounts list who liked on a comment
-[**like**](CommentLikesApi.md#like) | **POST** /comments/{id}/likes | Set a like on a comment
-[**unlike**](CommentLikesApi.md#unlike) | **DELETE** /comments/{id}/likes | Remove a like on a comment
+[**findAccountsLikedComment**](CommentLikesApi.md#findAccountsLikedComment) | **GET** /comments/{id}/likes | Get accounts list who liked on a comment
+[**likeComment**](CommentLikesApi.md#likeComment) | **POST** /comments/{id}/likes | Set a like on a comment
+[**unlikeComment**](CommentLikesApi.md#unlikeComment) | **DELETE** /comments/{id}/likes | Remove a like on a comment
 
 
-<a name="findLikes"></a>
-# **findLikes**
-> kotlin.Array&lt;Account&gt; findLikes(id, since, offset, count)
+<a name="findAccountsLikedComment"></a>
+# **findAccountsLikedComment**
+> kotlin.Array&lt;Account&gt; findAccountsLikedComment(id, since, offset, count)
 
 Get accounts list who liked on a comment
 
@@ -27,13 +27,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accoun
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findLikes(id, since, offset, count)
+    val result : kotlin.Array<Account> = apiInstance.findAccountsLikedComment(id, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling CommentLikesApi#findLikes")
+    println("4xx response calling CommentLikesApi#findAccountsLikedComment")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CommentLikesApi#findLikes")
+    println("5xx response calling CommentLikesApi#findAccountsLikedComment")
     e.printStackTrace()
 }
 ```
@@ -60,9 +60,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="like"></a>
-# **like**
-> like(id)
+<a name="likeComment"></a>
+# **likeComment**
+> likeComment(id)
 
 Set a like on a comment
 
@@ -75,12 +75,12 @@ Set a like on a comment
 val apiInstance = CommentLikesApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Comment Identifier.
 try {
-    apiInstance.like(id)
+    apiInstance.likeComment(id)
 } catch (e: ClientException) {
-    println("4xx response calling CommentLikesApi#like")
+    println("4xx response calling CommentLikesApi#likeComment")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CommentLikesApi#like")
+    println("5xx response calling CommentLikesApi#likeComment")
     e.printStackTrace()
 }
 ```
@@ -104,9 +104,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="unlike"></a>
-# **unlike**
-> unlike(id)
+<a name="unlikeComment"></a>
+# **unlikeComment**
+> unlikeComment(id)
 
 Remove a like on a comment
 
@@ -119,12 +119,12 @@ Remove a like on a comment
 val apiInstance = CommentLikesApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Comment Identifier.
 try {
-    apiInstance.unlike(id)
+    apiInstance.unlikeComment(id)
 } catch (e: ClientException) {
-    println("4xx response calling CommentLikesApi#unlike")
+    println("4xx response calling CommentLikesApi#unlikeComment")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CommentLikesApi#unlike")
+    println("5xx response calling CommentLikesApi#unlikeComment")
     e.printStackTrace()
 }
 ```
