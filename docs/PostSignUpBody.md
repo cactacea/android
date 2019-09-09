@@ -4,9 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accountName** | **kotlin.String** | Account name. | 
-**password** | **kotlin.String** | Account password. | 
-**udid** | **kotlin.String** | Unique Device Identifier. | 
+**authType** | [**inline**](#AuthTypeEnum) | Auth type. | 
+**identifier** | **kotlin.String** | User name or email address. | 
+**password** | **kotlin.String** | User password. | 
+
+
+<a name="AuthTypeEnum"></a>
+## Enum: authType
+Name | Value
+---- | -----
+authType | username, email
 
 
 

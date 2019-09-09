@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**groupId** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Group identifier. | 
+**channelId** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Channel identifier. | 
 **message** | **kotlin.String** | A message will be posted. | 
 
 

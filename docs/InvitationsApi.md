@@ -4,16 +4,16 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**acceptInvitation**](InvitationsApi.md#acceptInvitation) | **POST** /invitations/{id}/accept | Accept a groupInvitation
-[**inviteAccounts**](InvitationsApi.md#inviteAccounts) | **POST** /groups/{id}/invitations | Post a groupInvitation to some accounts
-[**rejectInvitation**](InvitationsApi.md#rejectInvitation) | **POST** /invitations/{id}/reject | Reject a groupInvitation
+[**acceptInvitation**](InvitationsApi.md#acceptInvitation) | **POST** /invitations/{id}/accept | Accept a invitation
+[**createInvitations**](InvitationsApi.md#createInvitations) | **POST** /invitations | Create invitations
+[**rejectInvitation**](InvitationsApi.md#rejectInvitation) | **POST** /invitations/{id}/reject | Reject a invitation
 
 
 <a name="acceptInvitation"></a>
 # **acceptInvitation**
 > acceptInvitation(id)
 
-Accept a groupInvitation
+Accept a invitation
 
 ### Example
 ```kotlin
@@ -22,7 +22,7 @@ Accept a groupInvitation
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group groupInvitation identifier.
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Invitation identifier.
 try {
     apiInstance.acceptInvitation(id)
 } catch (e: ClientException) {
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group groupInvitation identifier. |
+ **id** | **java.math.BigDecimal**| Invitation identifier. |
 
 ### Return type
 
@@ -46,18 +46,18 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="inviteAccounts"></a>
-# **inviteAccounts**
-> InvitationCreated inviteAccounts(id, body)
+<a name="createInvitations"></a>
+# **createInvitations**
+> InvitationCreated createInvitations(id, body)
 
-Post a groupInvitation to some accounts
+Create invitations
 
 ### Example
 ```kotlin
@@ -66,16 +66,16 @@ Post a groupInvitation to some accounts
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group Identifier.
-val body : PostInvitationAccountsBody =  // PostInvitationAccountsBody | 
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Channel Identifier.
+val body : PostInvitationsBody =  // PostInvitationsBody | 
 try {
-    val result : InvitationCreated = apiInstance.inviteAccounts(id, body)
+    val result : InvitationCreated = apiInstance.createInvitations(id, body)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling InvitationsApi#inviteAccounts")
+    println("4xx response calling InvitationsApi#createInvitations")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling InvitationsApi#inviteAccounts")
+    println("5xx response calling InvitationsApi#createInvitations")
     e.printStackTrace()
 }
 ```
@@ -84,8 +84,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group Identifier. |
- **body** | [**PostInvitationAccountsBody**](PostInvitationAccountsBody.md)|  |
+ **id** | **java.math.BigDecimal**| Channel Identifier. |
+ **body** | [**PostInvitationsBody**](PostInvitationsBody.md)|  |
 
 ### Return type
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 # **rejectInvitation**
 > rejectInvitation(id)
 
-Reject a groupInvitation
+Reject a invitation
 
 ### Example
 ```kotlin
@@ -113,7 +113,7 @@ Reject a groupInvitation
 //import io.github.cactacea.backend.*
 
 val apiInstance = InvitationsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group groupInvitation identifier.
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Invitation identifier.
 try {
     apiInstance.rejectInvitation(id)
 } catch (e: ClientException) {
@@ -129,7 +129,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group groupInvitation identifier. |
+ **id** | **java.math.BigDecimal**| Invitation identifier. |
 
 ### Return type
 
@@ -137,7 +137,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 

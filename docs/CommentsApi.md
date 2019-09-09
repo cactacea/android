@@ -48,7 +48,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -235,7 +235,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 

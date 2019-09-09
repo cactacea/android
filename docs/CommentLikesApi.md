@@ -4,16 +4,16 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findAccountsLikedComment**](CommentLikesApi.md#findAccountsLikedComment) | **GET** /comments/{id}/likes | Get accounts list who liked on a comment
+[**findUsersLikedComment**](CommentLikesApi.md#findUsersLikedComment) | **GET** /comments/{id}/likes | Get users list who liked on a comment
 [**likeComment**](CommentLikesApi.md#likeComment) | **POST** /comments/{id}/likes | Set a like on a comment
 [**unlikeComment**](CommentLikesApi.md#unlikeComment) | **DELETE** /comments/{id}/likes | Remove a like on a comment
 
 
-<a name="findAccountsLikedComment"></a>
-# **findAccountsLikedComment**
-> kotlin.Array&lt;Account&gt; findAccountsLikedComment(id, since, offset, count)
+<a name="findUsersLikedComment"></a>
+# **findUsersLikedComment**
+> kotlin.Array&lt;User&gt; findUsersLikedComment(id, since, offset, count)
 
-Get accounts list who liked on a comment
+Get users list who liked on a comment
 
 ### Example
 ```kotlin
@@ -23,17 +23,17 @@ Get accounts list who liked on a comment
 
 val apiInstance = CommentLikesApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Comment Identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters users which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of users. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of users returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findAccountsLikedComment(id, since, offset, count)
+    val result : kotlin.Array<User> = apiInstance.findUsersLikedComment(id, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling CommentLikesApi#findAccountsLikedComment")
+    println("4xx response calling CommentLikesApi#findUsersLikedComment")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CommentLikesApi#findAccountsLikedComment")
+    println("5xx response calling CommentLikesApi#findUsersLikedComment")
     e.printStackTrace()
 }
 ```
@@ -43,17 +43,17 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **java.math.BigDecimal**| Comment Identifier. |
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **since** | **java.math.BigDecimal**| Filters users which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of users. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of users returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
-[**kotlin.Array&lt;Account&gt;**](Account.md)
+[**kotlin.Array&lt;User&gt;**](User.md)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -97,7 +97,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -141,7 +141,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 

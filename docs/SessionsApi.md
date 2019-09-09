@@ -4,13 +4,13 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**signIn**](SessionsApi.md#signIn) | **GET** /sessions | Sign in
-[**signUp**](SessionsApi.md#signUp) | **POST** /sessions | Sign up
+[**signIn**](SessionsApi.md#signIn) | **POST** /signin | Sign in
+[**signUp**](SessionsApi.md#signUp) | **POST** /signup | Sign up
 
 
 <a name="signIn"></a>
 # **signIn**
-> Authentication signIn(accountName, password, udid)
+> signIn(body)
 
 Sign in
 
@@ -21,12 +21,9 @@ Sign in
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionsApi()
-val accountName : kotlin.String = accountName_example // kotlin.String | Account name.
-val password : kotlin.String = password_example // kotlin.String | Account password.
-val udid : kotlin.String = udid_example // kotlin.String | Unique Device Identifier.
+val body : PostSignInBody =  // PostSignInBody | 
 try {
-    val result : Authentication = apiInstance.signIn(accountName, password, udid)
-    println(result)
+    apiInstance.signIn(body)
 } catch (e: ClientException) {
     println("4xx response calling SessionsApi#signIn")
     e.printStackTrace()
@@ -40,17 +37,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountName** | **kotlin.String**| Account name. |
- **password** | **kotlin.String**| Account password. |
- **udid** | **kotlin.String**| Unique Device Identifier. |
+ **body** | [**PostSignInBody**](PostSignInBody.md)|  |
 
 ### Return type
 
-[**Authentication**](Authentication.md)
+null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+No authorization required
 
 ### HTTP request headers
 
@@ -59,7 +54,7 @@ Name | Type | Description  | Notes
 
 <a name="signUp"></a>
 # **signUp**
-> Authentication signUp(body)
+> signUp(body)
 
 Sign up
 
@@ -72,8 +67,7 @@ Sign up
 val apiInstance = SessionsApi()
 val body : PostSignUpBody =  // PostSignUpBody | 
 try {
-    val result : Authentication = apiInstance.signUp(body)
-    println(result)
+    apiInstance.signUp(body)
 } catch (e: ClientException) {
     println("4xx response calling SessionsApi#signUp")
     e.printStackTrace()
@@ -91,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Authentication**](Authentication.md)
+null (empty response body)
 
 ### Authorization
 

@@ -4,17 +4,17 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteMessage**](MessagesApi.md#deleteMessage) | **DELETE** /messages | Delete messages form a group
+[**deleteMessage**](MessagesApi.md#deleteMessage) | **DELETE** /messages | Delete messages form a channel
 [**findMessages**](MessagesApi.md#findMessages) | **GET** /messages | Search messages
-[**postMedium**](MessagesApi.md#postMedium) | **POST** /messages/medium | Send a medium to a group
-[**postText**](MessagesApi.md#postText) | **POST** /messages/text | Send a text to a group
+[**postMedium**](MessagesApi.md#postMedium) | **POST** /messages/medium | Send a medium to a channel
+[**postText**](MessagesApi.md#postText) | **POST** /messages/text | Send a text to a channel
 
 
 <a name="deleteMessage"></a>
 # **deleteMessage**
 > deleteMessage(body)
 
-Delete messages form a group
+Delete messages form a channel
 
 ### Example
 ```kotlin
@@ -47,7 +47,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -67,7 +67,7 @@ Search messages
 //import io.github.cactacea.backend.*
 
 val apiInstance = MessagesApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Group identifier.
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Channel identifier.
 val ascending : kotlin.Boolean = true // kotlin.Boolean | Order by posted time.
 val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters messages which started on since or later.
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of messages. By default the value is 0.
@@ -88,7 +88,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Group identifier. |
+ **id** | **java.math.BigDecimal**| Channel identifier. |
  **ascending** | **kotlin.Boolean**| Order by posted time. |
  **since** | **java.math.BigDecimal**| Filters messages which started on since or later. | [optional]
  **offset** | **java.math.BigDecimal**| The offset of messages. By default the value is 0. | [optional]
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 # **postMedium**
 > Message postMedium(body)
 
-Send a medium to a group
+Send a medium to a channel
 
 ### Example
 ```kotlin
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 # **postText**
 > Message postText(body)
 
-Send a text to a group
+Send a text to a channel
 
 ### Example
 ```kotlin
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 

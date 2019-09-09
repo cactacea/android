@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **size** | **kotlin.Long** |  | 
 **thumbnailUrl** | **kotlin.String** |  |  [optional]
 **mediumType** | [**inline**](#MediumTypeEnum) |  | 
-**contentWarning** | **kotlin.Boolean** |  | 
-**contentDeleted** | **kotlin.Boolean** |  | 
+**warning** | **kotlin.Boolean** |  | 
+**rejected** | **kotlin.Boolean** |  | 
 
 
 <a name="MediumTypeEnum"></a>

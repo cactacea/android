@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteFeed**](FeedsApi.md#deleteFeed) | **DELETE** /feeds/{id} | Delete a feed
 [**findFeed**](FeedsApi.md#findFeed) | **GET** /feeds/{id} | Get basic information about a feed
-[**findFeeds**](FeedsApi.md#findFeeds) | **GET** /feeds | Find feeds
 [**postFeed**](FeedsApi.md#postFeed) | **POST** /feeds | Post a feed
 [**reportFeed**](FeedsApi.md#reportFeed) | **POST** /feeds/{id}/reports | Report a feed
 [**updateFeed**](FeedsApi.md#updateFeed) | **PUT** /feeds/{id} | Update a feed
@@ -49,7 +48,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -94,58 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findFeeds"></a>
-# **findFeeds**
-> kotlin.Array&lt;Feed&gt; findFeeds(since, offset, feedPrivacyType, count)
-
-Find feeds
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = FeedsApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
-val feedPrivacyType : kotlin.String = feedPrivacyType_example // kotlin.String | Feed privacy type. By default the value is everyone.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Feed> = apiInstance.findFeeds(since, offset, feedPrivacyType, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling FeedsApi#findFeeds")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling FeedsApi#findFeeds")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **feedPrivacyType** | **kotlin.String**| Feed privacy type. By default the value is everyone. | [optional] [enum: everyone, followers, friends, self]
- **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Feed&gt;**](Feed.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -190,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -236,7 +184,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -282,7 +230,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 

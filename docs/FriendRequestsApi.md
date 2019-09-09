@@ -21,7 +21,7 @@ Accept a friend request
 //import io.github.cactacea.backend.*
 
 val apiInstance = FriendRequestsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Friend request Identifier.
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | friend request Identifier.
 try {
     apiInstance.acceptRequest(id)
 } catch (e: ClientException) {
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Friend request Identifier. |
+ **id** | **java.math.BigDecimal**| friend request Identifier. |
 
 ### Return type
 
@@ -45,7 +45,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -65,7 +65,7 @@ Reject a friend request
 //import io.github.cactacea.backend.*
 
 val apiInstance = FriendRequestsApi()
-val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Friend request Identifier.
+val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | friend request Identifier.
 try {
     apiInstance.rejectRequest(id)
 } catch (e: ClientException) {
@@ -81,7 +81,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **java.math.BigDecimal**| Friend request Identifier. |
+ **id** | **java.math.BigDecimal**| friend request Identifier. |
 
 ### Return type
 
@@ -89,7 +89,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 

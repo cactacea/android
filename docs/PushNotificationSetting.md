@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **comment** | **kotlin.Boolean** |  | 
 **friendRequest** | **kotlin.Boolean** |  | 
 **message** | **kotlin.Boolean** |  | 
-**groupMessage** | **kotlin.Boolean** |  | 
-**groupInvitation** | **kotlin.Boolean** |  | 
+**channelMessage** | **kotlin.Boolean** |  | 
+**invitation** | **kotlin.Boolean** |  | 
 **showMessage** | **kotlin.Boolean** |  | 
 
 

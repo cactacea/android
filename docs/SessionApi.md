@@ -5,24 +5,26 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteProfileImage**](SessionApi.md#deleteProfileImage) | **DELETE** /session/profile_image | Remove the profile image
-[**existAccountName**](SessionApi.md#existAccountName) | **GET** /session/account_name/{accountName} | Confirm account name exist
-[**findAccounts**](SessionApi.md#findAccounts) | **GET** /accounts | Find accounts
-[**findFriendRequests**](SessionApi.md#findFriendRequests) | **GET** /session/requests | Get friend requests list session account created or received
-[**findGroupInvitations**](SessionApi.md#findGroupInvitations) | **GET** /session/invitations | Get invitations list session account received
-[**findHiddenGroups**](SessionApi.md#findHiddenGroups) | **GET** /session/hides | Get hidden groups list session account groupJoined
-[**findMutingAccounts**](SessionApi.md#findMutingAccounts) | **GET** /session/mutes | Get accounts list session account muted
-[**findSession**](SessionApi.md#findSession) | **GET** /session | Get basic information about session account
-[**findSessionFeeds**](SessionApi.md#findSessionFeeds) | **GET** /session/feeds | Get feeds list session account posted
-[**findSessionFeedsLiked**](SessionApi.md#findSessionFeedsLiked) | **GET** /session/likes | Get feeds list session account set a like
-[**findSessionFollowers**](SessionApi.md#findSessionFollowers) | **GET** /session/followers | Get accounts list session account is followed by
-[**findSessionFollowing**](SessionApi.md#findSessionFollowing) | **GET** /session/following | Get accounts list session account followed
+[**existUserName**](SessionApi.md#existUserName) | **GET** /session/username/{userName} | Confirm user name exist
+[**findSession**](SessionApi.md#findSession) | **GET** /session | Get user information
+[**findSessionBlocks**](SessionApi.md#findSessionBlocks) | **GET** /session/blocks | Get block users list
+[**findSessionChannels**](SessionApi.md#findSessionChannels) | **GET** /session/channels | Get channels list session user channelJoined
+[**findSessionFeeds**](SessionApi.md#findSessionFeeds) | **GET** /session/feeds | Find session feeds
+[**findSessionFollowers**](SessionApi.md#findSessionFollowers) | **GET** /session/followers | Get users list session user is followed by
+[**findSessionFollows**](SessionApi.md#findSessionFollows) | **GET** /session/follows | Get users list session user followed
+[**findSessionFriendRequests**](SessionApi.md#findSessionFriendRequests) | **GET** /session/requests | Get friend requests list session user created or received
 [**findSessionFriends**](SessionApi.md#findSessionFriends) | **GET** /session/friends | Get friends list
-[**findSessionGroups**](SessionApi.md#findSessionGroups) | **GET** /session/groups | Get groups list session account groupJoined
+[**findSessionHiddenChannels**](SessionApi.md#findSessionHiddenChannels) | **GET** /session/hides | Get hidden channels list session user channelJoined
+[**findSessionInvitations**](SessionApi.md#findSessionInvitations) | **GET** /session/invitations | Get invitations list session user received
+[**findSessionLikes**](SessionApi.md#findSessionLikes) | **GET** /session/likes | Get feeds list session user set a like
+[**findSessionMutes**](SessionApi.md#findSessionMutes) | **GET** /session/mutes | Get users list session user muted
+[**findUsers**](SessionApi.md#findUsers) | **GET** /users | Find users
+[**registerSession**](SessionApi.md#registerSession) | **POST** /session | Register user
 [**signOut**](SessionApi.md#signOut) | **DELETE** /session | Sign out
-[**updateAccountName**](SessionApi.md#updateAccountName) | **PUT** /session/account_name | Update the account name
 [**updatePassword**](SessionApi.md#updatePassword) | **PUT** /session/password | Update the password
 [**updateProfile**](SessionApi.md#updateProfile) | **PUT** /session/profile | Update the profile
 [**updateProfileImage**](SessionApi.md#updateProfileImage) | **PUT** /session/profile_image | Update the profile image
+[**updateUserName**](SessionApi.md#updateUserName) | **PUT** /session/username | Update the user name
 
 
 <a name="deleteProfileImage"></a>
@@ -58,18 +60,18 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="existAccountName"></a>
-# **existAccountName**
-> AccountNameNotExists existAccountName(accountName)
+<a name="existUserName"></a>
+# **existUserName**
+> UserNameNotExists existUserName(userName)
 
-Confirm account name exist
+Confirm user name exist
 
 ### Example
 ```kotlin
@@ -78,15 +80,15 @@ Confirm account name exist
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val accountName : kotlin.String = accountName_example // kotlin.String | Account name.
+val userName : kotlin.String = userName_example // kotlin.String | User name.
 try {
-    val result : AccountNameNotExists = apiInstance.existAccountName(accountName)
+    val result : UserNameNotExists = apiInstance.existUserName(userName)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#existAccountName")
+    println("4xx response calling SessionApi#existUserName")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#existAccountName")
+    println("5xx response calling SessionApi#existUserName")
     e.printStackTrace()
 }
 ```
@@ -95,26 +97,26 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountName** | **kotlin.String**| Account name. |
+ **userName** | **kotlin.String**| User name. |
 
 ### Return type
 
-[**AccountNameNotExists**](AccountNameNotExists.md)
+[**UserNameNotExists**](UserNameNotExists.md)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findAccounts"></a>
-# **findAccounts**
-> kotlin.Array&lt;Account&gt; findAccounts(accountName, since, offset, count)
+<a name="findSession"></a>
+# **findSession**
+> User findSession()
 
-Find accounts
+Get user information
 
 ### Example
 ```kotlin
@@ -123,18 +125,59 @@ Find accounts
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val accountName : kotlin.String = accountName_example // kotlin.String | Filters accounts whose account name start of.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 accounts. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findAccounts(accountName, since, offset, count)
+    val result : User = apiInstance.findSession()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findAccounts")
+    println("4xx response calling SessionApi#findSession")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findAccounts")
+    println("5xx response calling SessionApi#findSession")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionBlocks"></a>
+# **findSessionBlocks**
+> kotlin.Array&lt;User&gt; findSessionBlocks(userName, since, offset, count)
+
+Get block users list
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val userName : kotlin.String = userName_example // kotlin.String | Filters users whose user name start of.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters users which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of users. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of users returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<User> = apiInstance.findSessionBlocks(userName, since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionBlocks")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionBlocks")
     e.printStackTrace()
 }
 ```
@@ -143,29 +186,231 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountName** | **kotlin.String**| Filters accounts whose account name start of. | [optional]
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 accounts. The page size can never be larger than 50. | [optional]
+ **userName** | **kotlin.String**| Filters users whose user name start of. | [optional]
+ **since** | **java.math.BigDecimal**| Filters users which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of users. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of users returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
-[**kotlin.Array&lt;Account&gt;**](Account.md)
+[**kotlin.Array&lt;User&gt;**](User.md)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findFriendRequests"></a>
-# **findFriendRequests**
-> kotlin.Array&lt;FriendRequest&gt; findFriendRequests(received, since, offset, count)
+<a name="findSessionChannels"></a>
+# **findSessionChannels**
+> kotlin.Array&lt;Channel&gt; findSessionChannels(since, offset, count)
 
-Get friend requests list session account created or received
+Get channels list session user channelJoined
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters channels which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of channels. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of channels returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Channel> = apiInstance.findSessionChannels(since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionChannels")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionChannels")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **since** | **java.math.BigDecimal**| Filters channels which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of channels. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of channels returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Channel&gt;**](Channel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionFeeds"></a>
+# **findSessionFeeds**
+> kotlin.Array&lt;Feed&gt; findSessionFeeds(since, offset, feedPrivacyType, count)
+
+Find session feeds
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
+val feedPrivacyType : kotlin.String = feedPrivacyType_example // kotlin.String | Feed privacy type. By default the value is everyone.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Feed> = apiInstance.findSessionFeeds(since, offset, feedPrivacyType, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionFeeds")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionFeeds")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
+ **feedPrivacyType** | **kotlin.String**| Feed privacy type. By default the value is everyone. | [optional] [enum: everyone, followers, friends, self]
+ **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Feed&gt;**](Feed.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionFollowers"></a>
+# **findSessionFollowers**
+> kotlin.Array&lt;User&gt; findSessionFollowers(userName, since, offset, count)
+
+Get users list session user is followed by
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val userName : kotlin.String = userName_example // kotlin.String | Filters users whose user name start of.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters followers which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of followers. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<User> = apiInstance.findSessionFollowers(userName, since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionFollowers")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionFollowers")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userName** | **kotlin.String**| Filters users whose user name start of. | [optional]
+ **since** | **java.math.BigDecimal**| Filters followers which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of followers. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;User&gt;**](User.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionFollows"></a>
+# **findSessionFollows**
+> kotlin.Array&lt;User&gt; findSessionFollows(userName, since, offset, count)
+
+Get users list session user followed
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val userName : kotlin.String = userName_example // kotlin.String | Filters users whose user name start of.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters follower which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of follower. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<User> = apiInstance.findSessionFollows(userName, since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionFollows")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionFollows")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userName** | **kotlin.String**| Filters users whose user name start of. | [optional]
+ **since** | **java.math.BigDecimal**| Filters follower which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of follower. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;User&gt;**](User.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionFriendRequests"></a>
+# **findSessionFriendRequests**
+> kotlin.Array&lt;FriendRequest&gt; findSessionFriendRequests(received, since, offset, count)
+
+Get friend requests list session user created or received
 
 ### Example
 ```kotlin
@@ -179,13 +424,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friend
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friend request. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friend request returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<FriendRequest> = apiInstance.findFriendRequests(received, since, offset, count)
+    val result : kotlin.Array<FriendRequest> = apiInstance.findSessionFriendRequests(received, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findFriendRequests")
+    println("4xx response calling SessionApi#findSessionFriendRequests")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findFriendRequests")
+    println("5xx response calling SessionApi#findSessionFriendRequests")
     e.printStackTrace()
 }
 ```
@@ -205,18 +450,118 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findGroupInvitations"></a>
-# **findGroupInvitations**
-> kotlin.Array&lt;GroupInvitation&gt; findGroupInvitations(since, offset, count)
+<a name="findSessionFriends"></a>
+# **findSessionFriends**
+> kotlin.Array&lt;User&gt; findSessionFriends(userName, since, offset, count)
 
-Get invitations list session account received
+Get friends list
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val userName : kotlin.String = userName_example // kotlin.String | Filters friends which started on
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friends which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friends. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<User> = apiInstance.findSessionFriends(userName, since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionFriends")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionFriends")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userName** | **kotlin.String**| Filters friends which started on | [optional]
+ **since** | **java.math.BigDecimal**| Filters friends which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of friends. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;User&gt;**](User.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionHiddenChannels"></a>
+# **findSessionHiddenChannels**
+> kotlin.Array&lt;Channel&gt; findSessionHiddenChannels(since, offset, count)
+
+Get hidden channels list session user channelJoined
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters channels which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of channels. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of channels returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+try {
+    val result : kotlin.Array<Channel> = apiInstance.findSessionHiddenChannels(since, offset, count)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#findSessionHiddenChannels")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#findSessionHiddenChannels")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **since** | **java.math.BigDecimal**| Filters channels which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of channels. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of channels returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+
+### Return type
+
+[**kotlin.Array&lt;Channel&gt;**](Channel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="findSessionInvitations"></a>
+# **findSessionInvitations**
+> kotlin.Array&lt;Invitation&gt; findSessionInvitations(since, offset, count)
+
+Get invitations list session user received
 
 ### Example
 ```kotlin
@@ -226,16 +571,16 @@ Get invitations list session account received
 
 val apiInstance = SessionApi()
 val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters invitations which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of group invitations. By default the value is 0.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of invitations. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of invitations returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<GroupInvitation> = apiInstance.findGroupInvitations(since, offset, count)
+    val result : kotlin.Array<Invitation> = apiInstance.findSessionInvitations(since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findGroupInvitations")
+    println("4xx response calling SessionApi#findSessionInvitations")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findGroupInvitations")
+    println("5xx response calling SessionApi#findSessionInvitations")
     e.printStackTrace()
 }
 ```
@@ -245,215 +590,27 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **since** | **java.math.BigDecimal**| Filters invitations which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of group invitations. By default the value is 0. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of invitations. By default the value is 0. | [optional]
  **count** | **java.math.BigDecimal**| Maximum number of invitations returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
-[**kotlin.Array&lt;GroupInvitation&gt;**](GroupInvitation.md)
+[**kotlin.Array&lt;Invitation&gt;**](Invitation.md)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findHiddenGroups"></a>
-# **findHiddenGroups**
-> kotlin.Array&lt;Group&gt; findHiddenGroups(since, offset, count)
+<a name="findSessionLikes"></a>
+# **findSessionLikes**
+> kotlin.Array&lt;Feed&gt; findSessionLikes(since, offset, count)
 
-Get hidden groups list session account groupJoined
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of groups. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Group> = apiInstance.findHiddenGroups(since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findHiddenGroups")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findHiddenGroups")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Group&gt;**](Group.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findMutingAccounts"></a>
-# **findMutingAccounts**
-> kotlin.Array&lt;Account&gt; findMutingAccounts(since, offset, count)
-
-Get accounts list session account muted
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Account> = apiInstance.findMutingAccounts(since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findMutingAccounts")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findMutingAccounts")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Account&gt;**](Account.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findSession"></a>
-# **findSession**
-> Account findSession()
-
-Get basic information about session account
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-try {
-    val result : Account = apiInstance.findSession()
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findSession")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findSession")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Account**](Account.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findSessionFeeds"></a>
-# **findSessionFeeds**
-> kotlin.Array&lt;Feed&gt; findSessionFeeds(since, offset, count)
-
-Get feeds list session account posted
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters feeds which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Feed> = apiInstance.findSessionFeeds(since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findSessionFeeds")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findSessionFeeds")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters feeds which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of feeds. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Feed&gt;**](Feed.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findSessionFeedsLiked"></a>
-# **findSessionFeedsLiked**
-> kotlin.Array&lt;Feed&gt; findSessionFeedsLiked(since, offset, count)
-
-Get feeds list session account set a like
+Get feeds list session user set a like
 
 ### Example
 ```kotlin
@@ -466,13 +623,13 @@ val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters entrie
 val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of feeds. By default the value is 0.
 val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of feeds returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Feed> = apiInstance.findSessionFeedsLiked(since, offset, count)
+    val result : kotlin.Array<Feed> = apiInstance.findSessionLikes(since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findSessionFeedsLiked")
+    println("4xx response calling SessionApi#findSessionLikes")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findSessionFeedsLiked")
+    println("5xx response calling SessionApi#findSessionLikes")
     e.printStackTrace()
 }
 ```
@@ -491,18 +648,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findSessionFollowers"></a>
-# **findSessionFollowers**
-> kotlin.Array&lt;Account&gt; findSessionFollowers(since, offset, count)
+<a name="findSessionMutes"></a>
+# **findSessionMutes**
+> kotlin.Array&lt;User&gt; findSessionMutes(userName, since, offset, count)
 
-Get accounts list session account is followed by
+Get users list session user muted
 
 ### Example
 ```kotlin
@@ -511,17 +668,18 @@ Get accounts list session account is followed by
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters followers which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of followers. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+val userName : kotlin.String = userName_example // kotlin.String | Filters users whose user name start of.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters users which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of users. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of users returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findSessionFollowers(since, offset, count)
+    val result : kotlin.Array<User> = apiInstance.findSessionMutes(userName, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findSessionFollowers")
+    println("4xx response calling SessionApi#findSessionMutes")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findSessionFollowers")
+    println("5xx response calling SessionApi#findSessionMutes")
     e.printStackTrace()
 }
 ```
@@ -530,28 +688,29 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters followers which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of followers. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of followers returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **userName** | **kotlin.String**| Filters users whose user name start of. | [optional]
+ **since** | **java.math.BigDecimal**| Filters users which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of users. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of users returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
-[**kotlin.Array&lt;Account&gt;**](Account.md)
+[**kotlin.Array&lt;User&gt;**](User.md)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findSessionFollowing"></a>
-# **findSessionFollowing**
-> kotlin.Array&lt;Account&gt; findSessionFollowing(since, offset, count)
+<a name="findUsers"></a>
+# **findUsers**
+> kotlin.Array&lt;User&gt; findUsers(userName, since, offset, count)
 
-Get accounts list session account followed
+Find users
 
 ### Example
 ```kotlin
@@ -560,17 +719,18 @@ Get accounts list session account followed
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters follower which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of follower. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+val userName : kotlin.String = userName_example // kotlin.String | Filters users whose user name start of.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters users which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of users. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of users returned on one result page. By default the value is 20 users. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findSessionFollowing(since, offset, count)
+    val result : kotlin.Array<User> = apiInstance.findUsers(userName, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findSessionFollowing")
+    println("4xx response calling SessionApi#findUsers")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findSessionFollowing")
+    println("5xx response calling SessionApi#findUsers")
     e.printStackTrace()
 }
 ```
@@ -579,28 +739,29 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters follower which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of follower. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of follower returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **userName** | **kotlin.String**| Filters users whose user name start of. | [optional]
+ **since** | **java.math.BigDecimal**| Filters users which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of users. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of users returned on one result page. By default the value is 20 users. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
-[**kotlin.Array&lt;Account&gt;**](Account.md)
+[**kotlin.Array&lt;User&gt;**](User.md)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="findSessionFriends"></a>
-# **findSessionFriends**
-> kotlin.Array&lt;Account&gt; findSessionFriends(since, offset, count, sortType)
+<a name="registerSession"></a>
+# **registerSession**
+> User registerSession()
 
-Get friends list
+Register user
 
 ### Example
 ```kotlin
@@ -609,87 +770,28 @@ Get friends list
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters friends which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of friends. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-val sortType : kotlin.String = sortType_example // kotlin.String | Friends which sorted by accountName or friendsAt. Default is friendsAt.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findSessionFriends(since, offset, count, sortType)
+    val result : User = apiInstance.registerSession()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SessionApi#findSessionFriends")
+    println("4xx response calling SessionApi#registerSession")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SessionApi#findSessionFriends")
+    println("5xx response calling SessionApi#registerSession")
     e.printStackTrace()
 }
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters friends which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of friends. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of friends returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
- **sortType** | **kotlin.String**| Friends which sorted by accountName or friendsAt. Default is friendsAt. | [optional] [enum: friendsAt, accountName]
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**kotlin.Array&lt;Account&gt;**](Account.md)
+[**User**](User.md)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="findSessionGroups"></a>
-# **findSessionGroups**
-> kotlin.Array&lt;Group&gt; findSessionGroups(since, offset, count)
-
-Get groups list session account groupJoined
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters groups which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of groups. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
-try {
-    val result : kotlin.Array<Group> = apiInstance.findSessionGroups(since, offset, count)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#findSessionGroups")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#findSessionGroups")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **since** | **java.math.BigDecimal**| Filters groups which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of groups. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of groups returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
-
-### Return type
-
-[**kotlin.Array&lt;Group&gt;**](Group.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -729,51 +831,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="updateAccountName"></a>
-# **updateAccountName**
-> updateAccountName(body)
-
-Update the account name
-
-### Example
-```kotlin
-// Import classes:
-//import io.swagger.client.infrastructure.*
-//import io.github.cactacea.backend.*
-
-val apiInstance = SessionApi()
-val body : PutSessionAccountNameBody =  // PutSessionAccountNameBody | 
-try {
-    apiInstance.updateAccountName(body)
-} catch (e: ClientException) {
-    println("4xx response calling SessionApi#updateAccountName")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SessionApi#updateAccountName")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PutSessionAccountNameBody**](PutSessionAccountNameBody.md)|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -793,7 +851,7 @@ Update the password
 //import io.github.cactacea.backend.*
 
 val apiInstance = SessionApi()
-val body : PutSessionPasswordBody =  // PutSessionPasswordBody | 
+val body : PutPasswordBody =  // PutPasswordBody | 
 try {
     apiInstance.updatePassword(body)
 } catch (e: ClientException) {
@@ -809,7 +867,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PutSessionPasswordBody**](PutSessionPasswordBody.md)|  |
+ **body** | [**PutPasswordBody**](PutPasswordBody.md)|  |
 
 ### Return type
 
@@ -817,7 +875,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -861,7 +919,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -905,7 +963,51 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="updateUserName"></a>
+# **updateUserName**
+> updateUserName(body)
+
+Update the user name
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.github.cactacea.backend.*
+
+val apiInstance = SessionApi()
+val body : PutUserNameBody =  // PutUserNameBody | 
+try {
+    apiInstance.updateUserName(body)
+} catch (e: ClientException) {
+    println("4xx response calling SessionApi#updateUserName")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SessionApi#updateUserName")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PutUserNameBody**](PutUserNameBody.md)|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

@@ -5,25 +5,25 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
-**groupId** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
+**channelId** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **messageType** | [**inline**](#MessageTypeEnum) |  | 
 **message** | **kotlin.String** |  |  [optional]
 **medium** | [**Medium**](Medium.md) |  |  [optional]
-**account** | [**Account**](Account.md) |  | 
+**user** | [**User**](User.md) |  | 
 **unread** | **kotlin.Boolean** |  | 
-**accountCount** | **kotlin.Long** |  | 
-**readAccountCount** | **kotlin.Long** |  | 
-**contentWarning** | **kotlin.Boolean** |  | 
-**contentDeleted** | **kotlin.Boolean** |  | 
+**userCount** | **kotlin.Long** |  | 
+**readUserCount** | **kotlin.Long** |  | 
+**warning** | **kotlin.Boolean** |  | 
+**rejected** | **kotlin.Boolean** |  | 
 **postedAt** | **kotlin.Long** |  | 
-**next** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional]
+**next** | **kotlin.Long** |  | 
 
 
 <a name="MessageTypeEnum"></a>
 ## Enum: messageType
 Name | Value
 ---- | -----
-messageType | text, medium, stamp, groupInvitation, groupJoined, groupLeft
+messageType | text, medium, stamp, invited, joined, left
 
 
 

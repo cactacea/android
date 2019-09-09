@@ -4,16 +4,16 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findAccountsLikedFeed**](FeedLikesApi.md#findAccountsLikedFeed) | **GET** /feeds/{id}/likes | Get accounts list who set a like to a feed
+[**findUsersLikedFeed**](FeedLikesApi.md#findUsersLikedFeed) | **GET** /feeds/{id}/likes | Get users list who set a like to a feed
 [**likeFeed**](FeedLikesApi.md#likeFeed) | **POST** /feeds/{id}/likes | Set a like on a feed
 [**unlikeFeed**](FeedLikesApi.md#unlikeFeed) | **DELETE** /feeds/{id}/likes | Remove a like on a feed
 
 
-<a name="findAccountsLikedFeed"></a>
-# **findAccountsLikedFeed**
-> kotlin.Array&lt;Account&gt; findAccountsLikedFeed(id, since, offset, count)
+<a name="findUsersLikedFeed"></a>
+# **findUsersLikedFeed**
+> kotlin.Array&lt;User&gt; findUsersLikedFeed(id, since, offset, count)
 
-Get accounts list who set a like to a feed
+Get users list who set a like to a feed
 
 ### Example
 ```kotlin
@@ -23,17 +23,17 @@ Get accounts list who set a like to a feed
 
 val apiInstance = FeedLikesApi()
 val id : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Feed identifier.
-val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters accounts which started on since or later.
-val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of accounts. By default the value is 0.
-val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
+val since : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Filters users which started on since or later.
+val offset : java.math.BigDecimal = 8.14 // java.math.BigDecimal | The offset of users. By default the value is 0.
+val count : java.math.BigDecimal = 8.14 // java.math.BigDecimal | Maximum number of users returned on one result page. By default the value is 20 entries. The page size can never be larger than 50.
 try {
-    val result : kotlin.Array<Account> = apiInstance.findAccountsLikedFeed(id, since, offset, count)
+    val result : kotlin.Array<User> = apiInstance.findUsersLikedFeed(id, since, offset, count)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FeedLikesApi#findAccountsLikedFeed")
+    println("4xx response calling FeedLikesApi#findUsersLikedFeed")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FeedLikesApi#findAccountsLikedFeed")
+    println("5xx response calling FeedLikesApi#findUsersLikedFeed")
     e.printStackTrace()
 }
 ```
@@ -43,17 +43,17 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **java.math.BigDecimal**| Feed identifier. |
- **since** | **java.math.BigDecimal**| Filters accounts which started on since or later. | [optional]
- **offset** | **java.math.BigDecimal**| The offset of accounts. By default the value is 0. | [optional]
- **count** | **java.math.BigDecimal**| Maximum number of accounts returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
+ **since** | **java.math.BigDecimal**| Filters users which started on since or later. | [optional]
+ **offset** | **java.math.BigDecimal**| The offset of users. By default the value is 0. | [optional]
+ **count** | **java.math.BigDecimal**| Maximum number of users returned on one result page. By default the value is 20 entries. The page size can never be larger than 50. | [optional]
 
 ### Return type
 
-[**kotlin.Array&lt;Account&gt;**](Account.md)
+[**kotlin.Array&lt;User&gt;**](User.md)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -97,7 +97,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -141,7 +141,7 @@ null (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [cactacea_auth](../README.md#cactacea_auth)
+No authorization required
 
 ### HTTP request headers
 
